@@ -17,3 +17,9 @@ ${TOOLS_EXCEL_EXPORT_BUTTON}    //span[.='Excel Export']
 ${BROWSER}    Chrome
 
 *** Keywords ***
+# Test Setup
+#     Open Browser    ${HOMEPAGE_URL}    ${BROWSER}
+#     Maximize Browser Window
+
+# Test Teardown
+#     Close All Browsers

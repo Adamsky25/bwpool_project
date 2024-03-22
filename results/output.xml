@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-03-22T15:46:20.052555" rpa="false" schemaversion="5">
+<suite id="s1" name="Bwpool Project" source="C:\Users\novoz\bwpool_project">
+<suite id="s1-s1" name="Tests" source="C:\Users\novoz\bwpool_project\tests">
+<suite id="s1-s1-s1" name="Bwpool Tests" source="C:\Users\novoz\bwpool_project\tests\bwpool_tests.robot">
+<test id="s1-s1-s1-t1" name="1. Step: Login Page" line="9">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-03-22T15:46:20.391258" level="INFO">Opening browser 'Chrome' to base url 'https://bwpool.azurewebsites.net/'.</msg>
+<msg time="2024-03-22T15:46:22.799817" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg time="2024-03-22T15:46:22.799817" level="FAIL">NoSuchDriverException: Message: Unable to obtain driver for chrome using Selenium Manager.; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location
+</msg>
+<arg>${HOMEPAGE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="FAIL" start="2024-03-22T15:46:20.390255" elapsed="2.422820">NoSuchDriverException: Message: Unable to obtain driver for chrome using Selenium Manager.; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location
+</status>
+</kw>
+<status status="FAIL" start="2024-03-22T15:46:20.387300" elapsed="2.425775">NoSuchDriverException: Message: Unable to obtain driver for chrome using Selenium Manager.; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location
+</status>
+</test>
+<test id="s1-s1-s1-t2" name="2. Step: Navigate To The &quot;Partnerek&quot; Manu" line="12">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-03-22T15:46:22.832344" level="INFO">Clicking element '//a[contains(.,'Partnerek')]'.</msg>
+<msg time="2024-03-22T15:46:22.832344" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg time="2024-03-22T15:46:22.832344" level="FAIL">No browser is open.</msg>
+<arg>${PARTNERS_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2024-03-22T15:46:22.832344" elapsed="0.014430">No browser is open.</status>
+</kw>
+<status status="FAIL" start="2024-03-22T15:46:22.829068" elapsed="0.018702">No browser is open.</status>
+</test>
+<test id="s1-s1-s1-t3" name="3. Step: API Call Test" line="15">
+<kw name="GET" owner="RequestsLibrary">
+<msg time="2024-03-22T15:46:23.711955" level="INFO">GET Request : url=https://random-data-api.com/api/users/random_user?size=1 
+ path_url=/api/users/random_user?size=1 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-03-22T15:46:23.728575" level="INFO">GET Response : url=https://random-data-api.com/api/users/random_user?size=1 
+ status=200, reason=OK 
+ headers={'Alt-Svc': 'h3=":443"; ma=2592000', 'Cache-Control': 'max-age=0, private, must-revalidate', 'Content-Encoding': 'gzip', 'Content-Type': 'application/json; charset=utf-8', 'Etag': 'W/"0e94a518e87d86bdd43337f24872ea76"', 'Referrer-Policy': 'strict-origin-when-cross-origin', 'Server': 'Caddy', 'Strict-Transport-Security': 'max-age=63072000; includeSubDomains', 'Vary': 'Origin, Accept-Encoding', 'X-Content-Type-Options': 'nosniff', 'X-Frame-Options': 'SAMEORIGIN', 'X-Permitted-Cross-Domain-Policies': 'none', 'X-Request-Id': '124c3864-e727-421f-ae53-7d4e8b4f8768', 'X-Runtime': '0.010869', 'X-Xss-Protection': '0', 'Date': 'Fri, 22 Mar 2024 14:46:18 GMT', 'Content-Length': '566'} 
+ body=[{"id":8194,"uid":"4bd4506e-5daf-4ed3-90e2-718f08ab0bd3","password":"eXEtuZ2IBv","first_name":"Del","last_name":"Shanahan","username":"del.shanahan","email":"del.shanahan@email.com","avatar":"https://robohash.org/placeatetquia.png?size=300x300\u0026set=set1","gender":"Female","phone_number":"+357 246-248-0351 x52008","social_insurance_number":"529873853","date_of_birth":"1987-07-14","employment":{"title":"Sales Liaison","key_skill":"Problem solving"},"address":{"city":"Fayfurt","street_name":"Haag Light","street_address":"6666 Sybil Throughway","zip_code":"67973","state":"Virginia","country":"United States","coordinates":{"lat":89.56615281772895,"lng":-27.555824119746518}},"credit_card":{"cc_number":"5543-0453-4900-8555"},"subscription":{"plan":"Diamond","status":"Pending","payment_method":"Alipay","term":"Full subscription"}}] 
+ </msg>
+<msg time="2024-03-22T15:46:23.728575" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>https://random-data-api.com/api/users/random_user</arg>
+<arg>params=size=1</arg>
+<doc>Sends a GET request.</doc>
+<status status="PASS" start="2024-03-22T15:46:22.850761" elapsed="0.877814"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-03-22T15:46:23.728575" level="INFO">${body} = [{'id': 8194, 'uid': '4bd4506e-5daf-4ed3-90e2-718f08ab0bd3', 'password': 'eXEtuZ2IBv', 'first_name': 'Del', 'last_name': 'Shanahan', 'username': 'del.shanahan', 'email': 'del.shanahan@email.com', 'ava...</msg>
+<var>${body}</var>
+<arg>${response.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-03-22T15:46:23.728575" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-03-22T15:46:22.849764" elapsed="0.878811"/>
+</test>
+<status status="FAIL" start="2024-03-22T15:46:20.114542" elapsed="3.614033"/>
+</suite>
+<status status="FAIL" start="2024-03-22T15:46:20.104028" elapsed="3.635057"/>
+</suite>
+<status status="FAIL" start="2024-03-22T15:46:20.070282" elapsed="3.673308"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="2" skip="0" id="s1" name="Bwpool Project">Bwpool Project</stat>
+<stat pass="1" fail="2" skip="0" id="s1-s1" name="Tests">Bwpool Project.Tests</stat>
+<stat pass="1" fail="2" skip="0" id="s1-s1-s1" name="Bwpool Tests">Bwpool Project.Tests.Bwpool Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
