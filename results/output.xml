@@ -1,73 +1,856 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-03-22T15:53:15.893007" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-03-23T22:03:56.611634" rpa="false" schemaversion="5">
 <suite id="s1" name="Bwpool Project" source="C:\Users\novoz\bwpool_project">
 <suite id="s1-s1" name="Tests" source="C:\Users\novoz\bwpool_project\tests">
 <suite id="s1-s1-s1" name="Bwpool Tests" source="C:\Users\novoz\bwpool_project\tests\bwpool_tests.robot">
-<test id="s1-s1-s1-t1" name="1. Step: Login Page" line="9">
+<test id="s1-s1-s1-t1" name="1.Step: Login Page" line="9">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-03-22T15:53:16.290464" level="INFO">Opening browser 'Chrome' to base url 'https://bwpool.azurewebsites.net/'.</msg>
+<msg time="2024-03-23T22:03:56.943948" level="INFO">Opening browser 'Chrome' to base url 'https://bwpool.azurewebsites.net/'.</msg>
+<msg time="2024-03-23T22:03:57.566533" level="WARN">There was an error managing chromedriver (request or response body error: error reading a body from connection: cannot decrypt peer's message); using driver found in the cache</msg>
 <arg>${HOMEPAGE_URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-03-22T15:53:16.290464" elapsed="5.571003"/>
+<status status="PASS" start="2024-03-23T22:03:56.943948" elapsed="3.467677"/>
 </kw>
-<status status="PASS" start="2024-03-22T15:53:16.290464" elapsed="5.571003"/>
+<status status="PASS" start="2024-03-23T22:03:56.943948" elapsed="3.468682"/>
 </test>
 <test id="s1-s1-s1-t2" name="2. Step: Navigate To The &quot;Partnerek&quot; Manu" line="12">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-03-22T15:53:21.861467" level="INFO">Clicking element '//a[contains(.,'Partnerek')]'.</msg>
+<msg time="2024-03-23T22:04:00.420211" level="INFO">Clicking element '//a[contains(.,'Partnerek')]'.</msg>
 <arg>${PARTNERS_BUTTON}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-03-22T15:53:21.861467" elapsed="0.615826"/>
+<status status="PASS" start="2024-03-23T22:04:00.418208" elapsed="0.527840"/>
 </kw>
-<status status="PASS" start="2024-03-22T15:53:21.861467" elapsed="0.615826"/>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2024-03-23T22:04:06.212834" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-197.png"&gt;&lt;img src="selenium-screenshot-197.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-03-23T22:04:06.212834" level="FAIL">Element '//span[.='Add']' not visible after 5 seconds.</msg>
+<arg>${PARTNERS_ADD_BUTTON}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2024-03-23T22:04:00.946048" elapsed="5.266786">Element '//span[.='Add']' not visible after 5 seconds.</status>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${PARTNERS_ADD_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-03-23T22:04:06.212834" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-03-23T22:04:00.415618" elapsed="5.797216">Element '//span[.='Add']' not visible after 5 seconds.</status>
 </test>
-<test id="s1-s1-s1-t3" name="3. Step: API Call Test" line="15">
+<test id="s1-s1-s1-t3" name="3. Step: API Call Test + 4. Step: Attach A Partner Based On The API Message" line="17">
 <kw name="GET" owner="RequestsLibrary">
-<msg time="2024-03-22T15:53:23.444372" level="INFO">GET Request : url=https://random-data-api.com/api/users/random_user?size=1 
+<msg time="2024-03-23T22:04:07.225682" level="INFO">GET Request : url=https://random-data-api.com/api/users/random_user?size=1 
  path_url=/api/users/random_user?size=1 
  headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg time="2024-03-22T15:53:23.444372" level="INFO">GET Response : url=https://random-data-api.com/api/users/random_user?size=1 
+<msg time="2024-03-23T22:04:07.225682" level="INFO">GET Response : url=https://random-data-api.com/api/users/random_user?size=1 
  status=200, reason=OK 
- headers={'Alt-Svc': 'h3=":443"; ma=2592000', 'Cache-Control': 'max-age=0, private, must-revalidate', 'Content-Encoding': 'gzip', 'Content-Type': 'application/json; charset=utf-8', 'Etag': 'W/"3615d35753282d7b077cdb924bc34f71"', 'Referrer-Policy': 'strict-origin-when-cross-origin', 'Server': 'Caddy', 'Strict-Transport-Security': 'max-age=63072000; includeSubDomains', 'Vary': 'Origin, Accept-Encoding', 'X-Content-Type-Options': 'nosniff', 'X-Frame-Options': 'SAMEORIGIN', 'X-Permitted-Cross-Domain-Policies': 'none', 'X-Request-Id': 'ed2b03df-ea63-46f9-a236-ac4a3dc91a36', 'X-Runtime': '0.047789', 'X-Xss-Protection': '0', 'Date': 'Fri, 22 Mar 2024 14:53:18 GMT', 'Content-Length': '583'} 
- body=[{"id":5279,"uid":"528f4ac2-7aa0-446a-9cea-956861e61ea6","password":"PGw5xtq6MO","first_name":"Billi","last_name":"Zboncak","username":"billi.zboncak","email":"billi.zboncak@email.com","avatar":"https://robohash.org/atlaboremollitia.png?size=300x300\u0026set=set1","gender":"Agender","phone_number":"+234 683-318-5084 x647","social_insurance_number":"200604759","date_of_birth":"1991-06-24","employment":{"title":"Retail Strategist","key_skill":"Work under pressure"},"address":{"city":"Reichertland","street_name":"Loree Fork","street_address":"5397 McKenzie Mountains","zip_code":"84125-8250","state":"Rhode Island","country":"United States","coordinates":{"lat":-2.2820654609488855,"lng":165.14630945854242}},"credit_card":{"cc_number":"6771-8921-2980-2231"},"subscription":{"plan":"Professional","status":"Blocked","payment_method":"Credit card","term":"Monthly"}}] 
+ headers={'Alt-Svc': 'h3=":443"; ma=2592000', 'Cache-Control': 'max-age=0, private, must-revalidate', 'Content-Encoding': 'gzip', 'Content-Type': 'application/json; charset=utf-8', 'Etag': 'W/"8b229841d2d695c6858f1f10a3dda1a9"', 'Referrer-Policy': 'strict-origin-when-cross-origin', 'Server': 'Caddy', 'Strict-Transport-Security': 'max-age=63072000; includeSubDomains', 'Vary': 'Origin, Accept-Encoding', 'X-Content-Type-Options': 'nosniff', 'X-Frame-Options': 'SAMEORIGIN', 'X-Permitted-Cross-Domain-Policies': 'none', 'X-Request-Id': '1bfbcf55-8fe8-4ce3-82aa-5dd046b37cb4', 'X-Runtime': '0.012517', 'X-Xss-Protection': '0', 'Date': 'Sat, 23 Mar 2024 21:04:01 GMT', 'Content-Length': '582'} 
+ body=[{"id":1761,"uid":"1f861675-0354-47b9-b636-0a6ed06a3d6e","password":"qA6eMwaog9","first_name":"Rosina","last_name":"Collier","username":"rosina.collier","email":"rosina.collier@email.com","avatar":"https://robohash.org/utsolutaqui.png?size=300x300\u0026set=set1","gender":"Female","phone_number":"+381 266.368.0124 x73286","social_insurance_number":"133898791","date_of_birth":"1970-02-09","employment":{"title":"Internal Legal Facilitator","key_skill":"Problem solving"},"address":{"city":"East Hungberg","street_name":"Kiehn Spurs","street_address":"87961 Riley Lake","zip_code":"10911","state":"Mississippi","country":"United States","coordinates":{"lat":21.77069150309474,"lng":47.23838851529692}},"credit_card":{"cc_number":"6771-8955-5076-9217"},"subscription":{"plan":"Free Trial","status":"Blocked","payment_method":"Credit card","term":"Full subscription"}}] 
  </msg>
-<msg time="2024-03-22T15:53:23.444372" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2024-03-23T22:04:07.225682" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
-<arg>https://random-data-api.com/api/users/random_user</arg>
+<arg>${API_URL_1}</arg>
 <arg>params=size=1</arg>
 <doc>Sends a GET request.</doc>
-<status status="PASS" start="2024-03-22T15:53:22.477293" elapsed="0.967079"/>
+<status status="PASS" start="2024-03-23T22:04:06.227467" elapsed="0.998215"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-03-22T15:53:23.444372" level="INFO">${body} = [{'id': 5279, 'uid': '528f4ac2-7aa0-446a-9cea-956861e61ea6', 'password': 'PGw5xtq6MO', 'first_name': 'Billi', 'last_name': 'Zboncak', 'username': 'billi.zboncak', 'email': 'billi.zboncak@email.com', '...</msg>
-<var>${body}</var>
+<msg time="2024-03-23T22:04:07.232298" level="INFO">${user_data} = [{'id': 1761, 'uid': '1f861675-0354-47b9-b636-0a6ed06a3d6e', 'password': 'qA6eMwaog9', 'first_name': 'Rosina', 'last_name': 'Collier', 'username': 'rosina.collier', 'email': 'rosina.collier@email.com'...</msg>
+<var>${user_data}</var>
 <arg>${response.json()}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-03-22T15:53:23.444372" elapsed="0.000000"/>
+<status status="PASS" start="2024-03-23T22:04:07.225682" elapsed="0.012150"/>
 </kw>
-<status status="PASS" start="2024-03-22T15:53:22.477293" elapsed="0.982823"/>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-03-23T22:04:07.239508" level="INFO">${first_name} = Rosina</msg>
+<var>${first_name}</var>
+<arg>${user_data[0]['first_name']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-03-23T22:04:07.238997" elapsed="0.000511"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-03-23T22:04:07.239508" level="INFO">${last_name} = Collier</msg>
+<var>${last_name}</var>
+<arg>${user_data[0]['last_name']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-03-23T22:04:07.239508" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-03-23T22:04:07.239508" level="INFO">${email} = rosina.collier@email.com</msg>
+<var>${email}</var>
+<arg>${user_data[0]['email']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-03-23T22:04:07.239508" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-03-23T22:04:07.250952" level="INFO">${phone_number} = +381 266.368.0124 x73286</msg>
+<var>${phone_number}</var>
+<arg>${user_data[0]['phone_number']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-03-23T22:04:07.247956" elapsed="0.002996"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-03-23T22:04:07.255312" level="INFO">${id} = 1761</msg>
+<var>${id}</var>
+<arg>${user_data[0]['id']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-03-23T22:04:07.251948" elapsed="0.005147"/>
+</kw>
+<kw name="Place Data Into &quot;Ügyfél&quot; Grid" owner="common_resources">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-03-23T22:04:07.260194" level="INFO">Typing text 'Rosina' into text field '//input[@id='name']'.</msg>
+<msg time="2024-03-23T22:04:07.472764" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-198.png"&gt;&lt;img src="selenium-screenshot-198.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-03-23T22:04:07.474102" level="FAIL">Element with locator '//input[@id='name']' not found.</msg>
+<arg>${PARTNERS_ADD_NAME}</arg>
+<arg>${first_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="FAIL" start="2024-03-23T22:04:07.259186" elapsed="0.226687">Element with locator '//input[@id='name']' not found.</status>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${PARTNERS_ADD_NAME}</arg>
+<arg>${last_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-03-23T22:04:07.487707" elapsed="0.000858"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${PARTNERS_ADD_EMAIL}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-03-23T22:04:07.488565" elapsed="0.001533"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${PARTNERS_ADD_TELEFON}</arg>
+<arg>${phone_number}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-03-23T22:04:07.490098" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${PARTNERS_ADD_COMMENT}</arg>
+<arg>${id}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-03-23T22:04:07.490098" elapsed="0.000000"/>
+</kw>
+<arg>${first_name}</arg>
+<arg>${last_name}</arg>
+<arg>${email}</arg>
+<arg>${phone_number}</arg>
+<arg>${id}</arg>
+<status status="FAIL" start="2024-03-23T22:04:07.258594" elapsed="0.231504">Element with locator '//input[@id='name']' not found.</status>
+</kw>
+<status status="FAIL" start="2024-03-23T22:04:06.225469" elapsed="1.264629">Element with locator '//input[@id='name']' not found.</status>
 </test>
-<status status="PASS" start="2024-03-22T15:53:15.936796" elapsed="7.524041"/>
+<test id="s1-s1-s1-t4" name="5. Step: Save The Menu" line="33">
+<kw name="Save The Partner Menu" owner="common_resources">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-03-23T22:04:07.502947" level="INFO">Clicking element '//button[@class='e-control e-btn e-lib e-control e-btn e-lib e-primary e-flat']'.</msg>
+<msg time="2024-03-23T22:04:07.697995" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-199.png"&gt;&lt;img src="selenium-screenshot-199.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-03-23T22:04:07.699005" level="FAIL">Element with locator '//button[@class='e-control e-btn e-lib e-control e-btn e-lib e-primary e-flat']' not found.</msg>
+<arg>${PARTNERS_ADD_SAVE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2024-03-23T22:04:07.502376" elapsed="0.203705">Element with locator '//button[@class='e-control e-btn e-lib e-control e-btn e-lib e-primary e-flat']' not found.</status>
+</kw>
+<status status="FAIL" start="2024-03-23T22:04:07.500376" elapsed="0.205705">Element with locator '//button[@class='e-control e-btn e-lib e-control e-btn e-lib e-primary e-flat']' not found.</status>
+</kw>
+<status status="FAIL" start="2024-03-23T22:04:07.498087" elapsed="0.211972">Element with locator '//button[@class='e-control e-btn e-lib e-control e-btn e-lib e-primary e-flat']' not found.</status>
+</test>
+<test id="s1-s1-s1-t5" name="6. Step: Navigate To The &quot;Telephelyek&quot; Menu" line="36">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOCATIONS_BUTTON}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-03-23T22:04:07.714564" elapsed="0.037126"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-03-23T22:04:07.753661" level="INFO">Clicking element '//a[contains(.,'Telephelyek')]'.</msg>
+<arg>${LOCATIONS_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-23T22:04:07.752658" elapsed="0.077955"/>
+</kw>
+<status status="PASS" start="2024-03-23T22:04:07.710059" elapsed="0.121617"/>
+</test>
+<test id="s1-s1-s1-t6" name="7. Step: Attach A Location Based On The API Message" line="40">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-03-23T22:04:07.841583" level="INFO">Clicking element '//span[.='Add']'.</msg>
+<msg time="2024-03-23T22:04:08.137588" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-200.png"&gt;&lt;img src="selenium-screenshot-200.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-03-23T22:04:08.138575" level="FAIL">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=123.0.6312.59)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6A2BA7062+63090]
+	(No symbol) [0x00007FF6A2B12CB2]
+	(No symbol) [0x00007FF6A29AEB1D]
+	(No symbol) [0x00007FF6A29F5D56]
+	(No symbol) [0x00007FF6A29EA708]
+	(No symbol) [0x00007FF6A2A16FDA]
+	(No symbol) [0x00007FF6A29EA00A]
+	(No symbol) [0x00007FF6A2A171F0]
+	(No symbol) [0x00007FF6A2A33412]
+	(No symbol) [0x00007FF6A2A16D83]
+	(No symbol) [0x00007FF6A29E83A8]
+	(No symbol) [0x00007FF6A29E9441]
+	GetHandleVerifier [0x00007FF6A2FA25CD+4238301]
+	GetHandleVerifier [0x00007FF6A2FDF72D+4488509]
+	GetHandleVerifier [0x00007FF6A2FD7A0F+4456479]
+	GetHandleVerifier [0x00007FF6A2C805A6+953270]
+	(No symbol) [0x00007FF6A2B1E57F]
+	(No symbol) [0x00007FF6A2B19254]
+	(No symbol) [0x00007FF6A2B1938B]
+	(No symbol) [0x00007FF6A2B09BC4]
+	BaseThreadInitThunk [0x00007FFAFAE1257D+29]
+	RtlUserThreadStart [0x00007FFAFB84AA58+40]
+</msg>
+<arg>${LOCATIONS_ADD_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2024-03-23T22:04:07.839577" elapsed="0.309423">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=123.0.6312.59)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6A2BA7062+63090]
+	(No symbol) [0x00007FF6A2B12CB2]
+	(No symbol) [0x00007FF6A29AEB1D]
+	(No symbol) [0x00007FF6A29F5D56]
+	(No symbol) [0x00007FF6A29EA708]
+	(No symbol) [0x00007FF6A2A16FDA]
+	(No symbol) [0x00007FF6A29EA00A]
+	(No symbol) [0x00007FF6A2A171F0]
+	(No symbol) [0x00007FF6A2A33412]
+	(No symbol) [0x00007FF6A2A16D83]
+	(No symbol) [0x00007FF6A29E83A8]
+	(No symbol) [0x00007FF6A29E9441]
+	GetHandleVerifier [0x00007FF6A2FA25CD+4238301]
+	GetHandleVerifier [0x00007FF6A2FDF72D+4488509]
+	GetHandleVerifier [0x00007FF6A2FD7A0F+4456479]
+	GetHandleVerifier [0x00007FF6A2C805A6+953270]
+	(No symbol) [0x00007FF6A2B1E57F]
+	(No symbol) [0x00007FF6A2B19254]
+	(No symbol) [0x00007FF6A2B1938B]
+	(No symbol) [0x00007FF6A2B09BC4]
+	BaseThreadInitThunk [0x00007FFAFAE1257D+29]
+	RtlUserThreadStart [0x00007FFAFB84AA58+40]
+</status>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${LOCATIONS_ADD_CUSTOMER}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" start="2024-03-23T22:04:08.151019" elapsed="0.001513"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${LOCATIONS_ADD_CUSTOMER}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-03-23T22:04:08.153557" elapsed="0.002464"/>
+</kw>
+<kw name="Create Location Data" owner="common_resources">
+<var>${location_data}</var>
+<arg>${partner_city}</arg>
+<arg>${partner_zip_code}</arg>
+<arg>${partner_street}</arg>
+<arg>${partner_street_number}</arg>
+<status status="NOT RUN" start="2024-03-23T22:04:08.158035" elapsed="0.000000"/>
+</kw>
+<kw name="Attach Location To Partner" owner="common_resources">
+<arg>${id}</arg>
+<arg>${location_data}</arg>
+<status status="NOT RUN" start="2024-03-23T22:04:08.159012" elapsed="0.000995"/>
+</kw>
+<kw name="Place Data Into &quot;Telephely&quot; Grid" owner="common_resources">
+<arg>${partner_city}</arg>
+<arg>${partner_zip_code}</arg>
+<arg>${partner_street}</arg>
+<arg>${partner_street_number}</arg>
+<status status="NOT RUN" start="2024-03-23T22:04:08.161003" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-03-23T22:04:07.836204" elapsed="0.324799">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=123.0.6312.59)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6A2BA7062+63090]
+	(No symbol) [0x00007FF6A2B12CB2]
+	(No symbol) [0x00007FF6A29AEB1D]
+	(No symbol) [0x00007FF6A29F5D56]
+	(No symbol) [0x00007FF6A29EA708]
+	(No symbol) [0x00007FF6A2A16FDA]
+	(No symbol) [0x00007FF6A29EA00A]
+	(No symbol) [0x00007FF6A2A171F0]
+	(No symbol) [0x00007FF6A2A33412]
+	(No symbol) [0x00007FF6A2A16D83]
+	(No symbol) [0x00007FF6A29E83A8]
+	(No symbol) [0x00007FF6A29E9441]
+	GetHandleVerifier [0x00007FF6A2FA25CD+4238301]
+	GetHandleVerifier [0x00007FF6A2FDF72D+4488509]
+	GetHandleVerifier [0x00007FF6A2FD7A0F+4456479]
+	GetHandleVerifier [0x00007FF6A2C805A6+953270]
+	(No symbol) [0x00007FF6A2B1E57F]
+	(No symbol) [0x00007FF6A2B19254]
+	(No symbol) [0x00007FF6A2B1938B]
+	(No symbol) [0x00007FF6A2B09BC4]
+	BaseThreadInitThunk [0x00007FFAFAE1257D+29]
+	RtlUserThreadStart [0x00007FFAFB84AA58+40]
+</status>
+</test>
+<test id="s1-s1-s1-t7" name="8. Step: Save the Menu" line="49">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2024-03-23T22:04:13.367825" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-201.png"&gt;&lt;img src="selenium-screenshot-201.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-03-23T22:04:13.368815" level="FAIL">Element '//button[@class='e-control e-btn e-lib e-control e-btn e-lib e-primary e-flat']' not visible after 5 seconds.</msg>
+<arg>${LOCATIONS_ADD_SAVE}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2024-03-23T22:04:08.171064" elapsed="5.204729">Element '//button[@class='e-control e-btn e-lib e-control e-btn e-lib e-primary e-flat']' not visible after 5 seconds.</status>
+</kw>
+<kw name="Save The Locations Menu" owner="common_resources">
+<status status="NOT RUN" start="2024-03-23T22:04:13.376791" elapsed="0.000994"/>
+</kw>
+<status status="FAIL" start="2024-03-23T22:04:08.168600" elapsed="5.210182">Element '//button[@class='e-control e-btn e-lib e-control e-btn e-lib e-primary e-flat']' not visible after 5 seconds.</status>
+</test>
+<test id="s1-s1-s1-t8" name="10. Step: Navigate To The &quot;Eszközök&quot; Menu" line="53">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${TOOLS_BUTTON}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-03-23T22:04:13.383769" elapsed="0.035447"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-03-23T22:04:13.421276" level="INFO">Clicking element '//a[contains(.,'Eszközök')]'.</msg>
+<arg>${TOOLS_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-23T22:04:13.420219" elapsed="0.064575"/>
+</kw>
+<status status="PASS" start="2024-03-23T22:04:13.381770" elapsed="0.107012"/>
+</test>
+<test id="s1-s1-s1-t9" name="12. Step: Save The Menu" line="57">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2024-03-23T22:04:18.590663" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=123.0.6312.59)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6A2BA7062+63090]
+	(No symbol) [0x00007FF6A2B12CB2]
+	(No symbol) [0x00007FF6A29AEC65]
+	(No symbol) [0x00007FF6A298CA7C]
+	(No symbol) [0x00007FF6A2A1D687]
+	(No symbol) [0x00007FF6A2A32AC1]
+	(No symbol) [0x00007FF6A2A16D83]
+	(No symbol) [0x00007FF6A29E83A8]
+	(No symbol) [0x00007FF6A29E9441]
+	GetHandleVerifier [0x00007FF6A2FA25CD+4238301]
+	GetHandleVerifier [0x00007FF6A2FDF72D+4488509]
+	GetHandleVerifier [0x00007FF6A2FD7A0F+4456479]
+	GetHandleVerifier [0x00007FF6A2C805A6+953270]
+	(No symbol) [0x00007FF6A2B1E57F]
+	(No symbol) [0x00007FF6A2B19254]
+	(No symbol) [0x00007FF6A2B1938B]
+	(No symbol) [0x00007FF6A2B09BC4]
+	BaseThreadInitThunk [0x00007FFAFAE1257D+29]
+	RtlUserThreadStart [0x00007FFAFB84AA58+40]
+</msg>
+<msg time="2024-03-23T22:04:18.600353" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=123.0.6312.59)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6A2BA7062+63090]
+	(No symbol) [0x00007FF6A2B12CB2]
+	(No symbol) [0x00007FF6A29AEC65]
+	(No symbol) [0x00007FF6A298CA7C]
+	(No symbol) [0x00007FF6A2A1D687]
+	(No symbol) [0x00007FF6A2A32AC1]
+	(No symbol) [0x00007FF6A2A16D83]
+	(No symbol) [0x00007FF6A29E83A8]
+	(No symbol) [0x00007FF6A29E9441]
+	GetHandleVerifier [0x00007FF6A2FA25CD+4238301]
+	GetHandleVerifier [0x00007FF6A2FDF72D+4488509]
+	GetHandleVerifier [0x00007FF6A2FD7A0F+4456479]
+	GetHandleVerifier [0x00007FF6A2C805A6+953270]
+	(No symbol) [0x00007FF6A2B1E57F]
+	(No symbol) [0x00007FF6A2B19254]
+	(No symbol) [0x00007FF6A2B1938B]
+	(No symbol) [0x00007FF6A2B09BC4]
+	BaseThreadInitThunk [0x00007FFAFAE1257D+29]
+	RtlUserThreadStart [0x00007FFAFB84AA58+40]
+</msg>
+<arg>${TOOLS_SAVE_BUTTON}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2024-03-23T22:04:13.493766" elapsed="5.113328">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=123.0.6312.59)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6A2BA7062+63090]
+	(No symbol) [0x00007FF6A2B12CB2]
+	(No symbol) [0x00007FF6A29AEC65]
+	(No symbol) [0x00007FF6A298CA7C]
+	(No symbol) [0x00007FF6A2A1D687]
+	(No symbol) [0x00007FF6A2A32AC1]
+	(No symbol) [0x00007FF6A2A16D83]
+	(No symbol) [0x00007FF6A29E83A8]
+	(No symbol) [0x00007FF6A29E9441]
+	GetHandleVerifier [0x00007FF6A2FA25CD+4238301]
+	GetHandleVerifier [0x00007FF6A2FDF72D+4488509]
+	GetHandleVerifier [0x00007FF6A2FD7A0F+4456479]
+	GetHandleVerifier [0x00007FF6A2C805A6+953270]
+	(No symbol) [0x00007FF6A2B1E57F]
+	(No symbol) [0x00007FF6A2B19254]
+	(No symbol) [0x00007FF6A2B1938B]
+	(No symbol) [0x00007FF6A2B09BC4]
+	BaseThreadInitThunk [0x00007FFAFAE1257D+29]
+	RtlUserThreadStart [0x00007FFAFB84AA58+40]
+</status>
+</kw>
+<kw name="Save The Tools Menu" owner="common_resources">
+<status status="NOT RUN" start="2024-03-23T22:04:18.608907" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-03-23T22:04:13.491770" elapsed="5.119829">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=123.0.6312.59)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6A2BA7062+63090]
+	(No symbol) [0x00007FF6A2B12CB2]
+	(No symbol) [0x00007FF6A29AEC65]
+	(No symbol) [0x00007FF6A298CA7C]
+	(No symbol) [0x00007FF6A2A1D687]
+	(No symbol) [0x00007FF6A2A32AC1]
+	(No symbol) [0x00007FF6A2A16D83]
+	(No symbol) [0x00007FF6A29E83A8]
+	(No symbol) [0x00007FF6A29E9441]
+	GetHandleVerifier [0x00007FF6A2FA25CD+4238301]
+	GetHandleVerifier [0x00007FF6A2FDF72D+4488509]
+	GetHandleVerifier [0x00007FF6A2FD7A0F+4456479]
+	GetHandleVerifier [0x00007FF6A2C805A6+953270]
+	(No symbol) [0x00007FF6A2B1E57F]
+	(No symbol) [0x00007FF6A2B19254]
+	(No symbol) [0x00007FF6A2B1938B]
+	(No symbol) [0x00007FF6A2B09BC4]
+	BaseThreadInitThunk [0x00007FFAFAE1257D+29]
+	RtlUserThreadStart [0x00007FFAFB84AA58+40]
+</status>
+</test>
+<test id="s1-s1-s1-t10" name="13. Click On &quot;Excel Export&quot; Button" line="61">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2024-03-23T22:04:18.679630" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=123.0.6312.59)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6A2BA7062+63090]
+	(No symbol) [0x00007FF6A2B12CB2]
+	(No symbol) [0x00007FF6A29AEC65]
+	(No symbol) [0x00007FF6A298CA7C]
+	(No symbol) [0x00007FF6A2A1D687]
+	(No symbol) [0x00007FF6A2A32AC1]
+	(No symbol) [0x00007FF6A2A16D83]
+	(No symbol) [0x00007FF6A29E83A8]
+	(No symbol) [0x00007FF6A29E9441]
+	GetHandleVerifier [0x00007FF6A2FA25CD+4238301]
+	GetHandleVerifier [0x00007FF6A2FDF72D+4488509]
+	GetHandleVerifier [0x00007FF6A2FD7A0F+4456479]
+	GetHandleVerifier [0x00007FF6A2C805A6+953270]
+	(No symbol) [0x00007FF6A2B1E57F]
+	(No symbol) [0x00007FF6A2B19254]
+	(No symbol) [0x00007FF6A2B1938B]
+	(No symbol) [0x00007FF6A2B09BC4]
+	BaseThreadInitThunk [0x00007FFAFAE1257D+29]
+	RtlUserThreadStart [0x00007FFAFB84AA58+40]
+</msg>
+<msg time="2024-03-23T22:04:18.692012" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=123.0.6312.59)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6A2BA7062+63090]
+	(No symbol) [0x00007FF6A2B12CB2]
+	(No symbol) [0x00007FF6A29AEC65]
+	(No symbol) [0x00007FF6A298CA7C]
+	(No symbol) [0x00007FF6A2A1D687]
+	(No symbol) [0x00007FF6A2A32AC1]
+	(No symbol) [0x00007FF6A2A16D83]
+	(No symbol) [0x00007FF6A29E83A8]
+	(No symbol) [0x00007FF6A29E9441]
+	GetHandleVerifier [0x00007FF6A2FA25CD+4238301]
+	GetHandleVerifier [0x00007FF6A2FDF72D+4488509]
+	GetHandleVerifier [0x00007FF6A2FD7A0F+4456479]
+	GetHandleVerifier [0x00007FF6A2C805A6+953270]
+	(No symbol) [0x00007FF6A2B1E57F]
+	(No symbol) [0x00007FF6A2B19254]
+	(No symbol) [0x00007FF6A2B1938B]
+	(No symbol) [0x00007FF6A2B09BC4]
+	BaseThreadInitThunk [0x00007FFAFAE1257D+29]
+	RtlUserThreadStart [0x00007FFAFB84AA58+40]
+</msg>
+<arg>${TOOLS_EXCEL_EXPORT_MENU}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2024-03-23T22:04:18.625156" elapsed="0.076801">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=123.0.6312.59)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6A2BA7062+63090]
+	(No symbol) [0x00007FF6A2B12CB2]
+	(No symbol) [0x00007FF6A29AEC65]
+	(No symbol) [0x00007FF6A298CA7C]
+	(No symbol) [0x00007FF6A2A1D687]
+	(No symbol) [0x00007FF6A2A32AC1]
+	(No symbol) [0x00007FF6A2A16D83]
+	(No symbol) [0x00007FF6A29E83A8]
+	(No symbol) [0x00007FF6A29E9441]
+	GetHandleVerifier [0x00007FF6A2FA25CD+4238301]
+	GetHandleVerifier [0x00007FF6A2FDF72D+4488509]
+	GetHandleVerifier [0x00007FF6A2FD7A0F+4456479]
+	GetHandleVerifier [0x00007FF6A2C805A6+953270]
+	(No symbol) [0x00007FF6A2B1E57F]
+	(No symbol) [0x00007FF6A2B19254]
+	(No symbol) [0x00007FF6A2B1938B]
+	(No symbol) [0x00007FF6A2B09BC4]
+	BaseThreadInitThunk [0x00007FFAFAE1257D+29]
+	RtlUserThreadStart [0x00007FFAFB84AA58+40]
+</status>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${TOOLS_EXCEL_EXPORT_MENU}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-03-23T22:04:18.703188" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-03-23T22:04:18.622310" elapsed="0.083081">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=123.0.6312.59)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6A2BA7062+63090]
+	(No symbol) [0x00007FF6A2B12CB2]
+	(No symbol) [0x00007FF6A29AEC65]
+	(No symbol) [0x00007FF6A298CA7C]
+	(No symbol) [0x00007FF6A2A1D687]
+	(No symbol) [0x00007FF6A2A32AC1]
+	(No symbol) [0x00007FF6A2A16D83]
+	(No symbol) [0x00007FF6A29E83A8]
+	(No symbol) [0x00007FF6A29E9441]
+	GetHandleVerifier [0x00007FF6A2FA25CD+4238301]
+	GetHandleVerifier [0x00007FF6A2FDF72D+4488509]
+	GetHandleVerifier [0x00007FF6A2FD7A0F+4456479]
+	GetHandleVerifier [0x00007FF6A2C805A6+953270]
+	(No symbol) [0x00007FF6A2B1E57F]
+	(No symbol) [0x00007FF6A2B19254]
+	(No symbol) [0x00007FF6A2B1938B]
+	(No symbol) [0x00007FF6A2B09BC4]
+	BaseThreadInitThunk [0x00007FFAFAE1257D+29]
+	RtlUserThreadStart [0x00007FFAFB84AA58+40]
+</status>
+</test>
+<test id="s1-s1-s1-t11" name="14. Step: Navigate To The &quot;Telephelyek&quot; Menu" line="65">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2024-03-23T22:04:18.764099" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=123.0.6312.59)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6A2BA7062+63090]
+	(No symbol) [0x00007FF6A2B12CB2]
+	(No symbol) [0x00007FF6A29AEC65]
+	(No symbol) [0x00007FF6A298CA7C]
+	(No symbol) [0x00007FF6A2A1D687]
+	(No symbol) [0x00007FF6A2A32AC1]
+	(No symbol) [0x00007FF6A2A16D83]
+	(No symbol) [0x00007FF6A29E83A8]
+	(No symbol) [0x00007FF6A29E9441]
+	GetHandleVerifier [0x00007FF6A2FA25CD+4238301]
+	GetHandleVerifier [0x00007FF6A2FDF72D+4488509]
+	GetHandleVerifier [0x00007FF6A2FD7A0F+4456479]
+	GetHandleVerifier [0x00007FF6A2C805A6+953270]
+	(No symbol) [0x00007FF6A2B1E57F]
+	(No symbol) [0x00007FF6A2B19254]
+	(No symbol) [0x00007FF6A2B1938B]
+	(No symbol) [0x00007FF6A2B09BC4]
+	BaseThreadInitThunk [0x00007FFAFAE1257D+29]
+	RtlUserThreadStart [0x00007FFAFB84AA58+40]
+</msg>
+<msg time="2024-03-23T22:04:18.774107" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=123.0.6312.59)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6A2BA7062+63090]
+	(No symbol) [0x00007FF6A2B12CB2]
+	(No symbol) [0x00007FF6A29AEC65]
+	(No symbol) [0x00007FF6A298CA7C]
+	(No symbol) [0x00007FF6A2A1D687]
+	(No symbol) [0x00007FF6A2A32AC1]
+	(No symbol) [0x00007FF6A2A16D83]
+	(No symbol) [0x00007FF6A29E83A8]
+	(No symbol) [0x00007FF6A29E9441]
+	GetHandleVerifier [0x00007FF6A2FA25CD+4238301]
+	GetHandleVerifier [0x00007FF6A2FDF72D+4488509]
+	GetHandleVerifier [0x00007FF6A2FD7A0F+4456479]
+	GetHandleVerifier [0x00007FF6A2C805A6+953270]
+	(No symbol) [0x00007FF6A2B1E57F]
+	(No symbol) [0x00007FF6A2B19254]
+	(No symbol) [0x00007FF6A2B1938B]
+	(No symbol) [0x00007FF6A2B09BC4]
+	BaseThreadInitThunk [0x00007FFAFAE1257D+29]
+	RtlUserThreadStart [0x00007FFAFB84AA58+40]
+</msg>
+<arg>${LOCATIONS_BUTTON}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2024-03-23T22:04:18.709897" elapsed="0.066774">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=123.0.6312.59)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6A2BA7062+63090]
+	(No symbol) [0x00007FF6A2B12CB2]
+	(No symbol) [0x00007FF6A29AEC65]
+	(No symbol) [0x00007FF6A298CA7C]
+	(No symbol) [0x00007FF6A2A1D687]
+	(No symbol) [0x00007FF6A2A32AC1]
+	(No symbol) [0x00007FF6A2A16D83]
+	(No symbol) [0x00007FF6A29E83A8]
+	(No symbol) [0x00007FF6A29E9441]
+	GetHandleVerifier [0x00007FF6A2FA25CD+4238301]
+	GetHandleVerifier [0x00007FF6A2FDF72D+4488509]
+	GetHandleVerifier [0x00007FF6A2FD7A0F+4456479]
+	GetHandleVerifier [0x00007FF6A2C805A6+953270]
+	(No symbol) [0x00007FF6A2B1E57F]
+	(No symbol) [0x00007FF6A2B19254]
+	(No symbol) [0x00007FF6A2B1938B]
+	(No symbol) [0x00007FF6A2B09BC4]
+	BaseThreadInitThunk [0x00007FFAFAE1257D+29]
+	RtlUserThreadStart [0x00007FFAFB84AA58+40]
+</status>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${LOCATIONS_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-03-23T22:04:18.782658" elapsed="0.001031"/>
+</kw>
+<status status="FAIL" start="2024-03-23T22:04:18.709897" elapsed="0.074470">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=123.0.6312.59)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6A2BA7062+63090]
+	(No symbol) [0x00007FF6A2B12CB2]
+	(No symbol) [0x00007FF6A29AEC65]
+	(No symbol) [0x00007FF6A298CA7C]
+	(No symbol) [0x00007FF6A2A1D687]
+	(No symbol) [0x00007FF6A2A32AC1]
+	(No symbol) [0x00007FF6A2A16D83]
+	(No symbol) [0x00007FF6A29E83A8]
+	(No symbol) [0x00007FF6A29E9441]
+	GetHandleVerifier [0x00007FF6A2FA25CD+4238301]
+	GetHandleVerifier [0x00007FF6A2FDF72D+4488509]
+	GetHandleVerifier [0x00007FF6A2FD7A0F+4456479]
+	GetHandleVerifier [0x00007FF6A2C805A6+953270]
+	(No symbol) [0x00007FF6A2B1E57F]
+	(No symbol) [0x00007FF6A2B19254]
+	(No symbol) [0x00007FF6A2B1938B]
+	(No symbol) [0x00007FF6A2B09BC4]
+	BaseThreadInitThunk [0x00007FFAFAE1257D+29]
+	RtlUserThreadStart [0x00007FFAFB84AA58+40]
+</status>
+</test>
+<test id="s1-s1-s1-t12" name="15. Step: Filter by fixed location in the search menu" line="69">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-03-23T22:04:18.795061" level="INFO">Clicking element '//input[@id='Grid_ToolbarSearchBox']'.</msg>
+<msg time="2024-03-23T22:04:18.853998" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=123.0.6312.59)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6A2BA7062+63090]
+	(No symbol) [0x00007FF6A2B12CB2]
+	(No symbol) [0x00007FF6A29AEC65]
+	(No symbol) [0x00007FF6A298CA7C]
+	(No symbol) [0x00007FF6A2A1D687]
+	(No symbol) [0x00007FF6A2A32AC1]
+	(No symbol) [0x00007FF6A2A16D83]
+	(No symbol) [0x00007FF6A29E83A8]
+	(No symbol) [0x00007FF6A29E9441]
+	GetHandleVerifier [0x00007FF6A2FA25CD+4238301]
+	GetHandleVerifier [0x00007FF6A2FDF72D+4488509]
+	GetHandleVerifier [0x00007FF6A2FD7A0F+4456479]
+	GetHandleVerifier [0x00007FF6A2C805A6+953270]
+	(No symbol) [0x00007FF6A2B1E57F]
+	(No symbol) [0x00007FF6A2B19254]
+	(No symbol) [0x00007FF6A2B1938B]
+	(No symbol) [0x00007FF6A2B09BC4]
+	BaseThreadInitThunk [0x00007FFAFAE1257D+29]
+	RtlUserThreadStart [0x00007FFAFB84AA58+40]
+</msg>
+<msg time="2024-03-23T22:04:18.864107" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=123.0.6312.59)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6A2BA7062+63090]
+	(No symbol) [0x00007FF6A2B12CB2]
+	(No symbol) [0x00007FF6A29AEC65]
+	(No symbol) [0x00007FF6A298CA7C]
+	(No symbol) [0x00007FF6A2A1D687]
+	(No symbol) [0x00007FF6A2A32AC1]
+	(No symbol) [0x00007FF6A2A16D83]
+	(No symbol) [0x00007FF6A29E83A8]
+	(No symbol) [0x00007FF6A29E9441]
+	GetHandleVerifier [0x00007FF6A2FA25CD+4238301]
+	GetHandleVerifier [0x00007FF6A2FDF72D+4488509]
+	GetHandleVerifier [0x00007FF6A2FD7A0F+4456479]
+	GetHandleVerifier [0x00007FF6A2C805A6+953270]
+	(No symbol) [0x00007FF6A2B1E57F]
+	(No symbol) [0x00007FF6A2B19254]
+	(No symbol) [0x00007FF6A2B1938B]
+	(No symbol) [0x00007FF6A2B09BC4]
+	BaseThreadInitThunk [0x00007FFAFAE1257D+29]
+	RtlUserThreadStart [0x00007FFAFB84AA58+40]
+</msg>
+<arg>${LOCATIONS_SEARCH_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2024-03-23T22:04:18.792795" elapsed="0.076353">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=123.0.6312.59)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6A2BA7062+63090]
+	(No symbol) [0x00007FF6A2B12CB2]
+	(No symbol) [0x00007FF6A29AEC65]
+	(No symbol) [0x00007FF6A298CA7C]
+	(No symbol) [0x00007FF6A2A1D687]
+	(No symbol) [0x00007FF6A2A32AC1]
+	(No symbol) [0x00007FF6A2A16D83]
+	(No symbol) [0x00007FF6A29E83A8]
+	(No symbol) [0x00007FF6A29E9441]
+	GetHandleVerifier [0x00007FF6A2FA25CD+4238301]
+	GetHandleVerifier [0x00007FF6A2FDF72D+4488509]
+	GetHandleVerifier [0x00007FF6A2FD7A0F+4456479]
+	GetHandleVerifier [0x00007FF6A2C805A6+953270]
+	(No symbol) [0x00007FF6A2B1E57F]
+	(No symbol) [0x00007FF6A2B19254]
+	(No symbol) [0x00007FF6A2B1938B]
+	(No symbol) [0x00007FF6A2B09BC4]
+	BaseThreadInitThunk [0x00007FFAFAE1257D+29]
+	RtlUserThreadStart [0x00007FFAFB84AA58+40]
+</status>
+</kw>
+<status status="FAIL" start="2024-03-23T22:04:18.790871" elapsed="0.078277">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=123.0.6312.59)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6A2BA7062+63090]
+	(No symbol) [0x00007FF6A2B12CB2]
+	(No symbol) [0x00007FF6A29AEC65]
+	(No symbol) [0x00007FF6A298CA7C]
+	(No symbol) [0x00007FF6A2A1D687]
+	(No symbol) [0x00007FF6A2A32AC1]
+	(No symbol) [0x00007FF6A2A16D83]
+	(No symbol) [0x00007FF6A29E83A8]
+	(No symbol) [0x00007FF6A29E9441]
+	GetHandleVerifier [0x00007FF6A2FA25CD+4238301]
+	GetHandleVerifier [0x00007FF6A2FDF72D+4488509]
+	GetHandleVerifier [0x00007FF6A2FD7A0F+4456479]
+	GetHandleVerifier [0x00007FF6A2C805A6+953270]
+	(No symbol) [0x00007FF6A2B1E57F]
+	(No symbol) [0x00007FF6A2B19254]
+	(No symbol) [0x00007FF6A2B1938B]
+	(No symbol) [0x00007FF6A2B09BC4]
+	BaseThreadInitThunk [0x00007FFAFAE1257D+29]
+	RtlUserThreadStart [0x00007FFAFB84AA58+40]
+</status>
+</test>
+<status status="FAIL" start="2024-03-23T22:03:56.658157" elapsed="22.214817"/>
 </suite>
-<status status="PASS" start="2024-03-22T15:53:15.933840" elapsed="7.526997"/>
+<status status="FAIL" start="2024-03-23T22:03:56.643411" elapsed="22.237941"/>
 </suite>
-<status status="PASS" start="2024-03-22T15:53:15.898301" elapsed="7.571465"/>
+<status status="FAIL" start="2024-03-23T22:03:56.627320" elapsed="22.257648"/>
 </suite>
 <statistics>
 <total>
-<stat pass="3" fail="0" skip="0">All Tests</stat>
+<stat pass="3" fail="9" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="3" fail="0" skip="0" id="s1" name="Bwpool Project">Bwpool Project</stat>
-<stat pass="3" fail="0" skip="0" id="s1-s1" name="Tests">Bwpool Project.Tests</stat>
-<stat pass="3" fail="0" skip="0" id="s1-s1-s1" name="Bwpool Tests">Bwpool Project.Tests.Bwpool Tests</stat>
+<stat pass="3" fail="9" skip="0" id="s1" name="Bwpool Project">Bwpool Project</stat>
+<stat pass="3" fail="9" skip="0" id="s1-s1" name="Tests">Bwpool Project.Tests</stat>
+<stat pass="3" fail="9" skip="0" id="s1-s1-s1" name="Bwpool Tests">Bwpool Project.Tests.Bwpool Tests</stat>
 </suite>
 </statistics>
 <errors>
+<msg time="2024-03-23T22:03:56.666556" level="WARN">Error in file 'C:\Users\novoz\bwpool_project\resources\common_resources.resource' on line 64: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+<msg time="2024-03-23T22:03:57.566533" level="WARN">There was an error managing chromedriver (request or response body error: error reading a body from connection: cannot decrypt peer's message); using driver found in the cache</msg>
+<msg time="2024-03-23T22:04:18.590663" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=123.0.6312.59)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6A2BA7062+63090]
+	(No symbol) [0x00007FF6A2B12CB2]
+	(No symbol) [0x00007FF6A29AEC65]
+	(No symbol) [0x00007FF6A298CA7C]
+	(No symbol) [0x00007FF6A2A1D687]
+	(No symbol) [0x00007FF6A2A32AC1]
+	(No symbol) [0x00007FF6A2A16D83]
+	(No symbol) [0x00007FF6A29E83A8]
+	(No symbol) [0x00007FF6A29E9441]
+	GetHandleVerifier [0x00007FF6A2FA25CD+4238301]
+	GetHandleVerifier [0x00007FF6A2FDF72D+4488509]
+	GetHandleVerifier [0x00007FF6A2FD7A0F+4456479]
+	GetHandleVerifier [0x00007FF6A2C805A6+953270]
+	(No symbol) [0x00007FF6A2B1E57F]
+	(No symbol) [0x00007FF6A2B19254]
+	(No symbol) [0x00007FF6A2B1938B]
+	(No symbol) [0x00007FF6A2B09BC4]
+	BaseThreadInitThunk [0x00007FFAFAE1257D+29]
+	RtlUserThreadStart [0x00007FFAFB84AA58+40]
+</msg>
+<msg time="2024-03-23T22:04:18.679630" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=123.0.6312.59)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6A2BA7062+63090]
+	(No symbol) [0x00007FF6A2B12CB2]
+	(No symbol) [0x00007FF6A29AEC65]
+	(No symbol) [0x00007FF6A298CA7C]
+	(No symbol) [0x00007FF6A2A1D687]
+	(No symbol) [0x00007FF6A2A32AC1]
+	(No symbol) [0x00007FF6A2A16D83]
+	(No symbol) [0x00007FF6A29E83A8]
+	(No symbol) [0x00007FF6A29E9441]
+	GetHandleVerifier [0x00007FF6A2FA25CD+4238301]
+	GetHandleVerifier [0x00007FF6A2FDF72D+4488509]
+	GetHandleVerifier [0x00007FF6A2FD7A0F+4456479]
+	GetHandleVerifier [0x00007FF6A2C805A6+953270]
+	(No symbol) [0x00007FF6A2B1E57F]
+	(No symbol) [0x00007FF6A2B19254]
+	(No symbol) [0x00007FF6A2B1938B]
+	(No symbol) [0x00007FF6A2B09BC4]
+	BaseThreadInitThunk [0x00007FFAFAE1257D+29]
+	RtlUserThreadStart [0x00007FFAFB84AA58+40]
+</msg>
+<msg time="2024-03-23T22:04:18.764099" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=123.0.6312.59)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6A2BA7062+63090]
+	(No symbol) [0x00007FF6A2B12CB2]
+	(No symbol) [0x00007FF6A29AEC65]
+	(No symbol) [0x00007FF6A298CA7C]
+	(No symbol) [0x00007FF6A2A1D687]
+	(No symbol) [0x00007FF6A2A32AC1]
+	(No symbol) [0x00007FF6A2A16D83]
+	(No symbol) [0x00007FF6A29E83A8]
+	(No symbol) [0x00007FF6A29E9441]
+	GetHandleVerifier [0x00007FF6A2FA25CD+4238301]
+	GetHandleVerifier [0x00007FF6A2FDF72D+4488509]
+	GetHandleVerifier [0x00007FF6A2FD7A0F+4456479]
+	GetHandleVerifier [0x00007FF6A2C805A6+953270]
+	(No symbol) [0x00007FF6A2B1E57F]
+	(No symbol) [0x00007FF6A2B19254]
+	(No symbol) [0x00007FF6A2B1938B]
+	(No symbol) [0x00007FF6A2B09BC4]
+	BaseThreadInitThunk [0x00007FFAFAE1257D+29]
+	RtlUserThreadStart [0x00007FFAFB84AA58+40]
+</msg>
+<msg time="2024-03-23T22:04:18.853998" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=123.0.6312.59)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6A2BA7062+63090]
+	(No symbol) [0x00007FF6A2B12CB2]
+	(No symbol) [0x00007FF6A29AEC65]
+	(No symbol) [0x00007FF6A298CA7C]
+	(No symbol) [0x00007FF6A2A1D687]
+	(No symbol) [0x00007FF6A2A32AC1]
+	(No symbol) [0x00007FF6A2A16D83]
+	(No symbol) [0x00007FF6A29E83A8]
+	(No symbol) [0x00007FF6A29E9441]
+	GetHandleVerifier [0x00007FF6A2FA25CD+4238301]
+	GetHandleVerifier [0x00007FF6A2FDF72D+4488509]
+	GetHandleVerifier [0x00007FF6A2FD7A0F+4456479]
+	GetHandleVerifier [0x00007FF6A2C805A6+953270]
+	(No symbol) [0x00007FF6A2B1E57F]
+	(No symbol) [0x00007FF6A2B19254]
+	(No symbol) [0x00007FF6A2B1938B]
+	(No symbol) [0x00007FF6A2B09BC4]
+	BaseThreadInitThunk [0x00007FFAFAE1257D+29]
+	RtlUserThreadStart [0x00007FFAFB84AA58+40]
+</msg>
 </errors>
 </robot>
