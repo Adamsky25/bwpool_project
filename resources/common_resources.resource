@@ -7,7 +7,9 @@ Library    Collections
 
 #URLs
 ${HOMEPAGE_URL}    https://bwpool.azurewebsites.net/
-${API_URL_1}    https://random-data-api.com/api/users/random_user
+${API_URL_1}    https://random-data-api.com/api/users/random_user?size=1
+${API_URL_2}    https://random-data-api.com/api/users/random_device?size=2
+#HTTP 404 hiba
 
 #Locators
 ${PARTNERS_BUTTON}    //a[contains(.,'Partnerek')]

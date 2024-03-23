@@ -50,6 +50,11 @@ Resource    ../resources/common_resources.resource
     Wait Until Element Is Visible    ${LOCATIONS_ADD_SAVE}    timeout=5s
     Save The Locations Menu
 
+9. Step: Request 2 Tools Via API
+    ${response}=    Get    ${API_URL_2}    params=size=1
+    ${user_data}=    Set Variable   ${response.json()}
+    
+
 10. Step: Navigate To The "Eszközök" Menu
     Wait Until Element Is Visible    ${TOOLS_BUTTON}
     Click Element    ${TOOLS_BUTTON}
