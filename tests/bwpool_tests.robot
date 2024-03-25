@@ -40,7 +40,7 @@ Resource    ../resources/common_resources.resource
 7. Step: Attach A Location Based On The API Message
     #Wait Until Element Is Visible    ${LOCATIONS_ADD_BUTTON}    timeout=10
     Click Element    ${LOCATIONS_ADD_BUTTON}
-    Wait Until Page Contains Element    ${LOCATIONS_ADD_CUSTOMER}    timeout=5s
+    Wait Until Element Is Visible    ${LOCATIONS_ADD_CUSTOMER}    timeout=5s
     Click Element    ${LOCATIONS_ADD_CUSTOMER}
     ${location_data}=    Create Location Data    ${partner_city}    ${partner_zip_code}    ${partner_street}    ${partner_street_number}
     Attach Location To Partner    ${id}    ${location_data}
