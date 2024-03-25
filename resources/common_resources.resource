@@ -2,14 +2,14 @@
 Library    SeleniumLibrary
 Library    RequestsLibrary
 Library    Collections
+Library    OperatingSystem
 
 *** Variables ***
 
 #URLs
 ${HOMEPAGE_URL}    https://bwpool.azurewebsites.net/
 ${API_URL_1}    https://random-data-api.com/api/users/random_user?size=1
-${API_URL_2}    https://random-data-api.com/api/users/random_device?size=2
-#HTTP 404 hiba
+${API_URL_2}    https://random-data-api.com/api/device/random_device?size=2
 
 #Locators
 ${PARTNERS_BUTTON}    //a[contains(.,'Partnerek')]
@@ -39,6 +39,7 @@ ${LOCATIONS_SEARCH_BUTTON}    //input[@id='Grid_ToolbarSearchBox']
 
 # Other Variables
 ${BROWSER}    Chrome
+${FOLDER_PATH}    C:/Users/novoz/bwpool_project/tests
 
 *** Variables ***
 ${partner_city}    None
@@ -51,8 +52,8 @@ ${id}    None
 
 Place Data Into "Ügyfél" Grid
     [Arguments]    ${first_name}    ${last_name}    ${email}    ${phone_number}    ${id}
-    Input Text    ${PARTNERS_ADD_NAME}    ${first_name}
-    Input Text    ${PARTNERS_ADD_NAME}    ${last_name}
+    Input Text    ${PARTNERS_ADD_NAME}    ${first_name} ${last_name}
+    #Input Text    ${PARTNERS_ADD_NAME}    ${last_name}
     Input Text    ${PARTNERS_ADD_EMAIL}    ${email}
     Input Text    ${PARTNERS_ADD_TELEFON}    ${phone_number}
     Input Text    ${PARTNERS_ADD_COMMENT}    ${id}
@@ -83,7 +84,11 @@ Save The Locations Menu
 
 Save The Tools Menu
     Click Element    ${TOOLS_SAVE_BUTTON}
-    
+
+Request 2 Tools Via API
+    ${response}=    Get    ${API_URL_2}    params=size=2
+    ${user_data}=    Set Variable   ${response.json()}
+
 
 # Test Setup
 #     Open Browser    ${HOMEPAGE_URL}    ${BROWSER}
