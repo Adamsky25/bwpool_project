@@ -1,460 +1,270 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-03-25T15:01:16.719008" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-03-25T17:10:29.832140" rpa="false" schemaversion="5">
 <suite id="s1" name="Bwpool Project" source="C:\Users\novoz\bwpool_project">
 <suite id="s1-s1" name="Tests" source="C:\Users\novoz\bwpool_project\tests">
 <suite id="s1-s1-s1" name="Bwpool Tests" source="C:\Users\novoz\bwpool_project\tests\bwpool_tests.robot">
-<test id="s1-s1-s1-t1" name="1.Step: Login Page" line="9">
+<test id="s1-s1-s1-t1" name="1.Step: Login" line="9">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-03-25T15:01:17.773743" level="INFO">Opening browser 'Chrome' to base url 'https://bwpool.azurewebsites.net/'.</msg>
+<msg time="2024-03-25T17:10:30.358043" level="INFO">Opening browser 'Chrome' to base url 'https://bwpool.azurewebsites.net/'.</msg>
 <arg>${HOMEPAGE_URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-03-25T15:01:17.772746" elapsed="8.576160"/>
-</kw>
-<status status="PASS" start="2024-03-25T15:01:17.769756" elapsed="8.580150"/>
-</test>
-<test id="s1-s1-s1-t2" name="2. Step: Navigate To The &quot;Partnerek&quot; Menu" line="12">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-03-25T15:01:26.358120" level="INFO">Clicking element '//a[contains(.,'Partnerek')]'.</msg>
-<arg>${PARTNERS_BUTTON}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-03-25T15:01:26.354893" elapsed="0.762392"/>
+<status status="PASS" start="2024-03-25T17:10:30.357047" elapsed="4.162125"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<msg time="2024-03-25T15:01:32.459417" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-419.png"&gt;&lt;img src="selenium-screenshot-419.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2024-03-25T15:01:32.460413" level="FAIL">Element '//span[.='Add']' not visible after 5 seconds.</msg>
+<arg>${PARTNERS_BUTTON}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-03-25T17:10:34.520171" elapsed="0.061376"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-03-25T17:10:34.583541" level="INFO">Clicking element '//a[contains(.,'Partnerek')]'.</msg>
+<arg>${PARTNERS_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-03-25T17:10:34.583541" elapsed="0.769475"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${PARTNERS_ADD_BUTTON}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="FAIL" start="2024-03-25T15:01:27.118286" elapsed="5.357080">Element '//span[.='Add']' not visible after 5 seconds.</status>
+<status status="PASS" start="2024-03-25T17:10:35.355013" elapsed="0.796659"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-03-25T17:10:36.153702" level="INFO">Clicking element '//span[.='Add']'.</msg>
 <arg>${PARTNERS_ADD_BUTTON}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2024-03-25T15:01:32.476440" elapsed="0.000000"/>
+<status status="PASS" start="2024-03-25T17:10:36.152660" elapsed="0.117552"/>
 </kw>
-<status status="FAIL" start="2024-03-25T15:01:26.351899" elapsed="6.126126">Element '//span[.='Add']' not visible after 5 seconds.</status>
-</test>
-<test id="s1-s1-s1-t3" name="3. Step: API Call Test + 4. Step: Attach A Partner Based On The API Message" line="18">
 <kw name="GET" owner="RequestsLibrary">
-<msg time="2024-03-25T15:01:33.525495" level="INFO">GET Request : url=https://random-data-api.com/api/users/random_user?size=1&amp;size=1 
+<msg time="2024-03-25T17:10:37.354370" level="INFO">GET Request : url=https://random-data-api.com/api/users/random_user?size=1&amp;size=1 
  path_url=/api/users/random_user?size=1&amp;size=1 
  headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg time="2024-03-25T15:01:33.526498" level="INFO">GET Response : url=https://random-data-api.com/api/users/random_user?size=1&amp;size=1 
+<msg time="2024-03-25T17:10:37.355371" level="INFO">GET Response : url=https://random-data-api.com/api/users/random_user?size=1&amp;size=1 
  status=200, reason=OK 
- headers={'Alt-Svc': 'h3=":443"; ma=2592000', 'Cache-Control': 'max-age=0, private, must-revalidate', 'Content-Encoding': 'gzip', 'Content-Type': 'application/json; charset=utf-8', 'Etag': 'W/"1b6cb9f7d10c74a826a09b4f36a8ed49"', 'Referrer-Policy': 'strict-origin-when-cross-origin', 'Server': 'Caddy', 'Strict-Transport-Security': 'max-age=63072000; includeSubDomains', 'Vary': 'Origin, Accept-Encoding', 'X-Content-Type-Options': 'nosniff', 'X-Frame-Options': 'SAMEORIGIN', 'X-Permitted-Cross-Domain-Policies': 'none', 'X-Request-Id': 'b9809ec4-2976-4f8e-bb50-b70d520ff55c', 'X-Runtime': '0.023221', 'X-Xss-Protection': '0', 'Date': 'Mon, 25 Mar 2024 14:01:33 GMT', 'Content-Length': '587'} 
- body=[{"id":7595,"uid":"170b6477-b694-430f-b64a-c6c36d4e7387","password":"TpX3WySKbE","first_name":"Crystal","last_name":"Bergstrom","username":"crystal.bergstrom","email":"crystal.bergstrom@email.com","avatar":"https://robohash.org/dolorconsequaturmagnam.png?size=300x300\u0026set=set1","gender":"Agender","phone_number":"+852 528-805-2430 x2736","social_insurance_number":"219726908","date_of_birth":"1977-04-29","employment":{"title":"Product Legal Planner","key_skill":"Technical savvy"},"address":{"city":"South Elvischester","street_name":"Parker Cove","street_address":"37289 Tillman Roads","zip_code":"82571","state":"Kansas","country":"United States","coordinates":{"lat":15.776959473810393,"lng":77.73245117687952}},"credit_card":{"cc_number":"4783-3991-5250-8025"},"subscription":{"plan":"Gold","status":"Blocked","payment_method":"Bitcoins","term":"Annual"}}] 
+ headers={'Alt-Svc': 'h3=":443"; ma=2592000', 'Cache-Control': 'max-age=0, private, must-revalidate', 'Content-Encoding': 'gzip', 'Content-Type': 'application/json; charset=utf-8', 'Etag': 'W/"7d1a4ac3d917204222d3fc4261f9cb92"', 'Referrer-Policy': 'strict-origin-when-cross-origin', 'Server': 'Caddy', 'Strict-Transport-Security': 'max-age=63072000; includeSubDomains', 'Vary': 'Origin, Accept-Encoding', 'X-Content-Type-Options': 'nosniff', 'X-Frame-Options': 'SAMEORIGIN', 'X-Permitted-Cross-Domain-Policies': 'none', 'X-Request-Id': 'b825e7ab-f10e-4b81-99f0-63358af7f945', 'X-Runtime': '0.019453', 'X-Xss-Protection': '0', 'Date': 'Mon, 25 Mar 2024 16:10:36 GMT', 'Content-Length': '580'} 
+ body=[{"id":4373,"uid":"2e1bfb0b-05a7-4fef-b00d-0281e265753a","password":"oXhKZYJ9mW","first_name":"Lynn","last_name":"Bayer","username":"lynn.bayer","email":"lynn.bayer@email.com","avatar":"https://robohash.org/quivoluptatemet.png?size=300x300\u0026set=set1","gender":"Agender","phone_number":"+972 981-552-1176 x0681","social_insurance_number":"752805119","date_of_birth":"1962-07-02","employment":{"title":"Marketing Producer","key_skill":"Problem solving"},"address":{"city":"North Bruce","street_name":"Rodriguez Rapid","street_address":"123 Sari Squares","zip_code":"58774","state":"South Carolina","country":"United States","coordinates":{"lat":-54.76397168789,"lng":61.74668869537487}},"credit_card":{"cc_number":"4403093039453"},"subscription":{"plan":"Business","status":"Active","payment_method":"Money transfer","term":"Full subscription"}}] 
  </msg>
-<msg time="2024-03-25T15:01:33.526498" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2024-03-25T17:10:37.355371" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>${API_URL_1}</arg>
 <arg>params=size=1</arg>
 <doc>Sends a GET request.</doc>
-<status status="PASS" start="2024-03-25T15:01:32.482060" elapsed="1.046299"/>
+<status status="PASS" start="2024-03-25T17:10:36.272219" elapsed="1.083152"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-03-25T15:01:33.532726" level="INFO">${user_data} = [{'id': 7595, 'uid': '170b6477-b694-430f-b64a-c6c36d4e7387', 'password': 'TpX3WySKbE', 'first_name': 'Crystal', 'last_name': 'Bergstrom', 'username': 'crystal.bergstrom', 'email': 'crystal.bergstrom@e...</msg>
+<msg time="2024-03-25T17:10:37.358362" level="INFO">${user_data} = [{'id': 4373, 'uid': '2e1bfb0b-05a7-4fef-b00d-0281e265753a', 'password': 'oXhKZYJ9mW', 'first_name': 'Lynn', 'last_name': 'Bayer', 'username': 'lynn.bayer', 'email': 'lynn.bayer@email.com', 'avatar': ...</msg>
 <var>${user_data}</var>
 <arg>${response.json()}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-03-25T15:01:33.529555" elapsed="0.003171"/>
+<status status="PASS" start="2024-03-25T17:10:37.356407" elapsed="0.002951"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-03-25T15:01:33.537244" level="INFO">${first_name} = Crystal</msg>
+<msg time="2024-03-25T17:10:37.361361" level="INFO">${first_name} = Lynn</msg>
 <var>${first_name}</var>
 <arg>${user_data[0]['first_name']}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-03-25T15:01:33.535002" elapsed="0.003291"/>
+<status status="PASS" start="2024-03-25T17:10:37.359358" elapsed="0.002998"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-03-25T15:01:33.542231" level="INFO">${last_name} = Bergstrom</msg>
+<msg time="2024-03-25T17:10:37.367338" level="INFO">${last_name} = Bayer</msg>
 <var>${last_name}</var>
 <arg>${user_data[0]['last_name']}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-03-25T15:01:33.539241" elapsed="0.003988"/>
+<status status="PASS" start="2024-03-25T17:10:37.363394" elapsed="0.003944"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-03-25T15:01:33.547215" level="INFO">${email} = crystal.bergstrom@email.com</msg>
+<msg time="2024-03-25T17:10:37.372122" level="INFO">${email} = lynn.bayer@email.com</msg>
 <var>${email}</var>
 <arg>${user_data[0]['email']}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-03-25T15:01:33.544228" elapsed="0.002987"/>
+<status status="PASS" start="2024-03-25T17:10:37.369003" elapsed="0.003119"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-03-25T15:01:33.550692" level="INFO">${phone_number} = +852 528-805-2430 x2736</msg>
+<msg time="2024-03-25T17:10:37.375177" level="INFO">${phone_number} = +972 981-552-1176 x0681</msg>
 <var>${phone_number}</var>
 <arg>${user_data[0]['phone_number']}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-03-25T15:01:33.548213" elapsed="0.003486"/>
+<status status="PASS" start="2024-03-25T17:10:37.373158" elapsed="0.002019"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-03-25T15:01:33.554150" level="INFO">${id} = 7595</msg>
+<msg time="2024-03-25T17:10:37.378151" level="INFO">${id} = 4373</msg>
 <var>${id}</var>
 <arg>${user_data[0]['id']}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-03-25T15:01:33.551699" elapsed="0.003442"/>
+<status status="PASS" start="2024-03-25T17:10:37.376157" elapsed="0.001994"/>
 </kw>
 <kw name="Place Data Into &quot;Ügyfél&quot; Grid" owner="common_resources">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-03-25T15:01:33.561277" level="INFO">Typing text 'Crystal Bergstrom' into text field '//input[@id='name']'.</msg>
-<msg time="2024-03-25T15:01:33.842738" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-420.png"&gt;&lt;img src="selenium-screenshot-420.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2024-03-25T15:01:33.844038" level="FAIL">Element with locator '//input[@id='name']' not found.</msg>
+<msg time="2024-03-25T17:10:37.385137" level="INFO">Typing text 'Lynn Bayer' into text field '//input[@id='name']'.</msg>
 <arg>${PARTNERS_ADD_NAME}</arg>
 <arg>${first_name} ${last_name}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="FAIL" start="2024-03-25T15:01:33.559425" elapsed="0.342654">Element with locator '//input[@id='name']' not found.</status>
+<status status="PASS" start="2024-03-25T17:10:37.384140" elapsed="0.154514"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-03-25T17:10:37.541173" level="INFO">Typing text 'lynn.bayer@email.com' into text field '//input[@id='email']'.</msg>
 <arg>${PARTNERS_ADD_EMAIL}</arg>
 <arg>${email}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" start="2024-03-25T15:01:33.904420" elapsed="0.007975"/>
+<status status="PASS" start="2024-03-25T17:10:37.540160" elapsed="0.196464"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-03-25T17:10:37.738622" level="INFO">Typing text '+972 981-552-1176 x0681' into text field '//input[@class='e-control e-numerictextbox e-lib e-input']'.</msg>
 <arg>${PARTNERS_ADD_TELEFON}</arg>
 <arg>${phone_number}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" start="2024-03-25T15:01:33.913400" elapsed="0.001767"/>
+<status status="PASS" start="2024-03-25T17:10:37.737621" elapsed="0.190059"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-03-25T17:10:37.930448" level="INFO">Typing text '4373' into text field '//input[@id='comment']'.</msg>
 <arg>${PARTNERS_ADD_COMMENT}</arg>
 <arg>${id}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" start="2024-03-25T15:01:33.916611" elapsed="0.001006"/>
+<status status="PASS" start="2024-03-25T17:10:37.928678" elapsed="0.148493"/>
 </kw>
 <arg>${first_name}</arg>
 <arg>${last_name}</arg>
 <arg>${email}</arg>
 <arg>${phone_number}</arg>
 <arg>${id}</arg>
-<status status="FAIL" start="2024-03-25T15:01:33.557148" elapsed="0.364199">Element with locator '//input[@id='name']' not found.</status>
+<status status="PASS" start="2024-03-25T17:10:37.383140" elapsed="0.694031"/>
 </kw>
-<kw name="Set Variable" owner="BuiltIn">
-<var>${json_content}</var>
-<arg>${response.content.decode('utf-8')}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2024-03-25T15:01:33.922350" elapsed="0.001995"/>
-</kw>
-<kw name="Create File" owner="OperatingSystem">
-<arg>customer.json</arg>
-<arg>${json_content}</arg>
-<doc>Creates a file with the given content and encoding.</doc>
-<status status="NOT RUN" start="2024-03-25T15:01:33.928789" elapsed="0.000000"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<arg>${json_content}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2024-03-25T15:01:33.929783" elapsed="0.000997"/>
-</kw>
-<status status="FAIL" start="2024-03-25T15:01:32.480023" elapsed="1.451755">Element with locator '//input[@id='name']' not found.</status>
-</test>
-<test id="s1-s1-s1-t4" name="5. Step: Save The Menu" line="38">
 <kw name="Save The Partner Menu" owner="common_resources">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-03-25T15:01:33.941801" level="INFO">Clicking element '//button[@class='e-control e-btn e-lib e-control e-btn e-lib e-primary e-flat']'.</msg>
-<msg time="2024-03-25T15:01:34.175561" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-421.png"&gt;&lt;img src="selenium-screenshot-421.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2024-03-25T15:01:34.177476" level="FAIL">Element with locator '//button[@class='e-control e-btn e-lib e-control e-btn e-lib e-primary e-flat']' not found.</msg>
+<msg time="2024-03-25T17:10:38.079162" level="INFO">Clicking element '//button[@class='e-control e-btn e-lib e-control e-btn e-lib e-primary e-flat']'.</msg>
 <arg>${PARTNERS_ADD_SAVE}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="FAIL" start="2024-03-25T15:01:33.938466" elapsed="0.258124">Element with locator '//button[@class='e-control e-btn e-lib e-control e-btn e-lib e-primary e-flat']' not found.</status>
+<status status="PASS" start="2024-03-25T17:10:38.079162" elapsed="0.102114"/>
 </kw>
-<status status="FAIL" start="2024-03-25T15:01:33.937475" elapsed="0.259115">Element with locator '//button[@class='e-control e-btn e-lib e-control e-btn e-lib e-primary e-flat']' not found.</status>
+<status status="PASS" start="2024-03-25T17:10:38.078183" elapsed="0.103093"/>
 </kw>
-<status status="FAIL" start="2024-03-25T15:01:33.935012" elapsed="0.262578">Element with locator '//button[@class='e-control e-btn e-lib e-control e-btn e-lib e-primary e-flat']' not found.</status>
-</test>
-<test id="s1-s1-s1-t5" name="6. Step: Navigate To The &quot;Telephelyek&quot; Menu" line="41">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${LOCATIONS_BUTTON}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-03-25T15:01:34.204272" elapsed="0.036815"/>
+<status status="PASS" start="2024-03-25T17:10:38.182275" elapsed="0.061245"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-03-25T15:01:34.244089" level="INFO">Clicking element '//a[contains(.,'Telephelyek')]'.</msg>
+<msg time="2024-03-25T17:10:38.246057" level="INFO">Clicking element '//a[contains(.,'Telephelyek')]'.</msg>
 <arg>${LOCATIONS_BUTTON}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-03-25T15:01:34.242095" elapsed="0.085866"/>
+<status status="PASS" start="2024-03-25T17:10:38.243520" elapsed="0.409570"/>
 </kw>
-<status status="PASS" start="2024-03-25T15:01:34.202281" elapsed="0.126685"/>
-</test>
-<test id="s1-s1-s1-t6" name="7. Step: Attach A Location Based On The API Message" line="45">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<msg time="2024-03-25T15:01:39.507082" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-422.png"&gt;&lt;img src="selenium-screenshot-422.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2024-03-25T15:01:39.508031" level="FAIL">Element '//span[.='Add']' not visible after 5 seconds.</msg>
 <arg>${LOCATIONS_ADD_BUTTON}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="FAIL" start="2024-03-25T15:01:34.334945" elapsed="5.176074">Element '//span[.='Add']' not visible after 5 seconds.</status>
+<status status="PASS" start="2024-03-25T17:10:38.655135" elapsed="0.086952"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-03-25T17:10:38.745079" level="INFO">Clicking element '//span[.='Add']'.</msg>
 <arg>${LOCATIONS_ADD_BUTTON}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2024-03-25T15:01:39.512052" elapsed="0.000992"/>
-</kw>
-<kw name="Get File" owner="OperatingSystem">
-<var>${user_data}</var>
-<arg>customer.json</arg>
-<doc>Returns the contents of a specified file.</doc>
-<status status="NOT RUN" start="2024-03-25T15:01:39.514009" elapsed="0.000000"/>
+<status status="PASS" start="2024-03-25T17:10:38.744100" elapsed="0.099920"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-03-25T17:10:38.847154" level="INFO">${first_name} = Lynn</msg>
 <var>${first_name}</var>
-<arg>json.loads (${user_data[0]['first_name']})</arg>
+<arg>${user_data[0]['first_name']}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2024-03-25T15:01:39.515008" elapsed="0.000000"/>
+<status status="PASS" start="2024-03-25T17:10:38.845158" elapsed="0.002990"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-03-25T17:10:38.851144" level="INFO">${last_name} = Bayer</msg>
 <var>${last_name}</var>
-<arg>json.loads(${user_data[0]['last_name']})</arg>
+<arg>${user_data[0]['last_name']}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2024-03-25T15:01:39.516508" elapsed="0.000000"/>
+<status status="PASS" start="2024-03-25T17:10:38.849143" elapsed="0.002001"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2024-03-25T17:10:44.192475" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-489.png"&gt;&lt;img src="selenium-screenshot-489.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-03-25T17:10:44.196467" level="FAIL">Element '//button[@class='e-control e-btn e-lib e-control e-btn e-lib e-primary e-flat']' not visible after 5 seconds.</msg>
+<arg>${LOCATIONS_ADD_SAVE}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2024-03-25T17:10:38.852139" elapsed="5.351818">Element '//button[@class='e-control e-btn e-lib e-control e-btn e-lib e-primary e-flat']' not visible after 5 seconds.</status>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${LOCATIONS_ADD_SAVE}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="NOT RUN" start="2024-03-25T15:01:39.517399" elapsed="0.000000"/>
-</kw>
-<status status="FAIL" start="2024-03-25T15:01:34.332959" elapsed="5.185281">Element '//span[.='Add']' not visible after 5 seconds.</status>
-</test>
-<test id="s1-s1-s1-t7" name="8. Step: Save the Menu" line="64">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<msg time="2024-03-25T15:01:44.805270" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-423.png"&gt;&lt;img src="selenium-screenshot-423.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2024-03-25T15:01:44.805270" level="FAIL">Element '//button[@class='e-control e-btn e-lib e-control e-btn e-lib e-primary e-flat']' not visible after 5 seconds.</msg>
-<arg>${LOCATIONS_ADD_SAVE}</arg>
-<arg>timeout=5s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="FAIL" start="2024-03-25T15:01:39.522077" elapsed="5.286205">Element '//button[@class='e-control e-btn e-lib e-control e-btn e-lib e-primary e-flat']' not visible after 5 seconds.</status>
+<status status="NOT RUN" start="2024-03-25T17:10:44.204954" elapsed="0.000000"/>
 </kw>
 <kw name="Save The Locations Menu" owner="common_resources">
-<status status="NOT RUN" start="2024-03-25T15:01:44.809257" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-03-25T17:10:44.204954" elapsed="0.000000"/>
 </kw>
-<status status="FAIL" start="2024-03-25T15:01:39.521082" elapsed="5.289602">Element '//button[@class='e-control e-btn e-lib e-control e-btn e-lib e-primary e-flat']' not visible after 5 seconds.</status>
-</test>
-<test id="s1-s1-s1-t8" name="9. Step: Request 2 Tools Via API" line="68">
 <kw name="Request 2 Tools Via API" owner="common_resources">
-<kw name="GET" owner="RequestsLibrary">
-<msg time="2024-03-25T15:01:45.565457" level="INFO">GET Request : url=https://random-data-api.com/api/device/random_device?size=2&amp;size=2 
- path_url=/api/device/random_device?size=2&amp;size=2 
- headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
- body=None 
- </msg>
-<msg time="2024-03-25T15:01:45.566451" level="INFO">GET Response : url=https://random-data-api.com/api/device/random_device?size=2&amp;size=2 
- status=200, reason=OK 
- headers={'Alt-Svc': 'h3=":443"; ma=2592000', 'Cache-Control': 'max-age=0, private, must-revalidate', 'Content-Length': '405', 'Content-Type': 'application/json; charset=utf-8', 'Etag': 'W/"6c9072513f823fb0c3e768a3168de6f2"', 'Referrer-Policy': 'strict-origin-when-cross-origin', 'Server': 'Caddy', 'Strict-Transport-Security': 'max-age=63072000; includeSubDomains', 'Vary': 'Origin', 'X-Content-Type-Options': 'nosniff', 'X-Frame-Options': 'SAMEORIGIN', 'X-Permitted-Cross-Domain-Policies': 'none', 'X-Request-Id': 'd36fead4-ef4e-4002-b790-540c5485d7ac', 'X-Runtime': '0.010097', 'X-Xss-Protection': '0', 'Date': 'Mon, 25 Mar 2024 14:01:45 GMT'} 
- body=[{"id":3624,"uid":"461a8c85-1ef7-47c5-b2a6-3698989a9398","build_number":247,"manufacturer":"Xiamomi","model":"OnePlus 2","platform":"Windows 8","serial_number":"Yr9Vt13BlgvXO9zgJTPuCLv6F82r5S","version":562},{"id":7992,"uid":"bae9c099-1148-41ea-b56f-6e352c103265","build_number":272,"manufacturer":"Google","model":"Galaxy S7 Edge","platform":"Firefox OS","serial_number":"SJMZOmtU0csrv4R","version":199}] 
- </msg>
-<msg time="2024-03-25T15:01:45.566451" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<var>${response}</var>
-<arg>${API_URL_2}</arg>
-<arg>params=size=2</arg>
-<doc>Sends a GET request.</doc>
-<status status="PASS" start="2024-03-25T15:01:44.815201" elapsed="0.751250"/>
+<status status="NOT RUN" start="2024-03-25T17:10:44.206460" elapsed="0.000000"/>
 </kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-03-25T15:01:45.568444" level="INFO">${user_data} = [{'id': 3624, 'uid': '461a8c85-1ef7-47c5-b2a6-3698989a9398', 'build_number': 247, 'manufacturer': 'Xiamomi', 'model': 'OnePlus 2', 'platform': 'Windows 8', 'serial_number': 'Yr9Vt13BlgvXO9zgJTPuCLv6F8...</msg>
-<var>${user_data}</var>
-<arg>${response.json()}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-03-25T15:01:45.567447" elapsed="0.001993"/>
-</kw>
-<status status="PASS" start="2024-03-25T15:01:44.814212" elapsed="0.755228"/>
-</kw>
-<status status="PASS" start="2024-03-25T15:01:44.812204" elapsed="0.758233"/>
-</test>
-<test id="s1-s1-s1-t9" name="10. Step: Navigate To The &quot;Eszközök&quot; Menu" line="71">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${TOOLS_BUTTON}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-03-25T15:01:45.573427" elapsed="0.024395"/>
+<status status="NOT RUN" start="2024-03-25T17:10:44.207562" elapsed="0.000000"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-03-25T15:01:45.598819" level="INFO">Clicking element '//a[contains(.,'Eszközök')]'.</msg>
 <arg>${TOOLS_BUTTON}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-03-25T15:01:45.597822" elapsed="0.076056"/>
+<status status="NOT RUN" start="2024-03-25T17:10:44.208505" elapsed="0.001566"/>
 </kw>
-<status status="PASS" start="2024-03-25T15:01:45.572431" elapsed="0.102958"/>
-</test>
-<test id="s1-s1-s1-t10" name="11. Step: Attach The 2 Tools" line="75">
-<kw name="Request 2 Tools Via API" owner="common_resources">
-<kw name="GET" owner="RequestsLibrary">
-<msg time="2024-03-25T15:01:46.517932" level="INFO">GET Request : url=https://random-data-api.com/api/device/random_device?size=2&amp;size=2 
- path_url=/api/device/random_device?size=2&amp;size=2 
- headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
- body=None 
- </msg>
-<msg time="2024-03-25T15:01:46.517932" level="INFO">GET Response : url=https://random-data-api.com/api/device/random_device?size=2&amp;size=2 
- status=200, reason=OK 
- headers={'Alt-Svc': 'h3=":443"; ma=2592000', 'Cache-Control': 'max-age=0, private, must-revalidate', 'Content-Length': '406', 'Content-Type': 'application/json; charset=utf-8', 'Etag': 'W/"704821fff5b5fff4a130743f293a83d9"', 'Referrer-Policy': 'strict-origin-when-cross-origin', 'Server': 'Caddy', 'Strict-Transport-Security': 'max-age=63072000; includeSubDomains', 'Vary': 'Origin', 'X-Content-Type-Options': 'nosniff', 'X-Frame-Options': 'SAMEORIGIN', 'X-Permitted-Cross-Domain-Policies': 'none', 'X-Request-Id': '4407f9a3-3cdc-489f-b466-2f349eda94b3', 'X-Runtime': '0.007774', 'X-Xss-Protection': '0', 'Date': 'Mon, 25 Mar 2024 14:01:46 GMT'} 
- body=[{"id":7450,"uid":"e5149507-1840-452b-bbb0-755687d0ab48","build_number":62,"manufacturer":"Samsung","model":"Galaxy S7 Edge","platform":"Android OS","serial_number":"Pbn8^`LkKPi4QJ79xk3SnW'_DbV*CL","version":245},{"id":119,"uid":"dfee346c-c81c-44aa-a0cb-e75790ee1cfb","build_number":450,"manufacturer":"Dell","model":"Galaxy S9","platform":"Windows 8","serial_number":"NjGU0z33pgE4sTEED7VR","version":896}] 
- </msg>
-<msg time="2024-03-25T15:01:46.518928" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<var>${response}</var>
-<arg>${API_URL_2}</arg>
-<arg>params=size=2</arg>
-<doc>Sends a GET request.</doc>
-<status status="PASS" start="2024-03-25T15:01:45.686666" elapsed="0.832262"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-03-25T15:01:46.519925" level="INFO">${user_data} = [{'id': 7450, 'uid': 'e5149507-1840-452b-bbb0-755687d0ab48', 'build_number': 62, 'manufacturer': 'Samsung', 'model': 'Galaxy S7 Edge', 'platform': 'Android OS', 'serial_number': "Pbn8^`LkKPi4QJ79xk3Sn...</msg>
-<var>${user_data}</var>
-<arg>${response.json()}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-03-25T15:01:46.518928" elapsed="0.001994"/>
-</kw>
-<status status="PASS" start="2024-03-25T15:01:45.684218" elapsed="0.836704"/>
-</kw>
-<status status="PASS" start="2024-03-25T15:01:45.681227" elapsed="0.840695"/>
-</test>
-<test id="s1-s1-s1-t11" name="12. Step: Save The Menu" line="79">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<msg time="2024-03-25T15:01:51.811372" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-424.png"&gt;&lt;img src="selenium-screenshot-424.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2024-03-25T15:01:51.812369" level="FAIL">Element '//button[@class='e-control e-btn e-lib e-control e-btn e-lib e-primary e-flat']' not visible after 5 seconds.</msg>
 <arg>${TOOLS_SAVE_BUTTON}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="FAIL" start="2024-03-25T15:01:46.525910" elapsed="5.289447">Element '//button[@class='e-control e-btn e-lib e-control e-btn e-lib e-primary e-flat']' not visible after 5 seconds.</status>
+<status status="NOT RUN" start="2024-03-25T17:10:44.210071" elapsed="0.001256"/>
 </kw>
 <kw name="Save The Tools Menu" owner="common_resources">
-<status status="NOT RUN" start="2024-03-25T15:01:51.815357" elapsed="0.001000"/>
+<status status="NOT RUN" start="2024-03-25T17:10:44.212370" elapsed="0.000955"/>
 </kw>
-<status status="FAIL" start="2024-03-25T15:01:46.523913" elapsed="5.293437">Element '//button[@class='e-control e-btn e-lib e-control e-btn e-lib e-primary e-flat']' not visible after 5 seconds.</status>
-</test>
-<test id="s1-s1-s1-t12" name="13. Click On &quot;Excel Export&quot; Button" line="83">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<msg time="2024-03-25T15:01:57.000285" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-425.png"&gt;&lt;img src="selenium-screenshot-425.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2024-03-25T15:01:57.001788" level="FAIL">Element '//span[.='Excel Export']' not visible after 5 seconds.</msg>
 <arg>${TOOLS_EXCEL_EXPORT_MENU}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="FAIL" start="2024-03-25T15:01:51.820845" elapsed="5.182962">Element '//span[.='Excel Export']' not visible after 5 seconds.</status>
+<status status="NOT RUN" start="2024-03-25T17:10:44.213325" elapsed="0.001020"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
 <arg>${TOOLS_EXCEL_EXPORT_MENU}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2024-03-25T15:01:57.004784" elapsed="0.000997"/>
+<status status="NOT RUN" start="2024-03-25T17:10:44.214345" elapsed="0.001001"/>
 </kw>
-<status status="FAIL" start="2024-03-25T15:01:51.819844" elapsed="5.186934">Element '//span[.='Excel Export']' not visible after 5 seconds.</status>
-</test>
-<test id="s1-s1-s1-t13" name="14. Step: Navigate To The &quot;Telephelyek&quot; Menu" line="87">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${LOCATIONS_BUTTON}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-03-25T15:01:57.010766" elapsed="0.027193"/>
+<status status="NOT RUN" start="2024-03-25T17:10:44.215346" elapsed="0.000000"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-03-25T15:01:57.038905" level="INFO">Clicking element '//a[contains(.,'Telephelyek')]'.</msg>
 <arg>${LOCATIONS_BUTTON}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-03-25T15:01:57.037959" elapsed="0.085360"/>
+<status status="NOT RUN" start="2024-03-25T17:10:44.216394" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2024-03-25T15:01:57.008771" elapsed="0.116534"/>
-</test>
-<test id="s1-s1-s1-t14" name="15. Step: Filter by fixed location in the search menu" line="91">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOCATIONS_SEARCH_BUTTON}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2024-03-25T17:10:44.217387" elapsed="0.000000"/>
+</kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-03-25T15:01:57.134275" level="INFO">Clicking element '//input[@id='Grid_ToolbarSearchBox']'.</msg>
-<msg time="2024-03-25T15:01:57.431971" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-426.png"&gt;&lt;img src="selenium-screenshot-426.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2024-03-25T15:01:57.432973" level="FAIL">ElementNotInteractableException: Message: element not interactable
-  (Session info: chrome=123.0.6312.59)
-Stacktrace:
-	GetHandleVerifier [0x00007FF75AAF7062+63090]
-	(No symbol) [0x00007FF75AA62CB2]
-	(No symbol) [0x00007FF75A8FEB1D]
-	(No symbol) [0x00007FF75A945D56]
-	(No symbol) [0x00007FF75A93A708]
-	(No symbol) [0x00007FF75A966FDA]
-	(No symbol) [0x00007FF75A93A00A]
-	(No symbol) [0x00007FF75A9671F0]
-	(No symbol) [0x00007FF75A983412]
-	(No symbol) [0x00007FF75A966D83]
-	(No symbol) [0x00007FF75A9383A8]
-	(No symbol) [0x00007FF75A939441]
-	GetHandleVerifier [0x00007FF75AEF25CD+4238301]
-	GetHandleVerifier [0x00007FF75AF2F72D+4488509]
-	GetHandleVerifier [0x00007FF75AF27A0F+4456479]
-	GetHandleVerifier [0x00007FF75ABD05A6+953270]
-	(No symbol) [0x00007FF75AA6E57F]
-	(No symbol) [0x00007FF75AA69254]
-	(No symbol) [0x00007FF75AA6938B]
-	(No symbol) [0x00007FF75AA59BC4]
-	BaseThreadInitThunk [0x00007FFA4AE7257D+29]
-	RtlUserThreadStart [0x00007FFA4BD2AA58+40]
-</msg>
 <arg>${LOCATIONS_SEARCH_BUTTON}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="FAIL" start="2024-03-25T15:01:57.133280" elapsed="0.330452">ElementNotInteractableException: Message: element not interactable
-  (Session info: chrome=123.0.6312.59)
-Stacktrace:
-	GetHandleVerifier [0x00007FF75AAF7062+63090]
-	(No symbol) [0x00007FF75AA62CB2]
-	(No symbol) [0x00007FF75A8FEB1D]
-	(No symbol) [0x00007FF75A945D56]
-	(No symbol) [0x00007FF75A93A708]
-	(No symbol) [0x00007FF75A966FDA]
-	(No symbol) [0x00007FF75A93A00A]
-	(No symbol) [0x00007FF75A9671F0]
-	(No symbol) [0x00007FF75A983412]
-	(No symbol) [0x00007FF75A966D83]
-	(No symbol) [0x00007FF75A9383A8]
-	(No symbol) [0x00007FF75A939441]
-	GetHandleVerifier [0x00007FF75AEF25CD+4238301]
-	GetHandleVerifier [0x00007FF75AF2F72D+4488509]
-	GetHandleVerifier [0x00007FF75AF27A0F+4456479]
-	GetHandleVerifier [0x00007FF75ABD05A6+953270]
-	(No symbol) [0x00007FF75AA6E57F]
-	(No symbol) [0x00007FF75AA69254]
-	(No symbol) [0x00007FF75AA6938B]
-	(No symbol) [0x00007FF75AA59BC4]
-	BaseThreadInitThunk [0x00007FFA4AE7257D+29]
-	RtlUserThreadStart [0x00007FFA4BD2AA58+40]
-</status>
+<status status="NOT RUN" start="2024-03-25T17:10:44.218338" elapsed="0.000000"/>
 </kw>
-<status status="FAIL" start="2024-03-25T15:01:57.129294" elapsed="0.335448">ElementNotInteractableException: Message: element not interactable
-  (Session info: chrome=123.0.6312.59)
-Stacktrace:
-	GetHandleVerifier [0x00007FF75AAF7062+63090]
-	(No symbol) [0x00007FF75AA62CB2]
-	(No symbol) [0x00007FF75A8FEB1D]
-	(No symbol) [0x00007FF75A945D56]
-	(No symbol) [0x00007FF75A93A708]
-	(No symbol) [0x00007FF75A966FDA]
-	(No symbol) [0x00007FF75A93A00A]
-	(No symbol) [0x00007FF75A9671F0]
-	(No symbol) [0x00007FF75A983412]
-	(No symbol) [0x00007FF75A966D83]
-	(No symbol) [0x00007FF75A9383A8]
-	(No symbol) [0x00007FF75A939441]
-	GetHandleVerifier [0x00007FF75AEF25CD+4238301]
-	GetHandleVerifier [0x00007FF75AF2F72D+4488509]
-	GetHandleVerifier [0x00007FF75AF27A0F+4456479]
-	GetHandleVerifier [0x00007FF75ABD05A6+953270]
-	(No symbol) [0x00007FF75AA6E57F]
-	(No symbol) [0x00007FF75AA69254]
-	(No symbol) [0x00007FF75AA6938B]
-	(No symbol) [0x00007FF75AA59BC4]
-	BaseThreadInitThunk [0x00007FFA4AE7257D+29]
-	RtlUserThreadStart [0x00007FFA4BD2AA58+40]
-</status>
+<status status="FAIL" start="2024-03-25T17:10:30.353497" elapsed="13.864841">Element '//button[@class='e-control e-btn e-lib e-control e-btn e-lib e-primary e-flat']' not visible after 5 seconds.</status>
 </test>
-<status status="FAIL" start="2024-03-25T15:01:16.800878" elapsed="40.670826"/>
+<status status="FAIL" start="2024-03-25T17:10:29.895288" elapsed="14.325695"/>
 </suite>
-<status status="FAIL" start="2024-03-25T15:01:16.794896" elapsed="40.680795"/>
+<status status="FAIL" start="2024-03-25T17:10:29.876748" elapsed="14.347233"/>
 </suite>
-<status status="FAIL" start="2024-03-25T15:01:16.729301" elapsed="40.752389"/>
+<status status="FAIL" start="2024-03-25T17:10:29.841569" elapsed="14.387722"/>
 </suite>
 <statistics>
 <total>
-<stat pass="6" fail="8" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="6" fail="8" skip="0" id="s1" name="Bwpool Project">Bwpool Project</stat>
-<stat pass="6" fail="8" skip="0" id="s1-s1" name="Tests">Bwpool Project.Tests</stat>
-<stat pass="6" fail="8" skip="0" id="s1-s1-s1" name="Bwpool Tests">Bwpool Project.Tests.Bwpool Tests</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="Bwpool Project">Bwpool Project</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Tests">Bwpool Project.Tests</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="Bwpool Tests">Bwpool Project.Tests.Bwpool Tests</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2024-03-25T15:01:16.819813" level="WARN">Error in file 'C:\Users\novoz\bwpool_project\resources\common_resources.resource' on line 67: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+<msg time="2024-03-25T17:10:29.920499" level="WARN">Error in file 'C:\Users\novoz\bwpool_project\resources\common_resources.resource' on line 69: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
 </errors>
 </robot>

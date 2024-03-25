@@ -3,6 +3,7 @@ Library    SeleniumLibrary
 Library    RequestsLibrary
 Library    Collections
 Library    OperatingSystem
+Library    json
 
 *** Variables ***
 
@@ -36,10 +37,10 @@ ${TOOLS_EXCEL_EXPORT_MENU}    //span[.='Excel Export']
 ${LOCATIONS_SEARCH_BUTTON}    //input[@id='Grid_ToolbarSearchBox']
 
 
-
 # Other Variables
 ${BROWSER}    Chrome
 ${FOLDER_PATH}    C:/Users/novoz/bwpool_project/tests
+${SUPERUSER}    
 
 *** Variables ***
 ${partner_city}    None
@@ -47,6 +48,7 @@ ${partner_zip_code}    None
 ${partner_street}    None
 ${partner_street_number}    None
 ${id}    None
+${customer_json_file}    customer.json
 
 *** Keywords ***
 
