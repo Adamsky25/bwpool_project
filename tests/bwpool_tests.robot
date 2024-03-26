@@ -44,26 +44,31 @@ Nur ein Test ablaufen lassan
 
 #7. Step: Attach A Location Based On The API Message
 
-    Wait Until Element Is Visible    ${LOCATIONS_ADD_BUTTON}    timeout=5s
+    Wait Until Element Is Enabled    ${LOCATIONS_ADD_BUTTON}    timeout=5s
     Click Element    ${LOCATIONS_ADD_BUTTON}
-
-    ${first_name}=    Set Variable    ${user_data[0]['first_name']}
-    ${last_name}=    Set Variable   ${user_data[0]['last_name']}
-    Wait Until Element Is Visible    ${LOCATIONS_ADD_SAVE}    timeout=5s
-
-    # ${user_data}=    Get File    customer.json
-    # ${first_name}=    Set Variable    json.loads (${user_data[0]['first_name']})
-    # ${last_name}=    Set Variable   json.loads(${user_data[0]['last_name']})
-    # Wait Until Element Is Visible    ${LOCATIONS_ADD_SAVE}    timeout=5s
+    Wait Until Element Is Visible    ${LOCATIONS_ADD_CUSTOMER}
+    Wait Until Element Is Enabled    ${LOCATIONS_ADD_SAVE}    timeout=5s
+    Input Text    ${LOCATIONS_FIRST_NAME_ON_THE_LIST}    ${first_name} ${last_name}
+    Click Element    ${LOCATIONS_CUSTOMER_DROPDOWN}
 
 
-#     #Wait Until Element Is Visible    ${LOCATIONS_ADD_BUTTON}    timeout=10
-#     Click Element    ${LOCATIONS_ADD_BUTTON}
-#    # Wait Until Element Is Visible    ${LOCATIONS_ADD_CUSTOMER}    timeout=5s
-#     Click Element    ${LOCATIONS_ADD_CUSTOMER}
-#     ${location_data}=    Create Location Data    ${partner_city}    ${partner_zip_code}    ${partner_street}    ${partner_street_number}
-#     Attach Location To Partner    ${id}    ${location_data}
-#     Place Data Into "Telephely" Grid    ${partner_city}    ${partner_zip_code}    ${partner_street}    ${partner_street_number}
+    ${partner_city}    Set Variable    ${user_data}[0][address][city]
+    Click Element    ${LOCATIONS_ADD_CITY}
+    Input Text    ${LOCATIONS_ADD_CITY}    ${partner_city}
+    
+
+    ${partner_zip_code}    Set Variable    ${user_data}[0][address][zip_code]
+    Click Element    ${LOCATIONS_ADD_CITY}
+    Input Text    ${LOCATIONS_ADD_ZIP}    ${partner_zip_code}
+
+    ${partner_street_name}    Set Variable    ${user_data}[0][address][street_name]
+    Click Element    ${LOCATIONS_ADD_STREET}
+    Input Text    ${LOCATIONS_ADD_STREET}    ${partner_street_name}
+
+    ${partner_street_number}    Set Variable    ${user_data}[0][address][street_number]
+    Click Element    ${LOCATIONS_ADD_STREET_NUMBER}    
+    Input Text    ${LOCATIONS_ADD_STREET_NUMBER}    ${partner_street_number}
+
 
 #8. Step: Save the Menu
     Wait Until Element Is Visible    ${LOCATIONS_ADD_SAVE}    timeout=5s

@@ -26,10 +26,12 @@ ${PARTNERS_ADD_COMMENT}    //input[@id='comment']
 ${PARTNERS_ADD_SAVE}    //button[@class='e-control e-btn e-lib e-control e-btn e-lib e-primary e-flat']
 ${LOCATIONS_ADD_BUTTON}    //span[.='Add']
 ${LOCATIONS_ADD_CUSTOMER}    //input[@class='e-control e-combobox e-lib e-input']
+${LOCATIONS_CUSTOMER_DROPDOWN}    //span[@class='e-input-group-icon e-ddl-icon e-icons e-ddl-disable-icon']
+${LOCATIONS_FIRST_NAME_ON_THE_LIST}    //li[@class='e-list-item e-item-focus']
 ${LOCATIONS_ADD_CITY}    //input[@id='varos']
 ${LOCATIONS_ADD_ZIP}    //input[@id='zip']
 ${LOCATIONS_ADD_STREET}    //input[@id='utca']
-${LOCATIONS_ADD_HOUSENUMBER}    //input[@id='szam']
+${LOCATIONS_ADD_STREET_NUMBER}    //input[@id='szam']
 ${LOCATIONS_ADD_SAVE}    //button[@class='e-control e-btn e-lib e-control e-btn e-lib e-primary e-flat']
 ${TOOLS_BUTTON}    //a[contains(.,'Eszközök')]
 ${TOOLS_SAVE_BUTTON}    //button[@class='e-control e-btn e-lib e-control e-btn e-lib e-primary e-flat']
@@ -69,17 +71,17 @@ Create Location Data
     [Return]    ${location_data}    # robotcode: ignore
 
 Attach Location To Partner
+    
     [Arguments]    ${partner_id}    ${location_data}
     ${response}=    Get    ${API_URL_1}    data=${location_data}
     Log    ${response.status_code}
-    # Add additional validation if necessary
 
-Place Data Into "Telephely" Grid
-    [Arguments]    ${city}    ${zip_code}    ${street_name}    ${street_number}
-    Input Text    ${LOCATIONS_ADD_CITY}    ${partner_city}
-    Input Text    ${LOCATIONS_ADD_ZIP}    ${partner_zip_code}
-    Input Text    ${LOCATIONS_ADD_STREET}    ${street_name}
-    Input Text    ${LOCATIONS_ADD_HOUSENUMBER}    ${partner_street_number}
+# Place Data Into "Telephely" Grid
+#     [Arguments]    ${city}    ${zip_code}    ${street_name}    ${street_number}
+#     Input Text    ${LOCATIONS_ADD_CITY}    ${partner_city}
+#     Input Text    ${LOCATIONS_ADD_ZIP}    ${partner_zip_code}
+#     Input Text    ${LOCATIONS_ADD_STREET}    ${street_name}
+#     Input Text    ${LOCATIONS_ADD_STREET_NUMBER}    ${partner_street_number}
 
 Save The Locations Menu
     Click Element    ${LOCATIONS_ADD_SAVE}
