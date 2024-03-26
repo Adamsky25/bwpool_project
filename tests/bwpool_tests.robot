@@ -75,14 +75,31 @@ Nur ein Test ablaufen lassan
     Save The Locations Menu
 
 #9. Step: Request 2 Tools Via API
-    Request 2 Tools Via API
+    ${response}=    Get    ${API_URL_2}    params=size=2
+    ${tools_data}=    Set Variable   ${response.json()}
 
 #10. Step: Navigate To The "Eszközök" Menu
-    Wait Until Element Is Visible    ${TOOLS_BUTTON}
+    Wait Until Element Is Enabled    ${TOOLS_BUTTON}
     Click Element    ${TOOLS_BUTTON}
 
 #11. Step: Attach The 2 Tools
     
+    Click Element    ${TOOLS_ADD_BUTTON} 
+    Wait Until Element Is Enabled    ${TOOLS_SAVE_BUTTON}    timeout=5s
+    Input Text    ${TOOLS_USER_NAME_INPUT}    ${first_name} ${last_name}
+    Click Element    ${TOOLS_USER_NAME_DROP_DOWN}
+
+    ${tools_'neve'}    Set Variable    ${tools_data}[0][manufacturer] [model]
+    Click Element    ${TOOLS_'NEVE'_INPUT}    
+    Input Text    ${TOOLS_'NEVE'_INPUT}    ${tools_'neve'}
+
+    ${tools'leiras'}    Set Variable    ${tools_data}[0][platform]
+    Click Element    ${TOOLS_'LEIRAS'_INPUT}
+    Input Text    ${TOOLS_'LEIRAS'_INPUT}    ${tools'leiras'}
+
+    ${tools'megjegyzes'}    Set Variable    ${tools_data}[0][serial_number]
+    Click Element    ${TOOLS_'MEGJEGYZES'_INPUT}
+    Input Text    ${TOOLS_'LEIRAS'_INPUT}    ${tools'megjegyzes'}
 
 #12. Step: Save The Menu
     Wait Until Element Is Visible    ${TOOLS_SAVE_BUTTON}
@@ -97,7 +114,14 @@ Nur ein Test ablaufen lassan
     Click Element    ${LOCATIONS_BUTTON}
 
 #15. Step: Filter by fixed location in the search menu
-    Wait Until Element Is Visible    ${LOCATIONS_SEARCH_BUTTON}
-    Click Element    ${LOCATIONS_SEARCH_BUTTON}
+    Wait Until Element Is Visible    ${LOCATIONS_SEARCH_INPUT}
+    Click Element    ${LOCATIONS_SEARCH_INPUT}
     #rögzített telephelyet beilleszteni
+
+#16: Step: Click On The 'UTCA' Field Menu
+    Click Element    ${LOCATION_NAVIGATION_BUTTON}
+
+
+
+
 

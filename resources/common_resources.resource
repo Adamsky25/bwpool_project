@@ -34,9 +34,17 @@ ${LOCATIONS_ADD_STREET}    //input[@id='utca']
 ${LOCATIONS_ADD_STREET_NUMBER}    //input[@id='szam']
 ${LOCATIONS_ADD_SAVE}    //button[@class='e-control e-btn e-lib e-control e-btn e-lib e-primary e-flat']
 ${TOOLS_BUTTON}    //a[contains(.,'Eszközök')]
+${TOOLS_ADD_BUTTON}    //span[@class='e-add e-icons e-btn-icon e-icon-left']
+${TOOLS_'NEVE'_INPUT}    //input[@id='name']
+${TOOLS_'LEIRAS'_INPUT}    //textarea[@id='Desc']
+${TOOLS_'MEGJEGYZES'_INPUT}    //textarea[@id='Comm']
+${TOOLS_USER_NAME_DROP_DOWN}      //span[@class='e-ddl e-lib e-input-group e-control-container e-control-wrapper e-input-focus valid e-icon-anim']/span[@class='e-input-group-icon e-ddl-icon e-icons e-ddl-disable-icon']
+${TOOLS_USER_NAME_INPUT}    //span[@class='e-ddl e-lib e-input-group e-control-container e-control-wrapper e-input-focus valid']/input[@class='e-control e-combobox e-lib e-input']
 ${TOOLS_SAVE_BUTTON}    //button[@class='e-control e-btn e-lib e-control e-btn e-lib e-primary e-flat']
 ${TOOLS_EXCEL_EXPORT_MENU}    //span[.='Excel Export']
-${LOCATIONS_SEARCH_BUTTON}    //input[@id='Grid_ToolbarSearchBox']
+${LOCATIONS_SEARCH_INPUT}    //input[@id='Grid_ToolbarSearchBox']
+${LOCATION_SEARCH_BUTTON}    //span[@class='e-searchclear e-search-icon e-icons e-input-group-icon']
+${LOCATION_NAVIGATION_BUTTON}    //a[@href='LocationInfo/674']/span[@class='oi oi-location']
 
 
 # Other Variables
@@ -89,9 +97,18 @@ Save The Locations Menu
 Save The Tools Menu
     Click Element    ${TOOLS_SAVE_BUTTON}
 
-Request 2 Tools Via API
-    ${response}=    Get    ${API_URL_2}    params=size=2
-    ${user_data}=    Set Variable   ${response.json()}
+# Request 2 Tools Via API
+#     ${response}=    Get    ${API_URL_2}    params=size=2
+#     ${tools_data}=    Set Variable   ${response.json()}
+
+# Place Data Into "Eszközök" Grid 
+
+#      [Arguments]   ${manufacturer}    ${model}    ${platform}    ${serial_number}    ${first_name}    ${last_name}
+#      Input Text    ${TOOLS_USER_NAME_INPUT}    ${first_name} ${last_name}
+#      Input Text    ${PARTNERS_ADD_NAME}    ${last_name}
+#      Input Text    ${PARTNERS_ADD_EMAIL}    ${email}
+#      Input Text    ${PARTNERS_ADD_TELEFON}    ${phone_number}
+#      Input Text    ${PARTNERS_ADD_COMMENT}    ${id}
 
 
 # Test Setup
