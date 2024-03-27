@@ -3,7 +3,7 @@ Library    SeleniumLibrary
 Library    RequestsLibrary
 Library    Collections
 Library    OperatingSystem
-Library    json
+#Library    json
 
 *** Variables ***
 
@@ -46,28 +46,27 @@ ${LOCATIONS_SEARCH_INPUT}    //input[@id='Grid_ToolbarSearchBox']
 ${LOCATION_SEARCH_BUTTON}    //span[@class='e-searchclear e-search-icon e-icons e-input-group-icon']
 ${LOCATION_NAVIGATION_BUTTON}    //a[@href='LocationInfo/674']/span[@class='oi oi-location']
 
-
 # Other Variables
 ${BROWSER}    Chrome
-${FOLDER_PATH}    C:/Users/novoz/bwpool_project/tests
-${SUPERUSER}    
+${EXPECTED_TITLE}    BWP Index
 
-*** Variables ***
-# ${partner_city}    None
-# ${partner_zip_code}    None
-# ${partner_street}    None
-# ${partner_street_number}    None
-# ${id}    None
-# ${customer_json_file}    customer.json
 
 *** Keywords ***
 
-Place Data Into "Ügyfél" Grid
-    [Arguments]    ${first_name}    ${last_name}    ${email}    ${phone_number}    ${id}
-    Input Text    ${PARTNERS_ADD_NAME}    ${first_name} ${last_name}
-    Input Text    ${PARTNERS_ADD_EMAIL}    ${email}
-    Input Text    ${PARTNERS_ADD_TELEFON}    ${phone_number}
-    Input Text    ${PARTNERS_ADD_COMMENT}    ${id}
+Test Setup
+    Open Browser    ${HOMEPAGE_URL}    ${BROWSER}
+    Maximize Browser Window
+    Title Should Be    ${EXPECTED_TITLE}
+
+Test Teardown
+    Close All Browsers
+
+# Place Data Into "Ügyfél" Grid
+#     [Arguments]    ${first_name}    ${last_name}    ${email}    ${phone_number}    ${id}
+#     Input Text    ${PARTNERS_ADD_NAME}    ${first_name} ${last_name}
+#     Input Text    ${PARTNERS_ADD_EMAIL}    ${email}
+#     Input Text    ${PARTNERS_ADD_TELEFON}    ${phone_number}
+#     Input Text    ${PARTNERS_ADD_COMMENT}    ${id}
 
 # Create Location Data
 #     [Arguments]    ${city}    ${zip_code}    ${street_name}    ${street_number}
