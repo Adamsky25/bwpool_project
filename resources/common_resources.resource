@@ -53,36 +53,27 @@ ${FOLDER_PATH}    C:/Users/novoz/bwpool_project/tests
 ${SUPERUSER}    
 
 *** Variables ***
-${partner_city}    None
-${partner_zip_code}    None
-${partner_street}    None
-${partner_street_number}    None
-${id}    None
-${customer_json_file}    customer.json
+# ${partner_city}    None
+# ${partner_zip_code}    None
+# ${partner_street}    None
+# ${partner_street_number}    None
+# ${id}    None
+# ${customer_json_file}    customer.json
 
 *** Keywords ***
 
 Place Data Into "Ügyfél" Grid
     [Arguments]    ${first_name}    ${last_name}    ${email}    ${phone_number}    ${id}
     Input Text    ${PARTNERS_ADD_NAME}    ${first_name} ${last_name}
-    #Input Text    ${PARTNERS_ADD_NAME}    ${last_name}
     Input Text    ${PARTNERS_ADD_EMAIL}    ${email}
     Input Text    ${PARTNERS_ADD_TELEFON}    ${phone_number}
     Input Text    ${PARTNERS_ADD_COMMENT}    ${id}
 
-Save The Partner Menu
-    Click Element    ${PARTNERS_ADD_SAVE}  
+# Create Location Data
+#     [Arguments]    ${city}    ${zip_code}    ${street_name}    ${street_number}
+#     ${location_data}=    Create Dictionary    city=${city}    zip_code=${zip_code}    street_name=${street_name}    street_number=${street_number}
+#     [Return]    ${location_data}    # robotcode: ignore
 
-Create Location Data
-    [Arguments]    ${city}    ${zip_code}    ${street_name}    ${street_number}
-    ${location_data}=    Create Dictionary    city=${city}    zip_code=${zip_code}    street_name=${street_name}    street_number=${street_number}
-    [Return]    ${location_data}    # robotcode: ignore
-
-Attach Location To Partner
-    
-    [Arguments]    ${partner_id}    ${location_data}
-    ${response}=    Get    ${API_URL_1}    data=${location_data}
-    Log    ${response.status_code}
 
 # Place Data Into "Telephely" Grid
 #     [Arguments]    ${city}    ${zip_code}    ${street_name}    ${street_number}
@@ -90,16 +81,6 @@ Attach Location To Partner
 #     Input Text    ${LOCATIONS_ADD_ZIP}    ${partner_zip_code}
 #     Input Text    ${LOCATIONS_ADD_STREET}    ${street_name}
 #     Input Text    ${LOCATIONS_ADD_STREET_NUMBER}    ${partner_street_number}
-
-Save The Locations Menu
-    Click Element    ${LOCATIONS_ADD_SAVE}
-
-Save The Tools Menu
-    Click Element    ${TOOLS_SAVE_BUTTON}
-
-# Request 2 Tools Via API
-#     ${response}=    Get    ${API_URL_2}    params=size=2
-#     ${tools_data}=    Set Variable   ${response.json()}
 
 # Place Data Into "Eszközök" Grid 
 
