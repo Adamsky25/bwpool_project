@@ -9,6 +9,7 @@ Bwpool.azurewebsites.net Automation Test
 
 #2. Step: Navigate To The "Partnerek" Menu
     Wait Until Element Is Visible    ${PARTNERS_BUTTON}    timeout=3s
+    Sleep    3s
     Click Element    ${PARTNERS_BUTTON}
     # Wait Until Element Is Visible    ${PARTNERS_ADD_BUTTON}    timeout=5s 
     # Click Element    ${PARTNERS_ADD_BUTTON}
@@ -20,31 +21,36 @@ Bwpool.azurewebsites.net Automation Test
     ${user_data}=    Set Variable   ${response.json()}
 
 #4. Step: Attach A Partner Based On The API Message (first_name, last_name, email, id)
-    Wait Until Element Is Visible    ${PARTNERS_ADD_BUTTON}    timeout=3s
-    Sleep    3s
+    Wait Until Element Is Visible    ${PARTNERS_ADD_BUTTON}    timeout=5s
+    Sleep    5s
     Click Element    ${PARTNERS_ADD_BUTTON}
     Wait Until Element Is Visible    ${PARTNERS_ADD_NAME}
     Wait Until Element Is Enabled    ${PARTNERS_ADD_SAVE}
 
-    ${first_name}=    Set Variable   ${user_data[0]['first_name']}
-    ${last_name}=    Set Variable   ${user_data[0]['last_name']}
-    ${email}=    Set Variable   ${user_data[0]['email']}
-    ${id}=    Set Variable   ${user_data[0]['id']}
+    # ${first_name}=    Set Variable   ${user_data[0]['first_name']}
+    # ${last_name}=    Set Variable   ${user_data[0]['last_name']}
+    # ${email}=    Set Variable   ${user_data[0]['email']}
+    # ${id}=    Set Variable   ${user_data[0]['id']}
 
     #Attach And Check The Values
+
+    ${first_name}=    Set Variable   ${user_data[0]['first_name']}
+    ${last_name}=    Set Variable   ${user_data[0]['last_name']}
     Input Text    ${PARTNERS_ADD_NAME}    ${first_name} ${last_name}
     ${first_last_name_value}    Get Element Attribute    ${PARTNERS_ADD_NAME}    value
-    Should Be Equal As Strings    ${first_name} ${last_name}    ${PARTNERS_ADD_BUTTON}
-    
+    Should Be Equal As Strings    ${first_last_name_value}    ${first_name} ${last_name}
+
+    ${email}=    Set Variable   ${user_data[0]['email']}
     Click Element    ${PARTNERS_ADD_EMAIL}
     Input Text    ${PARTNERS_ADD_EMAIL}    ${email}
     ${email_value}    Get Element Attribute    ${PARTNERS_ADD_EMAIL}     value
-    Should Be Equal As Strings    ${email_value}    ${PARTNERS_ADD_EMAIL}
+    Should Be Equal As Strings    ${email_value}    ${email}
 
+    ${id}=    Set Variable   ${user_data[0]['id']}
     Click Element    ${PARTNERS_ADD_COMMENT}
     Input Text    ${PARTNERS_ADD_COMMENT}    ${id}
     ${comment_value}    Get Element Attribute    ${PARTNERS_ADD_COMMENT}    value
-    Should Be Equal As Strings    ${comment_value}    ${PARTNERS_ADD_COMMENT}
+    Should Be Equal As Strings    ${comment_value}    ${id}
 
 #5. Step: Save The Menu
     Wait Until Element Is Visible    ${PARTNERS_ADD_SAVE}    timeout=3s
@@ -52,14 +58,18 @@ Bwpool.azurewebsites.net Automation Test
 
 #6. Step: Navigate To The "Telephelyek" Menu
     Wait Until Element Is Visible    ${LOCATIONS_BUTTON}    timeout=3s
+    Sleep    3s
     Click Element    ${LOCATIONS_BUTTON}
 
 #7. Step: Attach A Location Based On The API Message (city, zip_code, street_name, street:number) AND Check The Values
-    Wait Until Element Is Visible    ${LOCATIONS_ADD_BUTTON}    timeout=3s
+    Wait Until Element Is Enabled    ${LOCATIONS_ADD_BUTTON}    timeout=3s
     Click Element    ${LOCATIONS_ADD_BUTTON}
-    Wait Until Element Is Visible    ${LOCATIONS_ADD_CUSTOMER}    timeout=3s
-    Wait Until Element Is Enabled    ${LOCATIONS_ADD_SAVE}    timeout=3s
+    Wait Until Element Is Visible    ${LOCATIONS_ADD_CUSTOMER}    timeout=5s
+    #Wait Until Element Is Enabled    ${LOCATIONS_ADD_SAVE}    timeout=3s
+    #Click Element    ${LOCATIONS_ADD_CUSTOMER}
+    Click Element    ${LOCATIONS_CUSTOMER_DROPDOWN}
     Input Text    ${LOCATIONS_ADD_CUSTOMER}    ${first_name} ${last_name}
+   # Wait Until Element Is Visible    ${LOCATIONS_FIRST_NAME_IN_THE_LIST}
     #Input Text    ${LOCATIONS_FIRST_NAME_IN_THE_LIST}    ${first_name} ${last_name}
     Click Element    ${LOCATIONS_CUSTOMER_DROPDOWN}
 
@@ -67,25 +77,25 @@ Bwpool.azurewebsites.net Automation Test
     Click Element    ${LOCATIONS_ADD_CITY}
     Input Text    ${LOCATIONS_ADD_CITY}    ${partner_city}
     ${partner_city_value}    Get Element Attribute    ${LOCATIONS_ADD_CITY}    value
-    Should Be Equal As Strings    ${partner_city_value}    ${LOCATIONS_ADD_CITY}
+    Should Be Equal As Strings    ${partner_city_value}    ${partner_city}
 
     ${partner_zip_code}    Set Variable    ${user_data}[0][address][zip_code]
     Click Element    ${LOCATIONS_ADD_ZIP}
     Input Text    ${LOCATIONS_ADD_ZIP}    ${partner_zip_code}
     ${partner_zip_code_value}    Get Element Attribute    ${LOCATIONS_ADD_ZIP}    value
-    Should Be Equal As Integers    ${partner_city_value}    ${LOCATIONS_ADD_ZIP}
+    Should Be Equal As Integers    ${partner_zip_code_value}    ${partner_zip_code}
 
     ${partner_street_name}    Set Variable    ${user_data}[0][address][street_name]
     Click Element    ${LOCATIONS_ADD_STREET}
     Input Text    ${LOCATIONS_ADD_STREET}    ${partner_street_name}
     ${partner_street_name_value}    Get Element Attribute    ${LOCATIONS_ADD_STREET}    value
-    Should Be Equal As Strings    ${partner_street_name_value}    ${LOCATIONS_ADD_STREET}
+    Should Be Equal As Strings    ${partner_street_name_value}    ${partner_street_name}
 
     ${partner_street_number}    Set Variable    ${user_data}[0][address][street_address]
     Click Element    ${LOCATIONS_ADD_STREET_NUMBER}    
     Input Text    ${LOCATIONS_ADD_STREET_NUMBER}    ${partner_street_number}
     ${partner_street_number_value}    Get Element Attribute    ${LOCATIONS_ADD_STREET_NUMBER}    value
-    Should Be Equal As Integers    ${partner_street_number_value}    ${LOCATIONS_ADD_STREET_NUMBER}
+    Should Be Equal As Integers    ${partner_street_number_value}    ${partner_street_number}
 
 #8. Step: Save the Menu
     Wait Until Element Is Visible    ${LOCATIONS_ADD_SAVE}    timeout=3s
@@ -104,26 +114,26 @@ Bwpool.azurewebsites.net Automation Test
     Click Element    ${TOOLS_ADD_BUTTON} 
     Wait Until Element Is Visible    ${TOOLS_USER_NAME_INPUT}
     Wait Until Element Is Enabled    ${TOOLS_SAVE_BUTTON}    timeout=3s
-    Input Text    ${TOOLS_USER_NAME_INPUT}    ${first_name} ${last_name}
+    Input Text    ${TOOLS_USER_NAME_INPUT}    ${first_name} ${last_name}    #ide még egy ellenőrzést betenni
     Click Element    ${TOOLS_USER_NAME_DROP_DOWN}
 
     ${tools_'neve'}    Set Variable    ${tools_data}[0][manufacturer] [model]
     Click Element    ${TOOLS_'NEVE'_INPUT}    
     Input Text    ${TOOLS_'NEVE'_INPUT}    ${tools_'neve'}
     ${tools_'neve'_value}    Get Element Attribute    ${TOOLS_'NEVE'_INPUT}    value
-    Should Be Equal As Strings    ${tools_'neve'_value}    ${TOOLS_'NEVE'_INPUT}
+    Should Be Equal As Strings    ${tools_'neve'_value}    ${tools_'neve'}
 
-    ${tools'leiras'}    Set Variable    ${tools_data}[0][platform]
+    ${tools_'leiras'}    Set Variable    ${tools_data}[0][platform]
     Click Element    ${TOOLS_'LEIRAS'_INPUT}
     Input Text    ${TOOLS_'LEIRAS'_INPUT}    ${tools'leiras'}
     ${tools'leiras'_value}    Get Element Attribute    ${TOOLS_'LEIRAS'_INPUT}    value
-    Should Be Equal As Strings    ${tools_'neve'_value}    ${TOOLS_'LEIRAS'_INPUT}
+    Should Be Equal As Strings    ${tools'leiras'_value}    ${tools_'leiras'}
 
-    ${tools'megjegyzes'}    Set Variable    ${tools_data}[0][serial_number]
+    ${tools_'megjegyzes'}    Set Variable    ${tools_data}[0][serial_number]
     Click Element    ${TOOLS_'MEGJEGYZES'_INPUT}
     Input Text    ${TOOLS_'LEIRAS'_INPUT}    ${tools'megjegyzes'}    
     ${tools'megjegyzes'_value}    Get Element Attribute    ${TOOLS_'MEGJEGYZES'_INPUT}    value
-    Should Be Equal As Strings    ${tools'megjegyzes'_value}    ${TOOLS_'MEGJEGYZES'_INPUT}
+    Should Be Equal As Strings    ${tools'megjegyzes'_value}    ${tools_'megjegyzes'}
 
 #12. Step: Save The Menu
     Wait Until Element Is Visible    ${TOOLS_SAVE_BUTTON}    timeout=3s
@@ -142,7 +152,7 @@ Bwpool.azurewebsites.net Automation Test
     Click Element    ${LOCATIONS_SEARCH_INPUT}
     Input Text    ${LOCATIONS_SEARCH_INPUT}    ${first_name} ${last_name}
     ${name_value}    Get Element Attribute    ${LOCATIONS_SEARCH_INPUT}    value
-    Should Be Equal As Strings    ${name_value}    ${LOCATIONS_SEARCH_INPUT}
+    Should Be Equal As Strings    ${name_value}    ${first_name} ${last_name}
 
     Wait Until Element Is Visible    ${LOCATION_SEARCH_BUTTON}    timeout=3s
     Click Element    ${LOCATION_SEARCH_BUTTON}
