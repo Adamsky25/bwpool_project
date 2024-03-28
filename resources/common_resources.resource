@@ -3,7 +3,6 @@ Library    SeleniumLibrary
 Library    RequestsLibrary
 Library    Collections
 Library    OperatingSystem
-#Library    json
 
 *** Variables ***
 
@@ -15,8 +14,6 @@ ${API_URL_2}    https://random-data-api.com/api/device/random_device?size=2
 #Locators
 ${PARTNERS_BUTTON}    //a[contains(.,'Partnerek')]
 ${LOCATIONS_BUTTON}    //a[contains(.,'Telephelyek')]
-${TOOLS_BUTTON}    //a[contains(.,'Eszközök')]
-${TOOLS_EXCEL_EXPORT_BUTTON}    //span[.='Excel Export']
 ${PARTNERS_ADD_BUTTON}    //span[.='Add']
 ${PARTNERS_GRID}    //h4[.='Ügyfél']
 ${PARTNERS_ADD_NAME}    //input[@id='name']
@@ -27,7 +24,7 @@ ${PARTNERS_ADD_SAVE}    //button[@class='e-control e-btn e-lib e-control e-btn e
 ${LOCATIONS_ADD_BUTTON}    //span[.='Add']
 ${LOCATIONS_ADD_CUSTOMER}    //input[@class='e-control e-combobox e-lib e-input']
 ${LOCATIONS_CUSTOMER_DROPDOWN}    //span[@class='e-input-group-icon e-ddl-icon e-icons e-ddl-disable-icon']
-${LOCATIONS_FIRST_NAME_ON_THE_LIST}    //li[@class='e-list-item e-item-focus']
+#${LOCATIONS_FIRST_NAME_IN_THE_LIST}    //li[@class='e-list-item e-item-focus']
 ${LOCATIONS_ADD_CITY}    //input[@id='varos']
 ${LOCATIONS_ADD_ZIP}    //input[@id='zip']
 ${LOCATIONS_ADD_STREET}    //input[@id='utca']
@@ -50,7 +47,6 @@ ${LOCATION_NAVIGATION_BUTTON}    //a[@href='LocationInfo/674']/span[@class='oi o
 ${BROWSER}    Chrome
 ${EXPECTED_TITLE}    BWP Index
 
-
 *** Keywords ***
 
 Test Setup
@@ -60,40 +56,3 @@ Test Setup
 
 Test Teardown
     Close All Browsers
-
-# Place Data Into "Ügyfél" Grid
-#     [Arguments]    ${first_name}    ${last_name}    ${email}    ${phone_number}    ${id}
-#     Input Text    ${PARTNERS_ADD_NAME}    ${first_name} ${last_name}
-#     Input Text    ${PARTNERS_ADD_EMAIL}    ${email}
-#     Input Text    ${PARTNERS_ADD_TELEFON}    ${phone_number}
-#     Input Text    ${PARTNERS_ADD_COMMENT}    ${id}
-
-# Create Location Data
-#     [Arguments]    ${city}    ${zip_code}    ${street_name}    ${street_number}
-#     ${location_data}=    Create Dictionary    city=${city}    zip_code=${zip_code}    street_name=${street_name}    street_number=${street_number}
-#     [Return]    ${location_data}    # robotcode: ignore
-
-
-# Place Data Into "Telephely" Grid
-#     [Arguments]    ${city}    ${zip_code}    ${street_name}    ${street_number}
-#     Input Text    ${LOCATIONS_ADD_CITY}    ${partner_city}
-#     Input Text    ${LOCATIONS_ADD_ZIP}    ${partner_zip_code}
-#     Input Text    ${LOCATIONS_ADD_STREET}    ${street_name}
-#     Input Text    ${LOCATIONS_ADD_STREET_NUMBER}    ${partner_street_number}
-
-# Place Data Into "Eszközök" Grid 
-
-#      [Arguments]   ${manufacturer}    ${model}    ${platform}    ${serial_number}    ${first_name}    ${last_name}
-#      Input Text    ${TOOLS_USER_NAME_INPUT}    ${first_name} ${last_name}
-#      Input Text    ${PARTNERS_ADD_NAME}    ${last_name}
-#      Input Text    ${PARTNERS_ADD_EMAIL}    ${email}
-#      Input Text    ${PARTNERS_ADD_TELEFON}    ${phone_number}
-#      Input Text    ${PARTNERS_ADD_COMMENT}    ${id}
-
-
-# Test Setup
-#     Open Browser    ${HOMEPAGE_URL}    ${BROWSER}
-#     Maximize Browser Window
-
-# Test Teardown
-#     Close All Browsers

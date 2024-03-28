@@ -3,16 +3,16 @@ Resource    ../resources/common_resources.resource
 
 *** Test Cases ***
 
-Nur ein Test ablaufen lassen
+Bwpool.azurewebsites.net Automation Test
 #1. Step: Open Browser
     Test Setup
 
 #2. Step: Navigate To The "Partnerek" Menu
-    Wait Until Element Is Visible    ${PARTNERS_BUTTON}
-    Sleep    5s
+    Wait Until Element Is Visible    ${PARTNERS_BUTTON}    timeout=3s
     Click Element    ${PARTNERS_BUTTON}
-    Wait Until Element Is Visible    ${PARTNERS_ADD_BUTTON}    timeout=5s 
-    Click Element    ${PARTNERS_ADD_BUTTON}
+    # Wait Until Element Is Visible    ${PARTNERS_ADD_BUTTON}    timeout=5s 
+    # Click Element    ${PARTNERS_ADD_BUTTON}
+    # Wait Until Element Is Enabled    ${PARTNERS_ADD_SAVE}
 
 #3. Step: API Call Test (based on API_URL_1)
     ${response}=    Get    ${API_URL_1}    params=size=1
@@ -20,41 +20,47 @@ Nur ein Test ablaufen lassen
     ${user_data}=    Set Variable   ${response.json()}
 
 #4. Step: Attach A Partner Based On The API Message (first_name, last_name, email, id)
+    Wait Until Element Is Visible    ${PARTNERS_ADD_BUTTON}    timeout=3s
+    Sleep    3s
+    Click Element    ${PARTNERS_ADD_BUTTON}
+    Wait Until Element Is Visible    ${PARTNERS_ADD_NAME}
+    Wait Until Element Is Enabled    ${PARTNERS_ADD_SAVE}
+
     ${first_name}=    Set Variable   ${user_data[0]['first_name']}
     ${last_name}=    Set Variable   ${user_data[0]['last_name']}
     ${email}=    Set Variable   ${user_data[0]['email']}
     ${id}=    Set Variable   ${user_data[0]['id']}
-    Sleep    5s
+
     #Attach And Check The Values
     Input Text    ${PARTNERS_ADD_NAME}    ${first_name} ${last_name}
     ${first_last_name_value}    Get Element Attribute    ${PARTNERS_ADD_NAME}    value
     Should Be Equal As Strings    ${first_name} ${last_name}    ${PARTNERS_ADD_BUTTON}
     
-    
+    Click Element    ${PARTNERS_ADD_EMAIL}
     Input Text    ${PARTNERS_ADD_EMAIL}    ${email}
     ${email_value}    Get Element Attribute    ${PARTNERS_ADD_EMAIL}     value
     Should Be Equal As Strings    ${email_value}    ${PARTNERS_ADD_EMAIL}
 
+    Click Element    ${PARTNERS_ADD_COMMENT}
     Input Text    ${PARTNERS_ADD_COMMENT}    ${id}
     ${comment_value}    Get Element Attribute    ${PARTNERS_ADD_COMMENT}    value
-    Should Be Equal As Integers    ${comment_value}    ${PARTNERS_ADD_COMMENT}
-
-   # Place Data Into "Ügyfél" Grid    ${first_name}    ${last_name}    ${email}    ${phone_number}    ${id}
+    Should Be Equal As Strings    ${comment_value}    ${PARTNERS_ADD_COMMENT}
 
 #5. Step: Save The Menu
-    Wait Until Element Is Visible    ${PARTNERS_ADD_BUTTON}    timeout=5s
+    Wait Until Element Is Visible    ${PARTNERS_ADD_SAVE}    timeout=3s
     Click Element    ${PARTNERS_ADD_SAVE}
 
 #6. Step: Navigate To The "Telephelyek" Menu
-    Wait Until Element Is Visible    ${LOCATIONS_BUTTON}    timeout=5s
+    Wait Until Element Is Visible    ${LOCATIONS_BUTTON}    timeout=3s
     Click Element    ${LOCATIONS_BUTTON}
 
 #7. Step: Attach A Location Based On The API Message (city, zip_code, street_name, street:number) AND Check The Values
-    Wait Until Element Is Visible    ${LOCATIONS_ADD_BUTTON}    timeout=5s
+    Wait Until Element Is Visible    ${LOCATIONS_ADD_BUTTON}    timeout=3s
     Click Element    ${LOCATIONS_ADD_BUTTON}
-    Wait Until Element Is Visible    ${LOCATIONS_ADD_CUSTOMER}    timeout=5s
-    Wait Until Element Is Enabled    ${LOCATIONS_ADD_SAVE}    timeout=5s
-    Input Text    ${LOCATIONS_FIRST_NAME_ON_THE_LIST}    ${first_name} ${last_name}
+    Wait Until Element Is Visible    ${LOCATIONS_ADD_CUSTOMER}    timeout=3s
+    Wait Until Element Is Enabled    ${LOCATIONS_ADD_SAVE}    timeout=3s
+    Input Text    ${LOCATIONS_ADD_CUSTOMER}    ${first_name} ${last_name}
+    #Input Text    ${LOCATIONS_FIRST_NAME_IN_THE_LIST}    ${first_name} ${last_name}
     Click Element    ${LOCATIONS_CUSTOMER_DROPDOWN}
 
     ${partner_city}    Set Variable    ${user_data}[0][address][city]
@@ -82,7 +88,7 @@ Nur ein Test ablaufen lassen
     Should Be Equal As Integers    ${partner_street_number_value}    ${LOCATIONS_ADD_STREET_NUMBER}
 
 #8. Step: Save the Menu
-    Wait Until Element Is Visible    ${LOCATIONS_ADD_SAVE}    timeout=5s
+    Wait Until Element Is Visible    ${LOCATIONS_ADD_SAVE}    timeout=3s
     Click Element    ${LOCATIONS_ADD_SAVE}
 
 #9. Step: Request 2 Tools Via API
@@ -90,13 +96,14 @@ Nur ein Test ablaufen lassen
     ${tools_data}=    Set Variable   ${response.json()}
 
 #10. Step: Navigate To The "Eszközök" Menu
-    Wait Until Element Is Visible    ${TOOLS_BUTTON}    timeout=5s
+    Wait Until Element Is Visible    ${TOOLS_BUTTON}    timeout=3s
     Click Element    ${TOOLS_BUTTON}
 
 #11. Step: Attach The 2 Tools (manufacturer, model, platform, serial_number) AND Check The Values
-    
+    Wait Until Element Is Visible    ${TOOLS_ADD_BUTTON}
     Click Element    ${TOOLS_ADD_BUTTON} 
-    Wait Until Element Is Enabled    ${TOOLS_SAVE_BUTTON}    timeout=5s
+    Wait Until Element Is Visible    ${TOOLS_USER_NAME_INPUT}
+    Wait Until Element Is Enabled    ${TOOLS_SAVE_BUTTON}    timeout=3s
     Input Text    ${TOOLS_USER_NAME_INPUT}    ${first_name} ${last_name}
     Click Element    ${TOOLS_USER_NAME_DROP_DOWN}
 
@@ -119,25 +126,26 @@ Nur ein Test ablaufen lassen
     Should Be Equal As Strings    ${tools'megjegyzes'_value}    ${TOOLS_'MEGJEGYZES'_INPUT}
 
 #12. Step: Save The Menu
-    Wait Until Element Is Visible    ${TOOLS_SAVE_BUTTON}    timeout=5s
+    Wait Until Element Is Visible    ${TOOLS_SAVE_BUTTON}    timeout=3s
     Click Element    ${TOOLS_SAVE_BUTTON}
 
 #13. Click On "Excel Export" Button
-    Wait Until Element Is Visible    ${TOOLS_EXCEL_EXPORT_MENU}    timeout=5s
+    Wait Until Element Is Visible    ${TOOLS_EXCEL_EXPORT_MENU}    timeout=3s
     Click Element    ${TOOLS_EXCEL_EXPORT_MENU}
 
 #14. Step: Navigate To The "Telephelyek" Menu
-    Wait Until Element Is Visible    ${LOCATIONS_BUTTON}    timeout=5s
+    Wait Until Element Is Visible    ${LOCATIONS_BUTTON}    timeout=3s
     Click Element    ${LOCATIONS_BUTTON}
 
 #15. Step: Filter By Attached Location In The Search Menu AND Check The Name Value
-    Wait Until Element Is Visible    ${LOCATIONS_SEARCH_INPUT}    timeout=5s
+    Wait Until Element Is Visible    ${LOCATIONS_SEARCH_INPUT}    timeout=3s
     Click Element    ${LOCATIONS_SEARCH_INPUT}
     Input Text    ${LOCATIONS_SEARCH_INPUT}    ${first_name} ${last_name}
     ${name_value}    Get Element Attribute    ${LOCATIONS_SEARCH_INPUT}    value
     Should Be Equal As Strings    ${name_value}    ${LOCATIONS_SEARCH_INPUT}
 
-    Wait Until Element Is Visible    ${LOCATION_SEARCH_BUTTON}
+    Wait Until Element Is Visible    ${LOCATION_SEARCH_BUTTON}    timeout=3s
+    Click Element    ${LOCATION_SEARCH_BUTTON}
 
 #16: Step: Click On The 'UTCA' Field Menu
     Wait Until Element Is Visible    ${LOCATION_NAVIGATION_BUTTON}
