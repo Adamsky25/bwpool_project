@@ -73,7 +73,7 @@ Bwpool.azurewebsites.net Automation Test
     Input Text    ${LOCATIONS_ADD_CUSTOMER}    ${first_name} ${last_name}
    # Wait Until Element Is Visible    ${LOCATIONS_FIRST_NAME_IN_THE_LIST}
     #Input Text    ${LOCATIONS_FIRST_NAME_IN_THE_LIST}    ${first_name} ${last_name}
-    Sleep    3s
+    Sleep    5s
     Click Element    ${LOCATIONS_CUSTOMER_DROPDOWN}
 
     ${partner_city}    Set Variable    ${user_data}[0][address][city]
@@ -110,6 +110,7 @@ Bwpool.azurewebsites.net Automation Test
 
 #10. Step: Navigate To The "Eszközök" Menu
     Wait Until Element Is Visible    ${TOOLS_BUTTON}    timeout=3s
+    Sleep    3s
     Click Element    ${TOOLS_BUTTON}
 
 #11. Step: Attach The 2 Tools (manufacturer, model, platform, serial_number) AND Check The Values
@@ -117,38 +118,32 @@ Bwpool.azurewebsites.net Automation Test
     Sleep    3s
     Click Element    ${TOOLS_ADD_BUTTON} 
     Sleep    3s
-    #Wait Until Element Is Visible    ${TOOLS_USER_NAME_INPUT}
-    #Wait Until Element Is Enabled    ${TOOLS_SAVE_BUTTON}    timeout=3s
-    #Input Text    ${TOOLS_USER_NAME_INPUT}    ${first_name} ${last_name}    #ide még egy ellenőrzést betenni
-    #Click Element    ${TOOLS_USER_NAME_DROP_DOWN}
-    Input Text    ${TOOLS_'NEVE'_INPUT}    ${first_name} ${last_name}
-    Wait Until Element Is Enabled    ${TOOLS_USER_NAME_INPUT}
-    Click Element    ${TOOLS_USER_NAME_INPUT}
-    Sleep    2s
-    Input Text    ${TOOLS_USER_NAME_INPUT}    ${first_name} ${last_name}
-    Click Element    ${TOOLS_USER_NAME_DROP_DOWN}
-    #Click Button    ${TOOLS_USER_NAME_DROP_DOWN}
+    ${tools_'neve'}    Set Variable    ${tools_data}[0][manufacturer] [model]
+    Input Text    ${TOOLS_'NEVE'_INPUT}    ${tools_'neve'}
+    ${tools_'neve'_value}    Get Element Attribute    ${TOOLS_'NEVE'_INPUT}    value
+    Should Be Equal As Strings    ${tools_'neve'_value}    ${tools_'neve'}
 
-    # ${tools_'neve'}    Set Variable    ${tools_data}[0][manufacturer] [model]
-    # Click Element    ${TOOLS_'NEVE'_INPUT}    
-    # Input Text    ${TOOLS_'NEVE'_INPUT}    ${tools_'neve'}
-    # ${tools_'neve'_value}    Get Element Attribute    ${TOOLS_'NEVE'_INPUT}    value
-    # Should Be Equal As Strings    ${tools_'neve'_value}    ${tools_'neve'}
+    Sleep    3s
+    Click Element    ${TOOLS_USER_NAME_DROP_DOWN}
+    Input Text    ${TOOLS_USER_NAME_INPUT}    ${first_name} ${last_name}
+    Sleep    3s
+    Click Element    ${TOOLS_USER_NAME_DROPDOWN}  
 
     ${tools_'leiras'}    Set Variable    ${tools_data}[0][platform]
-    Click Element    ${TOOLS_'LEIRAS'_INPUT}
+    #Click Element    ${TOOLS_'LEIRAS'_INPUT}
     Input Text    ${TOOLS_'LEIRAS'_INPUT}    ${tools'leiras'}
     ${tools'leiras'_value}    Get Element Attribute    ${TOOLS_'LEIRAS'_INPUT}    value
     Should Be Equal As Strings    ${tools'leiras'_value}    ${tools_'leiras'}
 
     ${tools_'megjegyzes'}    Set Variable    ${tools_data}[0][serial_number]
-    Click Element    ${TOOLS_'MEGJEGYZES'_INPUT}
+    #Click Element    ${TOOLS_'MEGJEGYZES'_INPUT}
     Input Text    ${TOOLS_'LEIRAS'_INPUT}    ${tools'megjegyzes'}    
    # ${tools'megjegyzes'_value}    Get Element Attribute    ${TOOLS_'MEGJEGYZES'_INPUT}    value
     #Should Be Equal As Strings    ${tools'megjegyzes'_value}    ${tools_'megjegyzes'}
 
 #12. Step: Save The Menu
-    Wait Until Element Is Visible    ${TOOLS_SAVE_BUTTON}    timeout=3s
+    #Wait Until Element Is Enabled    ${TOOLS_SAVE_BUTTON}    timeout=3s
+    Sleep    5s
     Click Element    ${TOOLS_SAVE_BUTTON}
 
 #13. Click On "Excel Export" Button
@@ -162,6 +157,7 @@ Bwpool.azurewebsites.net Automation Test
 #15. Step: Filter By Attached Location In The Search Menu AND Check The Name Value
     Wait Until Element Is Visible    ${LOCATIONS_SEARCH_INPUT}    timeout=3s
     Click Element    ${LOCATIONS_SEARCH_INPUT}
+    Sleep    2s
     Input Text    ${LOCATIONS_SEARCH_INPUT}    ${first_name} ${last_name}
     ${name_value}    Get Element Attribute    ${LOCATIONS_SEARCH_INPUT}    value
     Should Be Equal As Strings    ${name_value}    ${first_name} ${last_name}
