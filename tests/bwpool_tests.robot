@@ -131,16 +131,14 @@ Bwpool.azurewebsites.net Automation Test
     Sleep    3s
 
     ${tools_'leiras'}    Set Variable    ${tools_data[0]['platform']}
-   # Click Element    ${TOOLS_'LEIRAS'_INPUT}
     Input Text    ${TOOLS_'LEIRAS'_INPUT}    ${tools'leiras'}
     ${tools'leiras'_value}    Get Element Attribute    ${TOOLS_'LEIRAS'_INPUT}    value
     Should Be Equal As Strings    ${tools'leiras'_value}    ${tools_'leiras'}
 
     ${tools_'megjegyzes'}    Set Variable    ${tools_data[0]['serial_number']}
-    #Click Element    ${TOOLS_'MEGJEGYZES'_INPUT}
-    Input Text    ${TOOLS_'LEIRAS'_INPUT}    ${tools'megjegyzes'}    
-   # ${tools'megjegyzes'_value}    Get Element Attribute    ${TOOLS_'MEGJEGYZES'_INPUT}    value
-    #Should Be Equal As Strings    ${tools'megjegyzes'_value}    ${tools_'megjegyzes'}
+    Input Text    ${TOOLS_'MEGJEGYZES'_INPUT}    ${tools'megjegyzes'}    
+    ${tools'megjegyzes'_value}    Get Element Attribute    ${TOOLS_'MEGJEGYZES'_INPUT}    value
+    Should Be Equal As Strings    ${tools'megjegyzes'_value}    ${tools_'megjegyzes'}
 
 #12. Step: Save The Menu
     #Wait Until Element Is Enabled    ${TOOLS_SAVE_BUTTON}    timeout=3s
