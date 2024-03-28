@@ -118,24 +118,25 @@ Bwpool.azurewebsites.net Automation Test
     Sleep    3s
     Click Element    ${TOOLS_ADD_BUTTON} 
     Sleep    3s
-    ${tools_'neve'}    Set Variable    ${tools_data}[0][manufacturer] [model]
-    Input Text    ${TOOLS_'NEVE'_INPUT}    ${tools_'neve'}
+    ${tools_'neve'_manufacturer}    Set Variable    ${tools_data[0]['manufacturer']}
+    ${tools_'neve'_model}    Set Variable    ${tools_data[0]['model']}
+
+    Input Text    ${TOOLS_'NEVE'_INPUT}    ${tools_'neve'_manufacturer} ${tools_'neve'_model}
     ${tools_'neve'_value}    Get Element Attribute    ${TOOLS_'NEVE'_INPUT}    value
-    Should Be Equal As Strings    ${tools_'neve'_value}    ${tools_'neve'}
+    Should Be Equal As Strings    ${tools_'neve'_value}    ${tools_'neve'_manufacturer} ${tools_'neve'_model}
 
     Sleep    3s
-    Click Element    ${TOOLS_USER_NAME_DROP_DOWN}
-    Input Text    ${TOOLS_USER_NAME_INPUT}    ${first_name} ${last_name}
+    #Click Element    ${TOOLS_USER_NAME_DROP_DOWN}
+    Input Text    ${TOOLS_USER_NAME_DROPDOWN}    ${first_name} ${last_name}
     Sleep    3s
-    Click Element    ${TOOLS_USER_NAME_DROPDOWN}  
 
-    ${tools_'leiras'}    Set Variable    ${tools_data}[0][platform]
-    #Click Element    ${TOOLS_'LEIRAS'_INPUT}
+    ${tools_'leiras'}    Set Variable    ${tools_data[0]['platform']}
+   # Click Element    ${TOOLS_'LEIRAS'_INPUT}
     Input Text    ${TOOLS_'LEIRAS'_INPUT}    ${tools'leiras'}
     ${tools'leiras'_value}    Get Element Attribute    ${TOOLS_'LEIRAS'_INPUT}    value
     Should Be Equal As Strings    ${tools'leiras'_value}    ${tools_'leiras'}
 
-    ${tools_'megjegyzes'}    Set Variable    ${tools_data}[0][serial_number]
+    ${tools_'megjegyzes'}    Set Variable    ${tools_data[0]['serial_number']}
     #Click Element    ${TOOLS_'MEGJEGYZES'_INPUT}
     Input Text    ${TOOLS_'LEIRAS'_INPUT}    ${tools'megjegyzes'}    
    # ${tools'megjegyzes'_value}    Get Element Attribute    ${TOOLS_'MEGJEGYZES'_INPUT}    value
