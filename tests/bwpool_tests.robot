@@ -9,6 +9,7 @@ Nur ein Test ablaufen lassen
 
 #2. Step: Navigate To The "Partnerek" Menu
     Wait Until Element Is Visible    ${PARTNERS_BUTTON}
+    Sleep    5s
     Click Element    ${PARTNERS_BUTTON}
     Wait Until Element Is Visible    ${PARTNERS_ADD_BUTTON}    timeout=5s 
     Click Element    ${PARTNERS_ADD_BUTTON}
@@ -23,7 +24,7 @@ Nur ein Test ablaufen lassen
     ${last_name}=    Set Variable   ${user_data[0]['last_name']}
     ${email}=    Set Variable   ${user_data[0]['email']}
     ${id}=    Set Variable   ${user_data[0]['id']}
-
+    Sleep    5s
     #Attach And Check The Values
     Input Text    ${PARTNERS_ADD_NAME}    ${first_name} ${last_name}
     ${first_last_name_value}    Get Element Attribute    ${PARTNERS_ADD_NAME}    value

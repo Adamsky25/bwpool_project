@@ -1,577 +1,654 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-03-27T15:01:43.172492" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-03-27T22:11:47.388749" rpa="false" schemaversion="5">
 <suite id="s1" name="Bwpool Project" source="C:\Users\novoz\bwpool_project">
 <suite id="s1-s1" name="Tests" source="C:\Users\novoz\bwpool_project\tests">
 <suite id="s1-s1-s1" name="Bwpool Tests" source="C:\Users\novoz\bwpool_project\tests\bwpool_tests.robot">
 <test id="s1-s1-s1-t1" name="Nur ein Test ablaufen lassen" line="6">
 <kw name="Test Setup" owner="common_resources">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-03-27T15:01:44.239843" level="INFO">Opening browser 'Chrome' to base url 'https://bwpool.azurewebsites.net/'.</msg>
-<msg time="2024-03-27T15:01:45.611861" level="WARN">There was an error managing chromedriver (request or response body error: error reading a body from connection: cannot decrypt peer's message); using driver found in the cache</msg>
+<msg time="2024-03-27T22:11:47.799733" level="INFO">Opening browser 'Chrome' to base url 'https://bwpool.azurewebsites.net/'.</msg>
+<msg time="2024-03-27T22:11:49.110148" level="WARN">There was an error managing chromedriver (request or response body error: error reading a body from connection: cannot decrypt peer's message); using driver found in the cache</msg>
 <arg>${HOMEPAGE_URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-03-27T15:01:44.239843" elapsed="4.925703"/>
+<status status="PASS" start="2024-03-27T22:11:47.799053" elapsed="4.673601"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-03-27T15:01:49.165546" elapsed="0.127274"/>
+<status status="PASS" start="2024-03-27T22:11:52.476787" elapsed="0.131618"/>
 </kw>
 <kw name="Title Should Be" owner="SeleniumLibrary">
-<msg time="2024-03-27T15:01:49.301790" level="INFO">Page title is 'BWP Index'.</msg>
+<msg time="2024-03-27T22:11:52.624015" level="INFO">Page title is 'BWP Index'.</msg>
 <arg>${EXPECTED_TITLE}</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<status status="PASS" start="2024-03-27T15:01:49.293829" elapsed="0.007961"/>
+<status status="PASS" start="2024-03-27T22:11:52.608405" elapsed="0.015610"/>
 </kw>
-<status status="PASS" start="2024-03-27T15:01:44.237845" elapsed="5.064941"/>
+<status status="PASS" start="2024-03-27T22:11:47.782683" elapsed="4.851256"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${PARTNERS_BUTTON}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-03-27T15:01:49.304788" elapsed="0.141580"/>
+<status status="PASS" start="2024-03-27T22:11:52.635237" elapsed="0.069545"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-03-27T22:11:57.705470" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-03-27T22:11:52.704782" elapsed="5.000688"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-03-27T15:01:49.449380" level="INFO">Clicking element '//a[contains(.,'Partnerek')]'.</msg>
+<msg time="2024-03-27T22:11:57.705470" level="INFO">Clicking element '//a[contains(.,'Partnerek')]'.</msg>
+<msg time="2024-03-27T22:11:59.221229" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-555.png"&gt;&lt;img src="selenium-screenshot-555.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-03-27T22:11:59.221229" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;a href="Customer" class="nav-link"&gt;...&lt;/a&gt; is not clickable at point (125, 208). Other element would receive the click: &lt;div id="components-reconnect-modal" style="position: fixed; inset: 0px; z-index: 1050; display: block; overflow: hidden; background-color: rgb(255, 255, 255); opacity: 0.8; text-align: center; font-weight: bold; transition: visibility 0s linear 500ms; visibility: visible;"&gt;...&lt;/div&gt;
+  (Session info: chrome=123.0.6312.86)
+Stacktrace:
+	GetHandleVerifier [0x00007FF7B4BE7062+63090]
+	(No symbol) [0x00007FF7B4B52CB2]
+	(No symbol) [0x00007FF7B49EEC65]
+	(No symbol) [0x00007FF7B4A3BB34]
+	(No symbol) [0x00007FF7B4A39954]
+	(No symbol) [0x00007FF7B4A37164]
+	(No symbol) [0x00007FF7B4A35EF9]
+	(No symbol) [0x00007FF7B4A2A708]
+	(No symbol) [0x00007FF7B4A56FDA]
+	(No symbol) [0x00007FF7B4A2A00A]
+	(No symbol) [0x00007FF7B4A571F0]
+	(No symbol) [0x00007FF7B4A73412]
+	(No symbol) [0x00007FF7B4A56D83]
+	(No symbol) [0x00007FF7B4A283A8]
+	(No symbol) [0x00007FF7B4A29441]
+	GetHandleVerifier [0x00007FF7B4FE25CD+4238301]
+	GetHandleVerifier [0x00007FF7B501F72D+4488509]
+	GetHandleVerifier [0x00007FF7B5017A0F+4456479]
+	GetHandleVerifier [0x00007FF7B4CC05A6+953270]
+	(No symbol) [0x00007FF7B4B5E57F]
+	(No symbol) [0x00007FF7B4B59254]
+	(No symbol) [0x00007FF7B4B5938B]
+	(No symbol) [0x00007FF7B4B49BC4]
+	BaseThreadInitThunk [0x00007FFA4AE7257D+29]
+	RtlUserThreadStart [0x00007FFA4BD2AA58+40]
+</msg>
 <arg>${PARTNERS_BUTTON}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-03-27T15:01:49.447360" elapsed="0.147247"/>
+<status status="FAIL" start="2024-03-27T22:11:57.705470" elapsed="1.536267">ElementClickInterceptedException: Message: element click intercepted: Element &lt;a href="Customer" class="nav-link"&gt;...&lt;/a&gt; is not clickable at point (125, 208). Other element would receive the click: &lt;div id="components-reconnect-modal" style="position: fixed; inset: 0px; z-index: 1050; display: block; overflow: hidden; background-color: rgb(255, 255, 255); opacity: 0.8; text-align: center; font-weight: bold; transition: visibility 0s linear 500ms; visibility: visible;"&gt;...&lt;/div&gt;
+  (Session info: chrome=123.0.6312.86)
+Stacktrace:
+	GetHandleVerifier [0x00007FF7B4BE7062+63090]
+	(No symbol) [0x00007FF7B4B52CB2]
+	(No symbol) [0x00007FF7B49EEC65]
+	(No symbol) [0x00007FF7B4A3BB34]
+	(No symbol) [0x00007FF7B4A39954]
+	(No symbol) [0x00007FF7B4A37164]
+	(No symbol) [0x00007FF7B4A35EF9]
+	(No symbol) [0x00007FF7B4A2A708]
+	(No symbol) [0x00007FF7B4A56FDA]
+	(No symbol) [0x00007FF7B4A2A00A]
+	(No symbol) [0x00007FF7B4A571F0]
+	(No symbol) [0x00007FF7B4A73412]
+	(No symbol) [0x00007FF7B4A56D83]
+	(No symbol) [0x00007FF7B4A283A8]
+	(No symbol) [0x00007FF7B4A29441]
+	GetHandleVerifier [0x00007FF7B4FE25CD+4238301]
+	GetHandleVerifier [0x00007FF7B501F72D+4488509]
+	GetHandleVerifier [0x00007FF7B5017A0F+4456479]
+	GetHandleVerifier [0x00007FF7B4CC05A6+953270]
+	(No symbol) [0x00007FF7B4B5E57F]
+	(No symbol) [0x00007FF7B4B59254]
+	(No symbol) [0x00007FF7B4B5938B]
+	(No symbol) [0x00007FF7B4B49BC4]
+	BaseThreadInitThunk [0x00007FFA4AE7257D+29]
+	RtlUserThreadStart [0x00007FFA4BD2AA58+40]
+</status>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${PARTNERS_ADD_BUTTON}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-03-27T15:01:49.594607" elapsed="0.261580"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.241737" elapsed="0.000000"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-03-27T15:01:49.858175" level="INFO">Clicking element '//span[.='Add']'.</msg>
 <arg>${PARTNERS_ADD_BUTTON}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-03-27T15:01:49.857177" elapsed="0.056713"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.255578" elapsed="0.000000"/>
 </kw>
 <kw name="GET" owner="RequestsLibrary">
-<msg time="2024-03-27T15:01:50.825970" level="INFO">GET Request : url=https://random-data-api.com/api/users/random_user?size=1&amp;size=1 
- path_url=/api/users/random_user?size=1&amp;size=1 
- headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
- body=None 
- </msg>
-<msg time="2024-03-27T15:01:50.825970" level="INFO">GET Response : url=https://random-data-api.com/api/users/random_user?size=1&amp;size=1 
- status=200, reason=OK 
- headers={'Alt-Svc': 'h3=":443"; ma=2592000', 'Cache-Control': 'max-age=0, private, must-revalidate', 'Content-Encoding': 'gzip', 'Content-Type': 'application/json; charset=utf-8', 'Etag': 'W/"96a769fb598cca20c76af6bbf1843317"', 'Referrer-Policy': 'strict-origin-when-cross-origin', 'Server': 'Caddy', 'Strict-Transport-Security': 'max-age=63072000; includeSubDomains', 'Vary': 'Origin, Accept-Encoding', 'X-Content-Type-Options': 'nosniff', 'X-Frame-Options': 'SAMEORIGIN', 'X-Permitted-Cross-Domain-Policies': 'none', 'X-Request-Id': '6f6ef7dd-0f50-459b-b2c3-586216c95b1c', 'X-Runtime': '0.008258', 'X-Xss-Protection': '0', 'Date': 'Wed, 27 Mar 2024 14:01:50 GMT', 'Content-Length': '571'} 
- body=[{"id":7457,"uid":"36757880-42a2-4bee-b6ed-06f5e9c95295","password":"7cpbj4PHsa","first_name":"Brent","last_name":"Bernier","username":"brent.bernier","email":"brent.bernier@email.com","avatar":"https://robohash.org/pariaturesseest.png?size=300x300\u0026set=set1","gender":"Non-binary","phone_number":"+421 (320) 651-1808","social_insurance_number":"467535191","date_of_birth":"1991-04-17","employment":{"title":"Dynamic Representative","key_skill":"Confidence"},"address":{"city":"South Melvin","street_name":"Koch Manors","street_address":"9525 Weissnat Mews","zip_code":"14697-0561","state":"Oklahoma","country":"United States","coordinates":{"lat":78.47669367085385,"lng":-162.0162342515802}},"credit_card":{"cc_number":"4401658580267"},"subscription":{"plan":"Starter","status":"Idle","payment_method":"Cheque","term":"Payment in advance"}}] 
- </msg>
-<msg time="2024-03-27T15:01:50.826967" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>${API_URL_1}</arg>
 <arg>params=size=1</arg>
 <doc>Sends a GET request.</doc>
-<status status="PASS" start="2024-03-27T15:01:49.914886" elapsed="0.913079"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.255578" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-03-27T15:01:50.831964" level="INFO">${user_data} = [{'id': 7457, 'uid': '36757880-42a2-4bee-b6ed-06f5e9c95295', 'password': '7cpbj4PHsa', 'first_name': 'Brent', 'last_name': 'Bernier', 'username': 'brent.bernier', 'email': 'brent.bernier@email.com', '...</msg>
 <var>${user_data}</var>
 <arg>${response.json()}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-03-27T15:01:50.828966" elapsed="0.004046"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.255578" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-03-27T15:01:50.836951" level="INFO">${first_name} = Brent</msg>
 <var>${first_name}</var>
 <arg>${user_data[0]['first_name']}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-03-27T15:01:50.833959" elapsed="0.002992"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.255578" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-03-27T15:01:50.839939" level="INFO">${last_name} = Bernier</msg>
 <var>${last_name}</var>
 <arg>${user_data[0]['last_name']}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-03-27T15:01:50.837945" elapsed="0.001994"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.255578" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-03-27T15:01:50.842929" level="INFO">${email} = brent.bernier@email.com</msg>
 <var>${email}</var>
 <arg>${user_data[0]['email']}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-03-27T15:01:50.841932" elapsed="0.000997"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.255578" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-03-27T15:01:50.844922" level="INFO">${id} = 7457</msg>
 <var>${id}</var>
 <arg>${user_data[0]['id']}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-03-27T15:01:50.843924" elapsed="0.001995"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.255578" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2024-03-27T22:11:59.255578" elapsed="0.000000"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-03-27T15:01:50.848281" level="INFO">Typing text 'Brent Bernier' into text field '//input[@id='name']'.</msg>
 <arg>${PARTNERS_ADD_NAME}</arg>
 <arg>${first_name} ${last_name}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-03-27T15:01:50.845919" elapsed="0.178151"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.255578" elapsed="0.015838"/>
 </kw>
 <kw name="Get Element Attribute" owner="SeleniumLibrary">
-<msg time="2024-03-27T15:01:51.056249" level="INFO">${first_last_name_value} = Brent Bernier</msg>
 <var>${first_last_name_value}</var>
 <arg>${PARTNERS_ADD_NAME}</arg>
 <arg>value</arg>
 <doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<status status="PASS" start="2024-03-27T15:01:51.025060" elapsed="0.031189"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.272828" elapsed="0.000000"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
-<msg time="2024-03-27T15:01:51.059253" level="FAIL">Brent Bernier != //span[.='Add']</msg>
 <arg>${first_name} ${last_name}</arg>
 <arg>${PARTNERS_ADD_BUTTON}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="FAIL" start="2024-03-27T15:01:51.058247" elapsed="0.002981">Brent Bernier != //span[.='Add']</status>
+<status status="NOT RUN" start="2024-03-27T22:11:59.272828" elapsed="0.000000"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
 <arg>${PARTNERS_ADD_EMAIL}</arg>
 <arg>${email}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.062224" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.272828" elapsed="0.000000"/>
 </kw>
 <kw name="Get Element Attribute" owner="SeleniumLibrary">
 <var>${email_value}</var>
 <arg>${PARTNERS_ADD_EMAIL}</arg>
 <arg>value</arg>
 <doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.063221" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.272828" elapsed="0.000000"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${email_value}</arg>
 <arg>${PARTNERS_ADD_EMAIL}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.064219" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.272828" elapsed="0.000000"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
 <arg>${PARTNERS_ADD_COMMENT}</arg>
 <arg>${id}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.065215" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.272828" elapsed="0.000000"/>
 </kw>
 <kw name="Get Element Attribute" owner="SeleniumLibrary">
 <var>${comment_value}</var>
 <arg>${PARTNERS_ADD_COMMENT}</arg>
 <arg>value</arg>
 <doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.066211" elapsed="0.000996"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.272828" elapsed="0.000000"/>
 </kw>
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
 <arg>${comment_value}</arg>
 <arg>${PARTNERS_ADD_COMMENT}</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.068207" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.272828" elapsed="0.000000"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${PARTNERS_ADD_BUTTON}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.069250" elapsed="0.000948"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.287595" elapsed="0.001434"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
 <arg>${PARTNERS_ADD_SAVE}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.071202" elapsed="0.000995"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.289029" elapsed="0.000000"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${LOCATIONS_BUTTON}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.073188" elapsed="0.000996"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.289029" elapsed="0.000000"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
 <arg>${LOCATIONS_BUTTON}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.074184" elapsed="0.001324"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.289029" elapsed="0.000000"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${LOCATIONS_ADD_BUTTON}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.076512" elapsed="0.000994"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.289029" elapsed="0.000000"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
 <arg>${LOCATIONS_ADD_BUTTON}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.078502" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.289029" elapsed="0.000000"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${LOCATIONS_ADD_CUSTOMER}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.079501" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.289029" elapsed="0.000000"/>
 </kw>
 <kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
 <arg>${LOCATIONS_ADD_SAVE}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.079501" elapsed="0.000997"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.302541" elapsed="0.002042"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
 <arg>${LOCATIONS_FIRST_NAME_ON_THE_LIST}</arg>
 <arg>${first_name} ${last_name}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.080498" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.305752" elapsed="0.000000"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
 <arg>${LOCATIONS_CUSTOMER_DROPDOWN}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.080498" elapsed="0.000995"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.305752" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
 <var>${partner_city}</var>
 <arg>${user_data}[0][address][city]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.081493" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.305752" elapsed="0.000000"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
 <arg>${LOCATIONS_ADD_CITY}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.081493" elapsed="0.000998"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.305752" elapsed="0.000000"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
 <arg>${LOCATIONS_ADD_CITY}</arg>
 <arg>${partner_city}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.082491" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.305752" elapsed="0.000000"/>
 </kw>
 <kw name="Get Element Attribute" owner="SeleniumLibrary">
 <var>${partner_city_value}</var>
 <arg>${LOCATIONS_ADD_CITY}</arg>
 <arg>value</arg>
 <doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.082491" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.305752" elapsed="0.000000"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${partner_city_value}</arg>
 <arg>${LOCATIONS_ADD_CITY}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.083487" elapsed="0.000998"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.305752" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
 <var>${partner_zip_code}</var>
 <arg>${user_data}[0][address][zip_code]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.085482" elapsed="0.000999"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.318261" elapsed="0.001023"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
 <arg>${LOCATIONS_ADD_ZIP}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.089481" elapsed="0.000992"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.321159" elapsed="0.000913"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
 <arg>${LOCATIONS_ADD_ZIP}</arg>
 <arg>${partner_zip_code}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.090473" elapsed="0.000991"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.322072" elapsed="0.000000"/>
 </kw>
 <kw name="Get Element Attribute" owner="SeleniumLibrary">
 <var>${partner_zip_code_value}</var>
 <arg>${LOCATIONS_ADD_ZIP}</arg>
 <arg>value</arg>
 <doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.091464" elapsed="0.000999"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.322072" elapsed="0.000000"/>
 </kw>
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
 <arg>${partner_city_value}</arg>
 <arg>${LOCATIONS_ADD_ZIP}</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.093454" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.322072" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
 <var>${partner_street_name}</var>
 <arg>${user_data}[0][address][street_name]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.094449" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.322072" elapsed="0.000000"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
 <arg>${LOCATIONS_ADD_STREET}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.094449" elapsed="0.000996"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.334101" elapsed="0.000000"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
 <arg>${LOCATIONS_ADD_STREET}</arg>
 <arg>${partner_street_name}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.095445" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.338139" elapsed="0.001998"/>
 </kw>
 <kw name="Get Element Attribute" owner="SeleniumLibrary">
 <var>${partner_street_name_value}</var>
 <arg>${LOCATIONS_ADD_STREET}</arg>
 <arg>value</arg>
 <doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.096442" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.341690" elapsed="0.000000"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${partner_street_name_value}</arg>
 <arg>${LOCATIONS_ADD_STREET}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.096442" elapsed="0.000997"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.341690" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
 <var>${partner_street_number}</var>
 <arg>${user_data}[0][address][street_address]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.097439" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.341690" elapsed="0.000000"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
 <arg>${LOCATIONS_ADD_STREET_NUMBER}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.097439" elapsed="0.000998"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.341690" elapsed="0.000000"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
 <arg>${LOCATIONS_ADD_STREET_NUMBER}</arg>
 <arg>${partner_street_number}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.098437" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.350203" elapsed="0.000000"/>
 </kw>
 <kw name="Get Element Attribute" owner="SeleniumLibrary">
 <var>${partner_street_number_value}</var>
 <arg>${LOCATIONS_ADD_STREET_NUMBER}</arg>
 <arg>value</arg>
 <doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.098437" elapsed="0.000995"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.350203" elapsed="0.004461"/>
 </kw>
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
 <arg>${partner_street_number_value}</arg>
 <arg>${LOCATIONS_ADD_STREET_NUMBER}</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.099432" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.354664" elapsed="0.000000"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${LOCATIONS_ADD_SAVE}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.100431" elapsed="0.001262"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.354664" elapsed="0.000000"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
 <arg>${LOCATIONS_ADD_SAVE}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.103706" elapsed="0.000984"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.354664" elapsed="0.000000"/>
 </kw>
 <kw name="GET" owner="RequestsLibrary">
 <var>${response}</var>
 <arg>${API_URL_2}</arg>
 <arg>params=size=2</arg>
 <doc>Sends a GET request.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.105689" elapsed="0.001000"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.354664" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
 <var>${tools_data}</var>
 <arg>${response.json()}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.106689" elapsed="0.000996"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.354664" elapsed="0.000000"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${TOOLS_BUTTON}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.108679" elapsed="0.000997"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.366171" elapsed="0.000000"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
 <arg>${TOOLS_BUTTON}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.110669" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.366171" elapsed="0.000000"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
 <arg>${TOOLS_ADD_BUTTON}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.111665" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.371355" elapsed="0.000000"/>
 </kw>
 <kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
 <arg>${TOOLS_SAVE_BUTTON}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.112661" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.371355" elapsed="0.000000"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
 <arg>${TOOLS_USER_NAME_INPUT}</arg>
 <arg>${first_name} ${last_name}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.113658" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.371355" elapsed="0.000000"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
 <arg>${TOOLS_USER_NAME_DROP_DOWN}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.114654" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.371355" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
 <var>${tools_'neve'}</var>
 <arg>${tools_data}[0][manufacturer] [model]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.114654" elapsed="0.001000"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.371355" elapsed="0.000000"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
 <arg>${TOOLS_'NEVE'_INPUT}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.116651" elapsed="0.000997"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.381862" elapsed="0.000000"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
 <arg>${TOOLS_'NEVE'_INPUT}</arg>
 <arg>${tools_'neve'}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.118654" elapsed="0.001000"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.381862" elapsed="0.000000"/>
 </kw>
 <kw name="Get Element Attribute" owner="SeleniumLibrary">
 <var>${tools_'neve'_value}</var>
 <arg>${TOOLS_'NEVE'_INPUT}</arg>
 <arg>value</arg>
 <doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.121640" elapsed="0.000989"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.387997" elapsed="0.000000"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${tools_'neve'_value}</arg>
 <arg>${TOOLS_'NEVE'_INPUT}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.124623" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.387997" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
 <var>${tools'leiras'}</var>
 <arg>${tools_data}[0][platform]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.124623" elapsed="0.001373"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.387997" elapsed="0.000000"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
 <arg>${TOOLS_'LEIRAS'_INPUT}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.125996" elapsed="0.001025"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.387997" elapsed="0.000000"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
 <arg>${TOOLS_'LEIRAS'_INPUT}</arg>
 <arg>${tools'leiras'}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.127021" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.397507" elapsed="0.000000"/>
 </kw>
 <kw name="Get Element Attribute" owner="SeleniumLibrary">
 <var>${tools'leiras'_value}</var>
 <arg>${TOOLS_'LEIRAS'_INPUT}</arg>
 <arg>value</arg>
 <doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.128014" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.397507" elapsed="0.000000"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${tools_'neve'_value}</arg>
 <arg>${TOOLS_'LEIRAS'_INPUT}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.129009" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.404893" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
 <var>${tools'megjegyzes'}</var>
 <arg>${tools_data}[0][serial_number]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.129009" elapsed="0.000995"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.404893" elapsed="0.000000"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
 <arg>${TOOLS_'MEGJEGYZES'_INPUT}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.130004" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.404893" elapsed="0.000000"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
 <arg>${TOOLS_'LEIRAS'_INPUT}</arg>
 <arg>${tools'megjegyzes'}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.130004" elapsed="0.000997"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.404893" elapsed="0.008529"/>
 </kw>
 <kw name="Get Element Attribute" owner="SeleniumLibrary">
 <var>${tools'megjegyzes'_value}</var>
 <arg>${TOOLS_'MEGJEGYZES'_INPUT}</arg>
 <arg>value</arg>
 <doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.131001" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.413422" elapsed="0.000000"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${tools'megjegyzes'_value}</arg>
 <arg>${TOOLS_'MEGJEGYZES'_INPUT}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.132000" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.413422" elapsed="0.000000"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${TOOLS_SAVE_BUTTON}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.132000" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.413422" elapsed="0.007609"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
 <arg>${TOOLS_SAVE_BUTTON}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.132996" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.422791" elapsed="0.000000"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${TOOLS_EXCEL_EXPORT_MENU}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.132996" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.422791" elapsed="0.000000"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
 <arg>${TOOLS_EXCEL_EXPORT_MENU}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.133995" elapsed="0.000999"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.422791" elapsed="0.000000"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${LOCATIONS_BUTTON}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.138072" elapsed="0.000917"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.422791" elapsed="0.000000"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
 <arg>${LOCATIONS_BUTTON}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.139976" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.422791" elapsed="0.000000"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${LOCATIONS_SEARCH_INPUT}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.140972" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.422791" elapsed="0.000000"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
 <arg>${LOCATIONS_SEARCH_INPUT}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.141975" elapsed="0.000993"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.422791" elapsed="0.000000"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
 <arg>${LOCATIONS_SEARCH_INPUT}</arg>
 <arg>${first_name} ${last_name}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.142968" elapsed="0.000995"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.422791" elapsed="0.014684"/>
 </kw>
 <kw name="Get Element Attribute" owner="SeleniumLibrary">
 <var>${name_value}</var>
 <arg>${LOCATIONS_SEARCH_INPUT}</arg>
 <arg>value</arg>
 <doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.143963" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.439097" elapsed="0.002516"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${name_value}</arg>
 <arg>${LOCATIONS_SEARCH_INPUT}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.144960" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.441613" elapsed="0.000000"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${LOCATION_SEARCH_BUTTON}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.144960" elapsed="0.001519"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.441613" elapsed="0.000000"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${LOCATION_NAVIGATION_BUTTON}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.146479" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.441613" elapsed="0.000000"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
 <arg>${LOCATION_NAVIGATION_BUTTON}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2024-03-27T15:01:51.146479" elapsed="0.001008"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.441613" elapsed="0.000000"/>
 </kw>
 <kw name="Test Teardown" owner="common_resources">
-<status status="NOT RUN" start="2024-03-27T15:01:51.147487" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-03-27T22:11:59.441613" elapsed="0.000000"/>
 </kw>
-<status status="FAIL" start="2024-03-27T15:01:44.235344" elapsed="6.913134">Brent Bernier != //span[.='Add']</status>
+<status status="FAIL" start="2024-03-27T22:11:47.782683" elapsed="11.658930">ElementClickInterceptedException: Message: element click intercepted: Element &lt;a href="Customer" class="nav-link"&gt;...&lt;/a&gt; is not clickable at point (125, 208). Other element would receive the click: &lt;div id="components-reconnect-modal" style="position: fixed; inset: 0px; z-index: 1050; display: block; overflow: hidden; background-color: rgb(255, 255, 255); opacity: 0.8; text-align: center; font-weight: bold; transition: visibility 0s linear 500ms; visibility: visible;"&gt;...&lt;/div&gt;
+  (Session info: chrome=123.0.6312.86)
+Stacktrace:
+	GetHandleVerifier [0x00007FF7B4BE7062+63090]
+	(No symbol) [0x00007FF7B4B52CB2]
+	(No symbol) [0x00007FF7B49EEC65]
+	(No symbol) [0x00007FF7B4A3BB34]
+	(No symbol) [0x00007FF7B4A39954]
+	(No symbol) [0x00007FF7B4A37164]
+	(No symbol) [0x00007FF7B4A35EF9]
+	(No symbol) [0x00007FF7B4A2A708]
+	(No symbol) [0x00007FF7B4A56FDA]
+	(No symbol) [0x00007FF7B4A2A00A]
+	(No symbol) [0x00007FF7B4A571F0]
+	(No symbol) [0x00007FF7B4A73412]
+	(No symbol) [0x00007FF7B4A56D83]
+	(No symbol) [0x00007FF7B4A283A8]
+	(No symbol) [0x00007FF7B4A29441]
+	GetHandleVerifier [0x00007FF7B4FE25CD+4238301]
+	GetHandleVerifier [0x00007FF7B501F72D+4488509]
+	GetHandleVerifier [0x00007FF7B5017A0F+4456479]
+	GetHandleVerifier [0x00007FF7B4CC05A6+953270]
+	(No symbol) [0x00007FF7B4B5E57F]
+	(No symbol) [0x00007FF7B4B59254]
+	(No symbol) [0x00007FF7B4B5938B]
+	(No symbol) [0x00007FF7B4B49BC4]
+	BaseThreadInitThunk [0x00007FFA4AE7257D+29]
+	RtlUserThreadStart [0x00007FFA4BD2AA58+40]
+</status>
 </test>
-<status status="FAIL" start="2024-03-27T15:01:43.260532" elapsed="7.889940"/>
+<status status="FAIL" start="2024-03-27T22:11:47.428364" elapsed="12.027688"/>
 </suite>
-<status status="FAIL" start="2024-03-27T15:01:43.256545" elapsed="7.901180"/>
+<status status="FAIL" start="2024-03-27T22:11:47.422328" elapsed="12.048641"/>
 </suite>
-<status status="FAIL" start="2024-03-27T15:01:43.185448" elapsed="7.975258"/>
+<status status="FAIL" start="2024-03-27T22:11:47.388749" elapsed="12.082220"/>
 </suite>
 <statistics>
 <total>
@@ -586,6 +663,6 @@
 </suite>
 </statistics>
 <errors>
-<msg time="2024-03-27T15:01:45.611861" level="WARN">There was an error managing chromedriver (request or response body error: error reading a body from connection: cannot decrypt peer's message); using driver found in the cache</msg>
+<msg time="2024-03-27T22:11:49.110148" level="WARN">There was an error managing chromedriver (request or response body error: error reading a body from connection: cannot decrypt peer's message); using driver found in the cache</msg>
 </errors>
 </robot>
