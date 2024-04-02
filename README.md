@@ -1,20 +1,26 @@
 # Sauce Demo Website Test Automation
-This is a Robot Framework test automation project for the Sauce Demo website (https://www.saucedemo.com/). The project includes test cases covering various functionalities of the website, such as login, cart operations, and checkout process.
+This is a Robot Framework test automation project for the BWP Index website (https://bwpool.azurewebsites.net/). The project includes test cases covering various functionalities of the website, such as API Call Test, attaching a partner based on the API message and checking the attached values. 
 
 ## Prerequisites
+- Chrome Browser
+- Chrome POM Builder extension
 - Python 3.x (Robot Framework is Python-based)
 - Robot Framework (Installation: ```pip install robotframework```)
 - Robot Framework SeleniumLibrary (Installation: ```pip install --upgrade robotframework-seleniumlibrary```)
+- Robot Framework RequestsLibrary (Installation:```pip install robotframework-requests```)
+- Visual Studio Code install
+- Robot Code extension for Visual Studio Code
+- GIT
 
 ## Installation
 1. Clone the repository:
 ```
-git clone https://github.com/your-username/sauce-demo-tests.git
+git clone https://github.com/Adamsky25/bwpool_project.git
 ```
 
 2. Navigate to the project directory:
 ```
-cd sauce-demo-tests
+cd bwpool_project
 ```
 
 3. Install the required Python libraries:
@@ -38,10 +44,7 @@ robot -d ./results ./tests/login.robot
 
 This will run only the test cases in the login_tests.robot file.
 
-## Test Cases
-The project includes the following test cases:
+## Test Case
+The project includes the following test case:
 
-- login_tests.robot
-- checkout_tests.robot
-- checkout_info_test.robot
-- add_to_cart_test.robot
+- bwpool_tests.robot
