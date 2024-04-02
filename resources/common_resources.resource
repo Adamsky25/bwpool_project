@@ -22,7 +22,6 @@ ${PARTNERS_ADD_TELEFON}    //input[@class='e-control e-numerictextbox e-lib e-in
 ${PARTNERS_ADD_COMMENT}    //input[@id='comment']
 ${PARTNERS_ADD_SAVE}    //button[@class='e-control e-btn e-lib e-control e-btn e-lib e-primary e-flat']
 ${LOCATIONS_ADD_BUTTON}    //span[@class='e-add e-icons e-btn-icon e-icon-left']
-#${LOCATIONS_ADD_BUTTON}    //span[.='Add']
 ${LOCATIONS_ADD_CUSTOMER}    //input[@class='e-control e-combobox e-lib e-input']
 ${LOCATIONS_CUSTOMER_DROPDOWN}    //span[@class='e-input-group-icon e-ddl-icon e-icons e-ddl-disable-icon']
 ${LOCATIONS_FIRST_NAME_IN_THE_LIST}    //li[@class='e-list-item e-item-focus']
@@ -37,9 +36,6 @@ ${TOOLS_'NEVE'_INPUT}    //input[@id='name']
 ${TOOLS_'LEIRAS'_INPUT}    //textarea[@id='Desc']
 ${TOOLS_'MEGJEGYZES'_INPUT}    //textarea[@id='Comm']
 ${TOOLS_USER_NAME_DROPDOWN}    //input[@placeholder="Ügyfél"]
-#${TOOLS_USER_NAME_DROP_DOWN}      //span[@class='e-ddl e-lib e-input-group e-control-container e-control-wrapper e-input-focus valid e-icon-anim']/span[@class='e-input-group-icon e-ddl-icon e-icons e-ddl-disable-icon']
-#${TOOLS_USER_NAME_INPUT}     //input[@placeholder="Ügyfél"]
-#${TOOLS_USER_NAME_INPUT}    //span[@class='e-ddl e-lib e-input-group e-control-container e-control-wrapper e-input-focus valid']/input[@class='e-control e-combobox e-lib e-input']
 ${TOOLS_SAVE_BUTTON}    //button[@class='e-control e-btn e-lib e-control e-btn e-lib e-primary e-flat']
 ${TOOLS_EXCEL_EXPORT_MENU}    //span[.='Excel Export']
 ${LOCATIONS_SEARCH_INPUT}    //input[@id='Grid_ToolbarSearchBox']
@@ -49,6 +45,7 @@ ${LOCATION_NAVIGATION_BUTTON}    //a[@href='LocationInfo/674']/span[@class='oi o
 # Other Variables
 ${BROWSER}    Chrome
 ${EXPECTED_TITLE}    BWP Index
+${EXCEL_DOWNLOAD_PATH}    C:\Users\novoz\Downloads
 
 *** Keywords ***
 
