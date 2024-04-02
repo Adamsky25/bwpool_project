@@ -155,8 +155,8 @@ Bwpool.azurewebsites.net Automation Testing
 
 #16: Step: Click On The 'UTCA' Field Menu
     
-      Wait Until Element Is Visible    ${LOCATION_NAVIGATION_BUTTON}
-      Click Element    ${LOCATION_NAVIGATION_BUTTON}
+    Sleep    5s
+    Click Link    //a[contains(.,"${partner_street_name}")]
 
-     Test Teardown
+    Test Teardown
    

@@ -1,736 +1,737 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-04-02T11:50:46.885732" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-04-02T12:21:58.907268" rpa="false" schemaversion="5">
 <suite id="s1" name="Bwpool Project" source="C:\Users\novoz\bwpool_project">
 <suite id="s1-s1" name="Tests" source="C:\Users\novoz\bwpool_project\tests">
 <suite id="s1-s1-s1" name="Bwpool Tests" source="C:\Users\novoz\bwpool_project\tests\bwpool_tests.robot">
 <test id="s1-s1-s1-t1" name="Bwpool.azurewebsites.net Automation Testing" line="6">
 <kw name="Test Setup" owner="common_resources">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-04-02T11:50:47.206789" level="INFO">Opening browser 'Chrome' to base url 'https://bwpool.azurewebsites.net/'.</msg>
+<msg time="2024-04-02T12:21:59.241877" level="INFO">Opening browser 'Chrome' to base url 'https://bwpool.azurewebsites.net/'.</msg>
 <arg>${HOMEPAGE_URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-04-02T11:50:47.206789" elapsed="4.180824"/>
+<status status="PASS" start="2024-04-02T12:21:59.241877" elapsed="4.139745"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-04-02T11:50:51.387613" elapsed="0.131074"/>
+<status status="PASS" start="2024-04-02T12:22:03.382292" elapsed="0.129005"/>
 </kw>
 <kw name="Title Should Be" owner="SeleniumLibrary">
-<msg time="2024-04-02T11:50:51.527663" level="INFO">Page title is 'BWP Index'.</msg>
+<msg time="2024-04-02T12:22:03.513929" level="INFO">Page title is 'BWP Index'.</msg>
 <arg>${EXPECTED_TITLE}</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<status status="PASS" start="2024-04-02T11:50:51.519692" elapsed="0.007971"/>
+<status status="PASS" start="2024-04-02T12:22:03.512300" elapsed="0.001629"/>
 </kw>
-<status status="PASS" start="2024-04-02T11:50:47.206789" elapsed="4.320874"/>
+<status status="PASS" start="2024-04-02T12:21:59.226264" elapsed="4.287665"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${PARTNERS_BUTTON}</arg>
 <arg>timeout=3s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-04-02T11:50:51.529023" elapsed="0.041542"/>
+<status status="PASS" start="2024-04-02T12:22:03.513929" elapsed="0.032673"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-04-02T11:50:54.571987" level="INFO">Slept 3 seconds.</msg>
+<msg time="2024-04-02T12:22:06.546874" level="INFO">Slept 3 seconds.</msg>
 <arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-04-02T11:50:51.570565" elapsed="3.001422"/>
+<status status="PASS" start="2024-04-02T12:22:03.546602" elapsed="3.000272"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-04-02T11:50:54.571987" level="INFO">Clicking element '//a[contains(.,'Partnerek')]'.</msg>
+<msg time="2024-04-02T12:22:06.546874" level="INFO">Clicking element '//a[contains(.,'Partnerek')]'.</msg>
 <arg>${PARTNERS_BUTTON}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-02T11:50:54.571987" elapsed="0.099212"/>
+<status status="PASS" start="2024-04-02T12:22:06.546874" elapsed="0.099021"/>
 </kw>
 <kw name="GET" owner="RequestsLibrary">
-<msg time="2024-04-02T11:50:55.705533" level="INFO">GET Request : url=https://random-data-api.com/api/users/random_user?size=1&amp;size=1 
+<msg time="2024-04-02T12:22:07.714887" level="INFO">GET Request : url=https://random-data-api.com/api/users/random_user?size=1&amp;size=1 
  path_url=/api/users/random_user?size=1&amp;size=1 
  headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg time="2024-04-02T11:50:55.705533" level="INFO">GET Response : url=https://random-data-api.com/api/users/random_user?size=1&amp;size=1 
+<msg time="2024-04-02T12:22:07.716802" level="INFO">GET Response : url=https://random-data-api.com/api/users/random_user?size=1&amp;size=1 
  status=200, reason=OK 
- headers={'Alt-Svc': 'h3=":443"; ma=2592000', 'Cache-Control': 'max-age=0, private, must-revalidate', 'Content-Encoding': 'gzip', 'Content-Type': 'application/json; charset=utf-8', 'Etag': 'W/"d031f6b1506a05119abdc16099d53091"', 'Referrer-Policy': 'strict-origin-when-cross-origin', 'Server': 'Caddy', 'Strict-Transport-Security': 'max-age=63072000; includeSubDomains', 'Vary': 'Origin, Accept-Encoding', 'X-Content-Type-Options': 'nosniff', 'X-Frame-Options': 'SAMEORIGIN', 'X-Permitted-Cross-Domain-Policies': 'none', 'X-Request-Id': '20fa97b5-6aca-4536-b0a8-482c96b197d0', 'X-Runtime': '0.010958', 'X-Xss-Protection': '0', 'Date': 'Tue, 02 Apr 2024 09:50:51 GMT', 'Content-Length': '589'} 
- body=[{"id":9125,"uid":"6720b838-367f-4c11-99c9-fa8a86105d60","password":"ql7d5EWz8j","first_name":"Maris","last_name":"Hauck","username":"maris.hauck","email":"maris.hauck@email.com","avatar":"https://robohash.org/veniampariaturcupiditate.png?size=300x300\u0026set=set1","gender":"Genderfluid","phone_number":"+374 453.168.7689 x07894","social_insurance_number":"198094062","date_of_birth":"1989-07-27","employment":{"title":"Principal Orchestrator","key_skill":"Work under pressure"},"address":{"city":"Dierdreberg","street_name":"Laverna Causeway","street_address":"18782 Kautzer Canyon","zip_code":"45403","state":"Indiana","country":"United States","coordinates":{"lat":-9.865829759331561,"lng":-160.30662211981482}},"credit_card":{"cc_number":"6771-8918-1727-8084"},"subscription":{"plan":"Gold","status":"Blocked","payment_method":"Cash","term":"Payment in advance"}}] 
+ headers={'Alt-Svc': 'h3=":443"; ma=2592000', 'Cache-Control': 'max-age=0, private, must-revalidate', 'Content-Encoding': 'gzip', 'Content-Type': 'application/json; charset=utf-8', 'Etag': 'W/"0d09357b1112190fcdba76d661eabb0d"', 'Referrer-Policy': 'strict-origin-when-cross-origin', 'Server': 'Caddy', 'Strict-Transport-Security': 'max-age=63072000; includeSubDomains', 'Vary': 'Origin, Accept-Encoding', 'X-Content-Type-Options': 'nosniff', 'X-Frame-Options': 'SAMEORIGIN', 'X-Permitted-Cross-Domain-Policies': 'none', 'X-Request-Id': '7f892279-a63c-4b4d-9a05-20c53620b1ce', 'X-Runtime': '0.012199', 'X-Xss-Protection': '0', 'Date': 'Tue, 02 Apr 2024 10:22:03 GMT', 'Content-Length': '591'} 
+ body=[{"id":2593,"uid":"56e9ed84-939a-4419-8fc2-3747aa2f8681","password":"8GQJzFkLKt","first_name":"Leilani","last_name":"Ernser","username":"leilani.ernser","email":"leilani.ernser@email.com","avatar":"https://robohash.org/ametdolorumvoluptas.png?size=300x300\u0026set=set1","gender":"Polygender","phone_number":"+680 (874) 119-5611 x845","social_insurance_number":"632203915","date_of_birth":"2002-07-13","employment":{"title":"Banking Orchestrator","key_skill":"Organisation"},"address":{"city":"Lake Anastasiaburgh","street_name":"Lorrine Cliffs","street_address":"233 Rosenbaum Plains","zip_code":"71732-3230","state":"Arkansas","country":"United States","coordinates":{"lat":7.30061688814726,"lng":44.07297527942001}},"credit_card":{"cc_number":"5319-4660-9696-4497"},"subscription":{"plan":"Free Trial","status":"Pending","payment_method":"Bitcoins","term":"Monthly"}}] 
  </msg>
-<msg time="2024-04-02T11:50:55.705533" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2024-04-02T12:22:07.716802" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>${API_URL_1}</arg>
 <arg>params=size=1</arg>
 <doc>Sends a GET request.</doc>
-<status status="PASS" start="2024-04-02T11:50:54.672192" elapsed="1.033341"/>
+<status status="PASS" start="2024-04-02T12:22:06.646891" elapsed="1.069911"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-04-02T11:50:55.709064" level="INFO">${user_data} = [{'id': 9125, 'uid': '6720b838-367f-4c11-99c9-fa8a86105d60', 'password': 'ql7d5EWz8j', 'first_name': 'Maris', 'last_name': 'Hauck', 'username': 'maris.hauck', 'email': 'maris.hauck@email.com', 'avatar...</msg>
+<msg time="2024-04-02T12:22:07.716802" level="INFO">${user_data} = [{'id': 2593, 'uid': '56e9ed84-939a-4419-8fc2-3747aa2f8681', 'password': '8GQJzFkLKt', 'first_name': 'Leilani', 'last_name': 'Ernser', 'username': 'leilani.ernser', 'email': 'leilani.ernser@email.com'...</msg>
 <var>${user_data}</var>
 <arg>${response.json()}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-04-02T11:50:55.709064" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-02T12:22:07.716802" elapsed="0.000000"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${PARTNERS_ADD_BUTTON}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-04-02T11:50:55.709064" elapsed="0.050284"/>
+<status status="PASS" start="2024-04-02T12:22:07.723248" elapsed="0.047591"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-04-02T11:51:00.762303" level="INFO">Slept 5 seconds.</msg>
+<msg time="2024-04-02T12:22:12.771388" level="INFO">Slept 5 seconds.</msg>
 <arg>5s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-04-02T11:50:55.759348" elapsed="5.002955"/>
+<status status="PASS" start="2024-04-02T12:22:07.770839" elapsed="5.000549"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-04-02T11:51:00.762303" level="INFO">Clicking element '//span[.='Add']'.</msg>
+<msg time="2024-04-02T12:22:12.771388" level="INFO">Clicking element '//span[.='Add']'.</msg>
 <arg>${PARTNERS_ADD_BUTTON}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-02T11:51:00.762303" elapsed="0.076690"/>
+<status status="PASS" start="2024-04-02T12:22:12.771388" elapsed="0.083896"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${PARTNERS_ADD_NAME}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-04-02T11:51:00.838993" elapsed="1.380839"/>
+<status status="PASS" start="2024-04-02T12:22:12.855284" elapsed="1.083021"/>
 </kw>
 <kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
 <arg>${PARTNERS_ADD_SAVE}</arg>
 <doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2024-04-02T11:51:02.220835" elapsed="0.044108"/>
+<status status="PASS" start="2024-04-02T12:22:13.938305" elapsed="0.042266"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-04-02T11:51:02.264943" level="INFO">${first_name} = Maris</msg>
+<msg time="2024-04-02T12:22:13.991080" level="INFO">${first_name} = Leilani</msg>
 <var>${first_name}</var>
 <arg>${user_data[0]['first_name']}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-04-02T11:51:02.264943" elapsed="0.015630"/>
+<status status="PASS" start="2024-04-02T12:22:13.980571" elapsed="0.010509"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-04-02T11:51:02.283880" level="INFO">${last_name} = Hauck</msg>
+<msg time="2024-04-02T12:22:13.992323" level="INFO">${last_name} = Ernser</msg>
 <var>${last_name}</var>
 <arg>${user_data[0]['last_name']}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-04-02T11:51:02.281419" elapsed="0.003937"/>
+<status status="PASS" start="2024-04-02T12:22:13.992323" elapsed="0.003163"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-04-02T11:51:02.285356" level="INFO">Typing text 'Maris Hauck' into text field '//input[@id='name']'.</msg>
+<msg time="2024-04-02T12:22:13.998321" level="INFO">Typing text 'Leilani Ernser' into text field '//input[@id='name']'.</msg>
 <arg>${PARTNERS_ADD_NAME}</arg>
 <arg>${first_name} ${last_name}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-02T11:51:02.285356" elapsed="0.133503"/>
+<status status="PASS" start="2024-04-02T12:22:13.996875" elapsed="0.162887"/>
 </kw>
 <kw name="Get Element Attribute" owner="SeleniumLibrary">
-<msg time="2024-04-02T11:51:02.447945" level="INFO">${first_last_name_value} = Maris Hauck</msg>
+<msg time="2024-04-02T12:22:14.191628" level="INFO">${first_last_name_value} = Leilani Ernser</msg>
 <var>${first_last_name_value}</var>
 <arg>${PARTNERS_ADD_NAME}</arg>
 <arg>value</arg>
 <doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<status status="PASS" start="2024-04-02T11:51:02.419862" elapsed="0.029856"/>
+<status status="PASS" start="2024-04-02T12:22:14.159762" elapsed="0.032370"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${first_last_name_value}</arg>
 <arg>${first_name} ${last_name}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2024-04-02T11:51:02.449718" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-02T12:22:14.193133" elapsed="0.000998"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-04-02T11:51:02.454736" level="INFO">${email} = maris.hauck@email.com</msg>
+<msg time="2024-04-02T12:22:14.197119" level="INFO">${email} = leilani.ernser@email.com</msg>
 <var>${email}</var>
 <arg>${user_data[0]['email']}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-04-02T11:51:02.449718" elapsed="0.005018"/>
+<status status="PASS" start="2024-04-02T12:22:14.195127" elapsed="0.001992"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-04-02T11:51:02.459664" level="INFO">Clicking element '//input[@id='email']'.</msg>
+<msg time="2024-04-02T12:22:14.200774" level="INFO">Clicking element '//input[@id='email']'.</msg>
 <arg>${PARTNERS_ADD_EMAIL}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-02T11:51:02.459664" elapsed="0.086406"/>
+<status status="PASS" start="2024-04-02T12:22:14.198365" elapsed="0.085759"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-04-02T11:51:02.549419" level="INFO">Typing text 'maris.hauck@email.com' into text field '//input[@id='email']'.</msg>
+<msg time="2024-04-02T12:22:14.286161" level="INFO">Typing text 'leilani.ernser@email.com' into text field '//input[@id='email']'.</msg>
 <arg>${PARTNERS_ADD_EMAIL}</arg>
 <arg>${email}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-02T11:51:02.546070" elapsed="0.125409"/>
+<status status="PASS" start="2024-04-02T12:22:14.285103" elapsed="0.125148"/>
 </kw>
 <kw name="Get Element Attribute" owner="SeleniumLibrary">
-<msg time="2024-04-02T11:51:02.693211" level="INFO">${email_value} = maris.hauck@email.com</msg>
+<msg time="2024-04-02T12:22:14.436958" level="INFO">${email_value} = leilani.ernser@email.com</msg>
 <var>${email_value}</var>
 <arg>${PARTNERS_ADD_EMAIL}</arg>
 <arg>value</arg>
 <doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<status status="PASS" start="2024-04-02T11:51:02.671479" elapsed="0.023250"/>
+<status status="PASS" start="2024-04-02T12:22:14.410251" elapsed="0.027719"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${email_value}</arg>
 <arg>${email}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2024-04-02T11:51:02.695731" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-02T12:22:14.437970" elapsed="0.001403"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-04-02T11:51:02.697732" level="INFO">${id} = 9125</msg>
+<msg time="2024-04-02T12:22:14.441695" level="INFO">${id} = 2593</msg>
 <var>${id}</var>
 <arg>${user_data[0]['id']}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-04-02T11:51:02.696728" elapsed="0.001993"/>
+<status status="PASS" start="2024-04-02T12:22:14.439373" elapsed="0.002322"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-04-02T11:51:02.700361" level="INFO">Clicking element '//input[@id='comment']'.</msg>
+<msg time="2024-04-02T12:22:14.442899" level="INFO">Clicking element '//input[@id='comment']'.</msg>
 <arg>${PARTNERS_ADD_COMMENT}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-02T11:51:02.698721" elapsed="0.075367"/>
+<status status="PASS" start="2024-04-02T12:22:14.442899" elapsed="0.091789"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-04-02T11:51:02.774088" level="INFO">Typing text '9125' into text field '//input[@id='comment']'.</msg>
+<msg time="2024-04-02T12:22:14.534688" level="INFO">Typing text '2593' into text field '//input[@id='comment']'.</msg>
 <arg>${PARTNERS_ADD_COMMENT}</arg>
 <arg>${id}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-02T11:51:02.774088" elapsed="0.093980"/>
+<status status="PASS" start="2024-04-02T12:22:14.534688" elapsed="0.098384"/>
 </kw>
 <kw name="Get Element Attribute" owner="SeleniumLibrary">
-<msg time="2024-04-02T11:51:02.888402" level="INFO">${comment_value} = 9125</msg>
+<msg time="2024-04-02T12:22:14.658809" level="INFO">${comment_value} = 2593</msg>
 <var>${comment_value}</var>
 <arg>${PARTNERS_ADD_COMMENT}</arg>
 <arg>value</arg>
 <doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<status status="PASS" start="2024-04-02T11:51:02.868068" elapsed="0.021339"/>
+<status status="PASS" start="2024-04-02T12:22:14.633072" elapsed="0.025737"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
-<msg time="2024-04-02T11:51:02.891397" level="INFO">Argument types are:
+<msg time="2024-04-02T12:22:14.660804" level="INFO">Argument types are:
 &lt;class 'str'&gt;
 &lt;class 'int'&gt;</msg>
 <arg>${comment_value}</arg>
 <arg>${id}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2024-04-02T11:51:02.890401" elapsed="0.000996"/>
+<status status="PASS" start="2024-04-02T12:22:14.659805" elapsed="0.001994"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${PARTNERS_ADD_SAVE}</arg>
 <arg>timeout=3s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-04-02T11:51:02.892394" elapsed="0.025672"/>
+<status status="PASS" start="2024-04-02T12:22:14.661799" elapsed="0.042260"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-04-02T11:51:02.921047" level="INFO">Clicking element '//button[@class='e-control e-btn e-lib e-control e-btn e-lib e-primary e-flat']'.</msg>
+<msg time="2024-04-02T12:22:14.706070" level="INFO">Clicking element '//button[@class='e-control e-btn e-lib e-control e-btn e-lib e-primary e-flat']'.</msg>
 <arg>${PARTNERS_ADD_SAVE}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-02T11:51:02.919570" elapsed="0.066563"/>
+<status status="PASS" start="2024-04-02T12:22:14.705065" elapsed="0.069572"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${LOCATIONS_BUTTON}</arg>
 <arg>timeout=3s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-04-02T11:51:02.986133" elapsed="0.037357"/>
+<status status="PASS" start="2024-04-02T12:22:14.774637" elapsed="0.046412"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-04-02T11:51:06.023869" level="INFO">Slept 3 seconds.</msg>
+<msg time="2024-04-02T12:22:17.821551" level="INFO">Slept 3 seconds.</msg>
 <arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-04-02T11:51:03.023490" elapsed="3.000379"/>
+<status status="PASS" start="2024-04-02T12:22:14.821049" elapsed="3.000502"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-04-02T11:51:06.025398" level="INFO">Clicking element '//a[contains(.,'Telephelyek')]'.</msg>
+<msg time="2024-04-02T12:22:17.821551" level="INFO">Clicking element '//a[contains(.,'Telephelyek')]'.</msg>
 <arg>${LOCATIONS_BUTTON}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-02T11:51:06.025398" elapsed="0.096333"/>
+<status status="PASS" start="2024-04-02T12:22:17.821551" elapsed="0.112327"/>
 </kw>
 <kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
 <arg>${LOCATIONS_ADD_BUTTON}</arg>
 <doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2024-04-02T11:51:06.122761" elapsed="0.063417"/>
+<status status="PASS" start="2024-04-02T12:22:17.934885" elapsed="0.032786"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-04-02T11:51:09.189501" level="INFO">Slept 3 seconds.</msg>
+<msg time="2024-04-02T12:22:20.984907" level="INFO">Slept 3 seconds.</msg>
 <arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-04-02T11:51:06.188180" elapsed="3.002376"/>
+<status status="PASS" start="2024-04-02T12:22:17.983491" elapsed="3.001416"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-04-02T11:51:09.190556" level="INFO">Clicking element '//span[@class='e-add e-icons e-btn-icon e-icon-left']'.</msg>
+<msg time="2024-04-02T12:22:20.987916" level="INFO">Clicking element '//span[@class='e-add e-icons e-btn-icon e-icon-left']'.</msg>
 <arg>${LOCATIONS_ADD_BUTTON}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-02T11:51:09.190556" elapsed="0.089577"/>
+<status status="PASS" start="2024-04-02T12:22:20.987916" elapsed="0.091546"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-04-02T11:51:12.280513" level="INFO">Slept 3 seconds.</msg>
+<msg time="2024-04-02T12:22:24.085308" level="INFO">Slept 3 seconds.</msg>
 <arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-04-02T11:51:09.280133" elapsed="3.000380"/>
+<status status="PASS" start="2024-04-02T12:22:21.079462" elapsed="3.005846"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${LOCATIONS_ADD_CUSTOMER}</arg>
 <arg>timeout=5s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-04-02T11:51:12.280513" elapsed="0.046859"/>
+<status status="PASS" start="2024-04-02T12:22:24.085308" elapsed="0.049098"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-04-02T11:51:12.327372" level="INFO">Clicking element '//span[@class='e-input-group-icon e-ddl-icon e-icons e-ddl-disable-icon']'.</msg>
+<msg time="2024-04-02T12:22:24.134406" level="INFO">Clicking element '//span[@class='e-input-group-icon e-ddl-icon e-icons e-ddl-disable-icon']'.</msg>
 <arg>${LOCATIONS_CUSTOMER_DROPDOWN}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-02T11:51:12.327372" elapsed="0.081501"/>
+<status status="PASS" start="2024-04-02T12:22:24.134406" elapsed="0.079546"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-04-02T11:51:12.410793" level="INFO">Typing text 'Maris Hauck' into text field '//input[@class='e-control e-combobox e-lib e-input']'.</msg>
+<msg time="2024-04-02T12:22:24.213952" level="INFO">Typing text 'Leilani Ernser' into text field '//input[@class='e-control e-combobox e-lib e-input']'.</msg>
 <arg>${LOCATIONS_ADD_CUSTOMER}</arg>
 <arg>${first_name} ${last_name}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-02T11:51:12.409792" elapsed="0.106952"/>
+<status status="PASS" start="2024-04-02T12:22:24.213952" elapsed="0.115507"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-04-02T11:51:15.522191" level="INFO">Slept 3 seconds.</msg>
+<msg time="2024-04-02T12:22:27.329819" level="INFO">Slept 3 seconds.</msg>
 <arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-04-02T11:51:12.520435" elapsed="3.001756"/>
+<status status="PASS" start="2024-04-02T12:22:24.329459" elapsed="3.000360"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-04-02T11:51:15.522191" level="INFO">Clicking element '//span[@class='e-input-group-icon e-ddl-icon e-icons e-ddl-disable-icon']'.</msg>
+<msg time="2024-04-02T12:22:27.329819" level="INFO">Clicking element '//span[@class='e-input-group-icon e-ddl-icon e-icons e-ddl-disable-icon']'.</msg>
 <arg>${LOCATIONS_CUSTOMER_DROPDOWN}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-02T11:51:15.522191" elapsed="0.075940"/>
+<status status="PASS" start="2024-04-02T12:22:27.329819" elapsed="0.080196"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-04-02T11:51:15.598131" level="INFO">${partner_city} = Dierdreberg</msg>
+<msg time="2024-04-02T12:22:27.410015" level="INFO">${partner_city} = Lake Anastasiaburgh</msg>
 <var>${partner_city}</var>
 <arg>${user_data}[0][address][city]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-04-02T11:51:15.598131" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-02T12:22:27.410015" elapsed="0.000000"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-04-02T11:51:15.598131" level="INFO">Clicking element '//input[@id='varos']'.</msg>
+<msg time="2024-04-02T12:22:27.410015" level="INFO">Clicking element '//input[@id='varos']'.</msg>
 <arg>${LOCATIONS_ADD_CITY}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-02T11:51:15.598131" elapsed="0.125348"/>
+<status status="PASS" start="2024-04-02T12:22:27.410015" elapsed="0.162566"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-04-02T11:51:15.739149" level="INFO">Typing text 'Dierdreberg' into text field '//input[@id='varos']'.</msg>
+<msg time="2024-04-02T12:22:27.573791" level="INFO">Typing text 'Lake Anastasiaburgh' into text field '//input[@id='varos']'.</msg>
 <arg>${LOCATIONS_ADD_CITY}</arg>
 <arg>${partner_city}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-02T11:51:15.723479" elapsed="0.116723"/>
+<status status="PASS" start="2024-04-02T12:22:27.572581" elapsed="0.150692"/>
 </kw>
 <kw name="Get Element Attribute" owner="SeleniumLibrary">
-<msg time="2024-04-02T11:51:15.871981" level="INFO">${partner_city_value} = Dierdreberg</msg>
+<msg time="2024-04-02T12:22:27.744157" level="INFO">${partner_city_value} = Lake Anastasiaburgh</msg>
 <var>${partner_city_value}</var>
 <arg>${LOCATIONS_ADD_CITY}</arg>
 <arg>value</arg>
 <doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<status status="PASS" start="2024-04-02T11:51:15.840202" elapsed="0.031779"/>
+<status status="PASS" start="2024-04-02T12:22:27.723273" elapsed="0.021891"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${partner_city_value}</arg>
 <arg>${partner_city}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2024-04-02T11:51:15.874788" elapsed="0.002025"/>
+<status status="PASS" start="2024-04-02T12:22:27.745164" elapsed="0.000988"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-04-02T11:51:15.877817" level="INFO">${partner_zip_code} = 45403</msg>
+<msg time="2024-04-02T12:22:27.747146" level="INFO">${partner_zip_code} = 71732-3230</msg>
 <var>${partner_zip_code}</var>
 <arg>${user_data}[0][address][zip_code]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-04-02T11:51:15.877817" elapsed="0.001010"/>
+<status status="PASS" start="2024-04-02T12:22:27.747146" elapsed="0.001176"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-04-02T11:51:15.880818" level="INFO">Clicking element '//input[@id='zip']'.</msg>
+<msg time="2024-04-02T12:22:27.749323" level="INFO">Clicking element '//input[@id='zip']'.</msg>
 <arg>${LOCATIONS_ADD_ZIP}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-02T11:51:15.879810" elapsed="0.069230"/>
+<status status="PASS" start="2024-04-02T12:22:27.748322" elapsed="0.089014"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-04-02T11:51:15.949040" level="INFO">Typing text '45403' into text field '//input[@id='zip']'.</msg>
+<msg time="2024-04-02T12:22:27.839343" level="INFO">Typing text '71732-3230' into text field '//input[@id='zip']'.</msg>
 <arg>${LOCATIONS_ADD_ZIP}</arg>
 <arg>${partner_zip_code}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-02T11:51:15.949040" elapsed="0.096691"/>
+<status status="PASS" start="2024-04-02T12:22:27.838342" elapsed="0.097285"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-04-02T11:51:16.045731" level="INFO">${partner_street_name} = Laverna Causeway</msg>
+<msg time="2024-04-02T12:22:27.938242" level="INFO">${partner_street_name} = Lorrine Cliffs</msg>
 <var>${partner_street_name}</var>
 <arg>${user_data}[0][address][street_name]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-04-02T11:51:16.045731" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-02T12:22:27.937231" elapsed="0.002006"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-04-02T11:51:16.045731" level="INFO">Clicking element '//input[@id='utca']'.</msg>
+<msg time="2024-04-02T12:22:27.940229" level="INFO">Clicking element '//input[@id='utca']'.</msg>
 <arg>${LOCATIONS_ADD_STREET}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-02T11:51:16.045731" elapsed="0.090768"/>
+<status status="PASS" start="2024-04-02T12:22:27.940229" elapsed="0.075743"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-04-02T11:51:16.139485" level="INFO">Typing text 'Laverna Causeway' into text field '//input[@id='utca']'.</msg>
+<msg time="2024-04-02T12:22:28.015972" level="INFO">Typing text 'Lorrine Cliffs' into text field '//input[@id='utca']'.</msg>
 <arg>${LOCATIONS_ADD_STREET}</arg>
 <arg>${partner_street_name}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-02T11:51:16.136499" elapsed="0.109560"/>
+<status status="PASS" start="2024-04-02T12:22:28.015972" elapsed="0.156736"/>
 </kw>
 <kw name="Get Element Attribute" owner="SeleniumLibrary">
-<msg time="2024-04-02T11:51:16.267834" level="INFO">${partner_street_name_value} = Laverna Causeway</msg>
+<msg time="2024-04-02T12:22:28.196420" level="INFO">${partner_street_name_value} = Lorrine Cliffs</msg>
 <var>${partner_street_name_value}</var>
 <arg>${LOCATIONS_ADD_STREET}</arg>
 <arg>value</arg>
 <doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<status status="PASS" start="2024-04-02T11:51:16.246059" elapsed="0.021775"/>
+<status status="PASS" start="2024-04-02T12:22:28.173668" elapsed="0.023759"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${partner_street_name_value}</arg>
 <arg>${partner_street_name}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2024-04-02T11:51:16.268830" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-02T12:22:28.197427" elapsed="0.000987"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-04-02T11:51:16.270831" level="INFO">${partner_street_number} = 18782 Kautzer Canyon</msg>
+<msg time="2024-04-02T12:22:28.199411" level="INFO">${partner_street_number} = 233 Rosenbaum Plains</msg>
 <var>${partner_street_number}</var>
 <arg>${user_data}[0][address][street_address]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-04-02T11:51:16.269842" elapsed="0.000989"/>
+<status status="PASS" start="2024-04-02T12:22:28.199411" elapsed="0.000997"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-04-02T11:51:16.272197" level="INFO">Clicking element '//input[@id='szam']'.</msg>
+<msg time="2024-04-02T12:22:28.201404" level="INFO">Clicking element '//input[@id='szam']'.</msg>
 <arg>${LOCATIONS_ADD_STREET_NUMBER}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-02T11:51:16.271905" elapsed="0.072124"/>
+<status status="PASS" start="2024-04-02T12:22:28.200408" elapsed="0.083418"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-04-02T11:51:16.345536" level="INFO">Typing text '18782 Kautzer Canyon' into text field '//input[@id='szam']'.</msg>
+<msg time="2024-04-02T12:22:28.285826" level="INFO">Typing text '233 Rosenbaum Plains' into text field '//input[@id='szam']'.</msg>
 <arg>${LOCATIONS_ADD_STREET_NUMBER}</arg>
 <arg>${partner_street_number}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-02T11:51:16.345536" elapsed="0.103208"/>
+<status status="PASS" start="2024-04-02T12:22:28.284825" elapsed="0.089134"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${LOCATIONS_ADD_SAVE}</arg>
 <arg>timeout=3s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-04-02T11:51:16.453712" elapsed="0.024527"/>
+<status status="PASS" start="2024-04-02T12:22:28.373959" elapsed="0.023688"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-04-02T11:51:16.479235" level="INFO">Clicking element '//button[@class='e-control e-btn e-lib e-control e-btn e-lib e-primary e-flat']'.</msg>
+<msg time="2024-04-02T12:22:28.398642" level="INFO">Clicking element '//button[@class='e-control e-btn e-lib e-control e-btn e-lib e-primary e-flat']'.</msg>
 <arg>${LOCATIONS_ADD_SAVE}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-02T11:51:16.479235" elapsed="0.055867"/>
+<status status="PASS" start="2024-04-02T12:22:28.398642" elapsed="0.056121"/>
 </kw>
 <kw name="GET" owner="RequestsLibrary">
-<msg time="2024-04-02T11:51:17.504201" level="INFO">GET Request : url=https://random-data-api.com/api/device/random_device?size=2&amp;size=2 
+<msg time="2024-04-02T12:22:29.517271" level="INFO">GET Request : url=https://random-data-api.com/api/device/random_device?size=2&amp;size=2 
  path_url=/api/device/random_device?size=2&amp;size=2 
  headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg time="2024-04-02T11:51:17.504201" level="INFO">GET Response : url=https://random-data-api.com/api/device/random_device?size=2&amp;size=2 
+<msg time="2024-04-02T12:22:29.517271" level="INFO">GET Response : url=https://random-data-api.com/api/device/random_device?size=2&amp;size=2 
  status=200, reason=OK 
- headers={'Alt-Svc': 'h3=":443"; ma=2592000', 'Cache-Control': 'max-age=0, private, must-revalidate', 'Content-Length': '386', 'Content-Type': 'application/json; charset=utf-8', 'Etag': 'W/"d6fa741401e301f207a6fc9defeef75c"', 'Referrer-Policy': 'strict-origin-when-cross-origin', 'Server': 'Caddy', 'Strict-Transport-Security': 'max-age=63072000; includeSubDomains', 'Vary': 'Origin', 'X-Content-Type-Options': 'nosniff', 'X-Frame-Options': 'SAMEORIGIN', 'X-Permitted-Cross-Domain-Policies': 'none', 'X-Request-Id': '4a6186a5-3379-4266-8a7e-8267f7a7f217', 'X-Runtime': '0.009226', 'X-Xss-Protection': '0', 'Date': 'Tue, 02 Apr 2024 09:51:13 GMT'} 
- body=[{"id":6381,"uid":"196af515-5e81-4fcc-ba68-57e6120b855f","build_number":127,"manufacturer":"Samsung","model":"OnePlus 5T","platform":"Android OS","serial_number":"Pbn8^`LkKPi4QJ79xk3SnW'_DbV*CL","version":8},{"id":1243,"uid":"94884aaf-9d32-4990-b26f-46b30d58190e","build_number":39,"manufacturer":"Dell","model":"P10","platform":"webOS","serial_number":"OezkV3nTii0sMK0","version":346}] 
+ headers={'Alt-Svc': 'h3=":443"; ma=2592000', 'Cache-Control': 'max-age=0, private, must-revalidate', 'Content-Length': '397', 'Content-Type': 'application/json; charset=utf-8', 'Etag': 'W/"be36a959e01245794685406990e8ef43"', 'Referrer-Policy': 'strict-origin-when-cross-origin', 'Server': 'Caddy', 'Strict-Transport-Security': 'max-age=63072000; includeSubDomains', 'Vary': 'Origin', 'X-Content-Type-Options': 'nosniff', 'X-Frame-Options': 'SAMEORIGIN', 'X-Permitted-Cross-Domain-Policies': 'none', 'X-Request-Id': 'd1222bf8-6475-4a7f-aaa1-fd3776a22ffd', 'X-Runtime': '0.005208', 'X-Xss-Protection': '0', 'Date': 'Tue, 02 Apr 2024 10:22:25 GMT'} 
+ body=[{"id":3317,"uid":"98f9f6a9-a0b2-4f34-ae4d-a8a9b995ad65","build_number":223,"manufacturer":"OnePlus","model":"Mate 10 Pro","platform":"Danger OS","serial_number":"Pbn8^`LkKPi4QJ79xk3SnW'_DbV*CL","version":887},{"id":9231,"uid":"b70c6a29-6a90-423d-a3bc-158a2de34c64","build_number":25,"manufacturer":"Lenovo","model":"OnePlus 6","platform":"Ubuntu Touch","serial_number":"hHhDJaHCO","version":382}] 
  </msg>
-<msg time="2024-04-02T11:51:17.516789" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2024-04-02T12:22:29.517271" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>${API_URL_2}</arg>
 <arg>params=size=2</arg>
 <doc>Sends a GET request.</doc>
-<status status="PASS" start="2024-04-02T11:51:16.535102" elapsed="0.981687"/>
+<status status="PASS" start="2024-04-02T12:22:28.454763" elapsed="1.062508"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-04-02T11:51:17.520355" level="INFO">${tools_data} = [{'id': 6381, 'uid': '196af515-5e81-4fcc-ba68-57e6120b855f', 'build_number': 127, 'manufacturer': 'Samsung', 'model': 'OnePlus 5T', 'platform': 'Android OS', 'serial_number': "Pbn8^`LkKPi4QJ79xk3SnW'_...</msg>
+<msg time="2024-04-02T12:22:29.517271" level="INFO">${tools_data} = [{'id': 3317, 'uid': '98f9f6a9-a0b2-4f34-ae4d-a8a9b995ad65', 'build_number': 223, 'manufacturer': 'OnePlus', 'model': 'Mate 10 Pro', 'platform': 'Danger OS', 'serial_number': "Pbn8^`LkKPi4QJ79xk3SnW'_...</msg>
 <var>${tools_data}</var>
 <arg>${response.json()}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-04-02T11:51:17.516789" elapsed="0.004509"/>
+<status status="PASS" start="2024-04-02T12:22:29.517271" elapsed="0.000000"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${TOOLS_BUTTON}</arg>
 <arg>timeout=3s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-04-02T11:51:17.521298" elapsed="0.039771"/>
+<status status="PASS" start="2024-04-02T12:22:29.517271" elapsed="0.047298"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-04-02T11:51:20.564623" level="INFO">Slept 3 seconds.</msg>
+<msg time="2024-04-02T12:22:32.565017" level="INFO">Slept 3 seconds.</msg>
 <arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-04-02T11:51:17.563103" elapsed="3.001520"/>
+<status status="PASS" start="2024-04-02T12:22:29.564569" elapsed="3.000448"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-04-02T11:51:20.566647" level="INFO">Clicking element '//a[contains(.,'Eszközök')]'.</msg>
+<msg time="2024-04-02T12:22:32.566570" level="INFO">Clicking element '//a[contains(.,'Eszközök')]'.</msg>
 <arg>${TOOLS_BUTTON}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-02T11:51:20.566647" elapsed="0.092546"/>
+<status status="PASS" start="2024-04-02T12:22:32.566570" elapsed="0.097668"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${TOOLS_ADD_BUTTON}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-04-02T11:51:20.660061" elapsed="0.031927"/>
+<status status="PASS" start="2024-04-02T12:22:32.665162" elapsed="0.026621"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-04-02T11:51:23.692327" level="INFO">Slept 3 seconds.</msg>
+<msg time="2024-04-02T12:22:35.692301" level="INFO">Slept 3 seconds.</msg>
 <arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-04-02T11:51:20.691988" elapsed="3.000339"/>
+<status status="PASS" start="2024-04-02T12:22:32.691783" elapsed="3.000518"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-04-02T11:51:23.696447" level="INFO">Clicking element '//span[@class='e-add e-icons e-btn-icon e-icon-left']'.</msg>
+<msg time="2024-04-02T12:22:35.692301" level="INFO">Clicking element '//span[@class='e-add e-icons e-btn-icon e-icon-left']'.</msg>
 <arg>${TOOLS_ADD_BUTTON}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-02T11:51:23.694326" elapsed="0.094227"/>
+<status status="PASS" start="2024-04-02T12:22:35.692301" elapsed="0.098079"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-04-02T11:51:26.788771" level="INFO">Slept 3 seconds.</msg>
+<msg time="2024-04-02T12:22:38.791873" level="INFO">Slept 3 seconds.</msg>
 <arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-04-02T11:51:23.788553" elapsed="3.000218"/>
+<status status="PASS" start="2024-04-02T12:22:35.791265" elapsed="3.000608"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-04-02T11:51:26.788771" level="INFO">${tools_'neve'_manufacturer} = Samsung</msg>
+<msg time="2024-04-02T12:22:38.794387" level="INFO">${tools_'neve'_manufacturer} = OnePlus</msg>
 <var>${tools_'neve'_manufacturer}</var>
 <arg>${tools_data[0]['manufacturer']}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-04-02T11:51:26.788771" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-02T12:22:38.793427" elapsed="0.000960"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-04-02T11:51:26.788771" level="INFO">${tools_'neve'_model} = OnePlus 5T</msg>
+<msg time="2024-04-02T12:22:38.794387" level="INFO">${tools_'neve'_model} = Mate 10 Pro</msg>
 <var>${tools_'neve'_model}</var>
 <arg>${tools_data[0]['model']}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-04-02T11:51:26.788771" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-02T12:22:38.794387" elapsed="0.000000"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-04-02T11:51:26.788771" level="INFO">Typing text 'Samsung OnePlus 5T' into text field '//input[@id='name']'.</msg>
+<msg time="2024-04-02T12:22:38.794387" level="INFO">Typing text 'OnePlus Mate 10 Pro' into text field '//input[@id='name']'.</msg>
 <arg>${TOOLS_'NEVE'_INPUT}</arg>
 <arg>${tools_'neve'_manufacturer} ${tools_'neve'_model}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-02T11:51:26.788771" elapsed="0.147940"/>
+<status status="PASS" start="2024-04-02T12:22:38.794387" elapsed="0.157407"/>
 </kw>
 <kw name="Get Element Attribute" owner="SeleniumLibrary">
-<msg time="2024-04-02T11:51:26.959574" level="INFO">${tools_'neve'_value} = Samsung OnePlus 5T</msg>
+<msg time="2024-04-02T12:22:38.977145" level="INFO">${tools_'neve'_value} = OnePlus Mate 10 Pro</msg>
 <var>${tools_'neve'_value}</var>
 <arg>${TOOLS_'NEVE'_INPUT}</arg>
 <arg>value</arg>
 <doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<status status="PASS" start="2024-04-02T11:51:26.936711" elapsed="0.022863"/>
+<status status="PASS" start="2024-04-02T12:22:38.951794" elapsed="0.025351"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${tools_'neve'_value}</arg>
 <arg>${tools_'neve'_manufacturer} ${tools_'neve'_model}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2024-04-02T11:51:26.960573" elapsed="0.000995"/>
+<status status="PASS" start="2024-04-02T12:22:38.978142" elapsed="0.000996"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-04-02T11:51:29.963193" level="INFO">Slept 3 seconds.</msg>
+<msg time="2024-04-02T12:22:41.981622" level="INFO">Slept 3 seconds.</msg>
 <arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-04-02T11:51:26.962567" elapsed="3.000626"/>
+<status status="PASS" start="2024-04-02T12:22:38.980135" elapsed="3.001487"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-04-02T11:51:29.965344" level="INFO">Typing text 'Maris Hauck' into text field '//input[@placeholder="Ügyfél"]'.</msg>
+<msg time="2024-04-02T12:22:41.981622" level="INFO">Typing text 'Leilani Ernser' into text field '//input[@placeholder="Ügyfél"]'.</msg>
 <arg>${TOOLS_USER_NAME_DROPDOWN}</arg>
 <arg>${first_name} ${last_name}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-02T11:51:29.963193" elapsed="0.143374"/>
+<status status="PASS" start="2024-04-02T12:22:41.981622" elapsed="0.167914"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-04-02T11:51:33.106980" level="INFO">Slept 3 seconds.</msg>
+<msg time="2024-04-02T12:22:45.150226" level="INFO">Slept 3 seconds.</msg>
 <arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-04-02T11:51:30.106567" elapsed="3.000413"/>
+<status status="PASS" start="2024-04-02T12:22:42.149536" elapsed="3.000690"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-04-02T11:51:33.106980" level="INFO">${tools_'leiras'} = Android OS</msg>
+<msg time="2024-04-02T12:22:45.150226" level="INFO">${tools_'leiras'} = Danger OS</msg>
 <var>${tools_'leiras'}</var>
 <arg>${tools_data[0]['platform']}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-04-02T11:51:33.106980" elapsed="0.000000"/>
+<status status="PASS" start="2024-04-02T12:22:45.150226" elapsed="0.000000"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-04-02T11:51:33.106980" level="INFO">Typing text 'Android OS' into text field '//textarea[@id='Desc']'.</msg>
+<msg time="2024-04-02T12:22:45.150226" level="INFO">Typing text 'Danger OS' into text field '//textarea[@id='Desc']'.</msg>
 <arg>${TOOLS_'LEIRAS'_INPUT}</arg>
 <arg>${tools'leiras'}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-02T11:51:33.106980" elapsed="0.165373"/>
+<status status="PASS" start="2024-04-02T12:22:45.150226" elapsed="0.153842"/>
 </kw>
 <kw name="Get Element Attribute" owner="SeleniumLibrary">
-<msg time="2024-04-02T11:51:33.293206" level="INFO">${tools'leiras'_value} = Android OS</msg>
+<msg time="2024-04-02T12:22:45.327604" level="INFO">${tools'leiras'_value} = Danger OS</msg>
 <var>${tools'leiras'_value}</var>
 <arg>${TOOLS_'LEIRAS'_INPUT}</arg>
 <arg>value</arg>
 <doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<status status="PASS" start="2024-04-02T11:51:33.272353" elapsed="0.020853"/>
+<status status="PASS" start="2024-04-02T12:22:45.304068" elapsed="0.024538"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${tools'leiras'_value}</arg>
 <arg>${tools_'leiras'}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2024-04-02T11:51:33.294213" elapsed="0.001354"/>
+<status status="PASS" start="2024-04-02T12:22:45.329606" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-04-02T11:51:33.297575" level="INFO">${tools_'megjegyzes'} = Pbn8^`LkKPi4QJ79xk3SnW'_DbV*CL</msg>
+<msg time="2024-04-02T12:22:45.333644" level="INFO">${tools_'megjegyzes'} = Pbn8^`LkKPi4QJ79xk3SnW'_DbV*CL</msg>
 <var>${tools_'megjegyzes'}</var>
 <arg>${tools_data[0]['serial_number']}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-04-02T11:51:33.296577" elapsed="0.001991"/>
+<status status="PASS" start="2024-04-02T12:22:45.330623" elapsed="0.003992"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-04-02T11:51:33.299563" level="INFO">Typing text 'Pbn8^`LkKPi4QJ79xk3SnW'_DbV*CL' into text field '//textarea[@id='Comm']'.</msg>
+<msg time="2024-04-02T12:22:45.337604" level="INFO">Typing text 'Pbn8^`LkKPi4QJ79xk3SnW'_DbV*CL' into text field '//textarea[@id='Comm']'.</msg>
 <arg>${TOOLS_'MEGJEGYZES'_INPUT}</arg>
 <arg>${tools'megjegyzes'}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-02T11:51:33.298568" elapsed="0.181697"/>
+<status status="PASS" start="2024-04-02T12:22:45.336607" elapsed="0.193337"/>
 </kw>
 <kw name="Get Element Attribute" owner="SeleniumLibrary">
-<msg time="2024-04-02T11:51:33.528733" level="INFO">${tools'megjegyzes'_value} = Pbn8^`LkKPi4QJ79xk3SnW'_DbV*CL</msg>
+<msg time="2024-04-02T12:22:45.546374" level="INFO">${tools'megjegyzes'_value} = Pbn8^`LkKPi4QJ79xk3SnW'_DbV*CL</msg>
 <var>${tools'megjegyzes'_value}</var>
 <arg>${TOOLS_'MEGJEGYZES'_INPUT}</arg>
 <arg>value</arg>
 <doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<status status="PASS" start="2024-04-02T11:51:33.481261" elapsed="0.048483"/>
+<status status="PASS" start="2024-04-02T12:22:45.529944" elapsed="0.016430"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${tools'megjegyzes'_value}</arg>
 <arg>${tools_'megjegyzes'}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2024-04-02T11:51:33.531735" elapsed="0.001779"/>
+<status status="PASS" start="2024-04-02T12:22:45.546374" elapsed="0.000000"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-04-02T11:51:38.534216" level="INFO">Slept 5 seconds.</msg>
+<msg time="2024-04-02T12:22:50.547016" level="INFO">Slept 5 seconds.</msg>
 <arg>5s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-04-02T11:51:33.533514" elapsed="5.000702"/>
+<status status="PASS" start="2024-04-02T12:22:45.546374" elapsed="5.000642"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-04-02T11:51:38.534216" level="INFO">Clicking element '//button[@class='e-control e-btn e-lib e-control e-btn e-lib e-primary e-flat']'.</msg>
+<msg time="2024-04-02T12:22:50.547016" level="INFO">Clicking element '//button[@class='e-control e-btn e-lib e-control e-btn e-lib e-primary e-flat']'.</msg>
 <arg>${TOOLS_SAVE_BUTTON}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-02T11:51:38.534216" elapsed="0.080229"/>
+<status status="PASS" start="2024-04-02T12:22:50.547016" elapsed="0.078071"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${TOOLS_EXCEL_EXPORT_MENU}</arg>
 <arg>timeout=3s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-04-02T11:51:38.614445" elapsed="0.033684"/>
+<status status="PASS" start="2024-04-02T12:22:50.625087" elapsed="0.033688"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-04-02T11:51:38.648129" level="INFO">Clicking element '//span[.='Excel Export']'.</msg>
+<msg time="2024-04-02T12:22:50.665882" level="INFO">Clicking element '//span[.='Excel Export']'.</msg>
 <arg>${TOOLS_EXCEL_EXPORT_MENU}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-02T11:51:38.648129" elapsed="0.371845"/>
+<status status="PASS" start="2024-04-02T12:22:50.664663" elapsed="0.812137"/>
 </kw>
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
 <kw name="C:Users&#10;ovozDownloadsExport.xlsx">
-<msg time="2024-04-02T11:51:39.030799" level="FAIL">No keyword with name 'C:Users
+<msg time="2024-04-02T12:22:51.497904" level="FAIL">No keyword with name 'C:Users
 ovozDownloadsExport.xlsx' found.</msg>
-<status status="FAIL" start="2024-04-02T11:51:39.030799" elapsed="0.000000">No keyword with name 'C:Users
+<status status="FAIL" start="2024-04-02T12:22:51.479766" elapsed="0.019133">No keyword with name 'C:Users
 ovozDownloadsExport.xlsx' found.</status>
 </kw>
-<msg time="2024-04-02T11:51:39.050881" level="INFO">${download} = False</msg>
+<msg time="2024-04-02T12:22:51.504870" level="INFO">${download} = False</msg>
 <var>${download}</var>
 <arg>${EXCEL_DOWNLOAD_PATH}Export.xlsx</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2024-04-02T11:51:39.021521" elapsed="0.029360"/>
+<status status="PASS" start="2024-04-02T12:22:51.477804" elapsed="0.028065"/>
 </kw>
 <if>
 <branch type="IF" condition="&quot;${download}&quot; == &quot;${False}&quot;">
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-04-02T11:51:39.053876" level="WARN">"downloaded Excel file path is correct!"</msg>
+<msg time="2024-04-02T12:22:51.509851" level="WARN">"downloaded Excel file path is correct!"</msg>
 <arg>"downloaded Excel file path is correct!"</arg>
 <arg>WARN</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-04-02T11:51:39.052875" elapsed="0.006000"/>
+<status status="PASS" start="2024-04-02T12:22:51.507857" elapsed="0.008051"/>
 </kw>
-<status status="PASS" start="2024-04-02T11:51:39.051878" elapsed="0.006997"/>
+<status status="PASS" start="2024-04-02T12:22:51.506859" elapsed="0.009049"/>
 </branch>
-<status status="PASS" start="2024-04-02T11:51:39.051878" elapsed="0.007975"/>
+<status status="PASS" start="2024-04-02T12:22:51.506859" elapsed="0.009049"/>
 </if>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${LOCATIONS_BUTTON}</arg>
 <arg>timeout=3s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-04-02T11:51:39.059853" elapsed="0.037711"/>
+<status status="PASS" start="2024-04-02T12:22:51.516904" elapsed="0.281598"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-04-02T11:51:39.097564" level="INFO">Clicking element '//a[contains(.,'Telephelyek')]'.</msg>
+<msg time="2024-04-02T12:22:51.801859" level="INFO">Clicking element '//a[contains(.,'Telephelyek')]'.</msg>
 <arg>${LOCATIONS_BUTTON}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-02T11:51:39.097564" elapsed="0.106714"/>
+<status status="PASS" start="2024-04-02T12:22:51.799858" elapsed="0.113235"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${LOCATIONS_SEARCH_INPUT}</arg>
 <arg>timeout=3s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-04-02T11:51:39.205274" elapsed="0.053768"/>
+<status status="PASS" start="2024-04-02T12:22:51.915089" elapsed="0.217088"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-04-02T11:51:42.259616" level="INFO">Slept 3 seconds.</msg>
+<msg time="2024-04-02T12:22:55.136189" level="INFO">Slept 3 seconds.</msg>
 <arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-04-02T11:51:39.259042" elapsed="3.000574"/>
+<status status="PASS" start="2024-04-02T12:22:52.134176" elapsed="3.002013"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-04-02T11:51:42.259616" level="INFO">Clicking element '//input[@id='Grid_ToolbarSearchBox']'.</msg>
+<msg time="2024-04-02T12:22:55.138929" level="INFO">Clicking element '//input[@id='Grid_ToolbarSearchBox']'.</msg>
 <arg>${LOCATIONS_SEARCH_INPUT}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-02T11:51:42.259616" elapsed="0.094553"/>
+<status status="PASS" start="2024-04-02T12:22:55.138929" elapsed="0.092945"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-04-02T11:51:45.354852" level="INFO">Slept 3 seconds.</msg>
+<msg time="2024-04-02T12:22:58.232514" level="INFO">Slept 3 seconds.</msg>
 <arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-04-02T11:51:42.354169" elapsed="3.000683"/>
+<status status="PASS" start="2024-04-02T12:22:55.231874" elapsed="3.000640"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-04-02T11:51:45.354852" level="INFO">Typing text 'Maris Hauck' into text field '//input[@id='Grid_ToolbarSearchBox']'.</msg>
+<msg time="2024-04-02T12:22:58.232514" level="INFO">Typing text 'Leilani Ernser' into text field '//input[@id='Grid_ToolbarSearchBox']'.</msg>
 <arg>${LOCATIONS_SEARCH_INPUT}</arg>
 <arg>${first_name} ${last_name}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-02T11:51:45.354852" elapsed="0.138062"/>
+<status status="PASS" start="2024-04-02T12:22:58.232514" elapsed="0.139308"/>
 </kw>
 <kw name="Get Element Attribute" owner="SeleniumLibrary">
-<msg time="2024-04-02T11:51:45.513659" level="INFO">${name_value} = Maris Hauck</msg>
+<msg time="2024-04-02T12:22:58.395526" level="INFO">${name_value} = Leilani Ernser</msg>
 <var>${name_value}</var>
 <arg>${LOCATIONS_SEARCH_INPUT}</arg>
 <arg>value</arg>
 <doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<status status="PASS" start="2024-04-02T11:51:45.492914" elapsed="0.020745"/>
+<status status="PASS" start="2024-04-02T12:22:58.371822" elapsed="0.023704"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${name_value}</arg>
 <arg>${first_name} ${last_name}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2024-04-02T11:51:45.514643" elapsed="0.001038"/>
+<status status="PASS" start="2024-04-02T12:22:58.396523" elapsed="0.000998"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${LOCATION_SEARCH_BUTTON}</arg>
 <arg>timeout=3s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-04-02T11:51:45.515681" elapsed="0.037731"/>
+<status status="PASS" start="2024-04-02T12:22:58.398527" elapsed="0.034019"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2024-04-02T11:51:50.554434" level="INFO">Slept 5 seconds.</msg>
+<msg time="2024-04-02T12:23:03.433275" level="INFO">Slept 5 seconds.</msg>
 <arg>5s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-04-02T11:51:45.553412" elapsed="5.001022"/>
+<status status="PASS" start="2024-04-02T12:22:58.432546" elapsed="5.000729"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-04-02T11:51:50.554434" level="INFO">Clicking element '//span[@class='e-searchclear e-search-icon e-icons e-input-group-icon']'.</msg>
+<msg time="2024-04-02T12:23:03.433275" level="INFO">Clicking element '//span[@class='e-searchclear e-search-icon e-icons e-input-group-icon']'.</msg>
 <arg>${LOCATION_SEARCH_BUTTON}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-02T11:51:50.554434" elapsed="0.086634"/>
+<status status="PASS" start="2024-04-02T12:23:03.433275" elapsed="0.079566"/>
 </kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${LOCATION_NAVIGATION_BUTTON}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-04-02T11:51:50.641068" elapsed="0.042048"/>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-04-02T12:23:08.513514" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-04-02T12:23:03.512841" elapsed="5.000673"/>
 </kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-04-02T11:51:50.685092" level="INFO">Clicking element '//a[@href='LocationInfo/674']/span[@class='oi oi-location']'.</msg>
-<arg>${LOCATION_NAVIGATION_BUTTON}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-04-02T11:51:50.684146" elapsed="0.092382"/>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2024-04-02T12:23:08.513514" level="INFO">Clicking link '//a[contains(.,"Lorrine Cliffs")]'.</msg>
+<arg>//a[contains(.,"${partner_street_name}")]</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-02T12:23:08.513514" elapsed="0.110722"/>
 </kw>
 <kw name="Test Teardown" owner="common_resources">
 <kw name="Close All Browsers" owner="SeleniumLibrary">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2024-04-02T11:51:50.778564" elapsed="6.378974"/>
+<status status="PASS" start="2024-04-02T12:23:08.626186" elapsed="6.435376"/>
 </kw>
-<status status="PASS" start="2024-04-02T11:51:50.777522" elapsed="6.380016"/>
+<status status="PASS" start="2024-04-02T12:23:08.625187" elapsed="6.436375"/>
 </kw>
-<status status="PASS" start="2024-04-02T11:50:47.206789" elapsed="69.952143"/>
+<status status="PASS" start="2024-04-02T12:21:59.226264" elapsed="75.835298"/>
 </test>
-<status status="PASS" start="2024-04-02T11:50:46.928038" elapsed="70.234051"/>
+<status status="PASS" start="2024-04-02T12:21:58.938717" elapsed="76.122845"/>
 </suite>
-<status status="PASS" start="2024-04-02T11:50:46.917880" elapsed="70.247574"/>
+<status status="PASS" start="2024-04-02T12:21:58.938717" elapsed="76.122845"/>
 </suite>
-<status status="PASS" start="2024-04-02T11:50:46.898765" elapsed="70.269679"/>
+<status status="PASS" start="2024-04-02T12:21:58.908074" elapsed="76.153488"/>
 </suite>
 <statistics>
 <total>
@@ -745,6 +746,6 @@ ovozDownloadsExport.xlsx' found.</status>
 </suite>
 </statistics>
 <errors>
-<msg time="2024-04-02T11:51:39.053876" level="WARN">"downloaded Excel file path is correct!"</msg>
+<msg time="2024-04-02T12:22:51.509851" level="WARN">"downloaded Excel file path is correct!"</msg>
 </errors>
 </robot>
